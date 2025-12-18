@@ -1,0 +1,103 @@
+/**
+   @file main.ino
+   @brief Програма керування трьома світлодіодами за допомогою однієї кнопки, використовуючи переривання.
+
+   Програма керує трьома світлодіодами, підключеними до GPIO 18, 19, та 21, за допомогою кнопки, підключеної до GPIO 18.
+   Вона реалізує алгоритм послідовного увімкнення/вимкнення світлодіодів при кожному натисканні кнопки.
+   Для обробки натискань кнопки використовується зовнішнє переривання.
+   Код включає програмне усунення деренчання контактів для запобігання помилкових спрацьовувань.
+   @author Mykyta Siryk
+   @date 2025-09-14
+*/
+
+// --- Визначення констант та змінних ---
+
+/**
+   @def BUTTON_PIN
+   @brief Пін GPIO, до якого підключена кнопка.
+   @def LED1_PIN
+   @brief Пін GPIO, до якого підключений LED1.
+   @def LED2_PIN
+   @brief Пін GPIO, до якого підключений LED2.
+   @def LED3_PIN
+   @brief Пін GPIO, до якого підключений LED3.
+*/
+#define BUTTON_PIN 20
+#define LED1_PIN 18
+#define LED2_PIN 19
+#define LED3_PIN 21
+
+/**
+   @var buttonPressCount
+   @brief Лічильник натискань кнопки.
+   @details Використовується для відстеження кількості натискань, щоб реалізувати логіку увімкнення/вимкнення світлодіодів.
+   Змінна є `volatile`, оскільки вона змінюється в підпрограмі обробки переривання (ISR).
+*/
+volatile int buttonPressCount = 0;
+
+/**
+   @var lastButtonTime
+   @brief Зберігає час останнього переривання.
+   @details Використовується для програмного усунення деренчання контактів кнопки.
+*/
+volatile unsigned long lastButtonTime = 0;
+
+/**
+   @def debounceDelay
+   @brief Час затримки для усунення деренчання контактів (в мс).
+   @details Запобігає багаторазовому спрацьовуванню переривання від одного натискання кнопки.
+*/
+const unsigned long debounceDelay = 250;
+
+/**
+   @brief Підпрограма обробки переривання (ISR) для натискань кнопки.
+
+   Ця функція викликається при кожному спрацьовуванні переривання від кнопки (спадний фронт).
+   Вона перевіряє час, що пройшов з моменту останнього переривання,
+   і, якщо він перевищує `debounceDelay`, збільшує лічильник `buttonPressCount`.
+   Функція позначена як `IRAM_ATTR` для швидкого виконання з внутрішньої пам'яті RAM.
+*/
+void IRAM_ATTR handleButtonPress() {
+  unsigned long currentButtonTime = millis();
+  if (currentButtonTime - lastButtonTime > debounceDelay) {
+    buttonPressCount++;
+    lastButtonTime = currentButtonTime;
+  }
+}
+
+/**
+   @brief Налаштування програми.
+
+   Ініціалізує піни світлодіодів як виходи та пін кнопки як вхід з внутрішнім підтягуючим резистором (`INPUT_PULLUP`).
+   Налаштовує переривання на піні кнопки (`BUTTON_PIN`) для спрацьовування на спадному фронті (`FALLING`).
+*/
+void setup() {
+  pinMode(LED1_PIN, OUTPUT);
+  pinMode(LED2_PIN, OUTPUT);
+  pinMode(LED3_PIN, OUTPUT);
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+
+  attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), handleButtonPress, FALLING);
+}
+
+/**
+   @brief Основний цикл програми.
+
+   Відстежує значення `buttonPressCount` та відповідно керує станом світлодіодів.
+   Логіка увімкнення/вимкнення світлодіодів реалізована згідно з алгоритмом завдання.
+   Після четвертого натискання лічильник скидається, і алгоритм повторюється.
+*/
+void loop() {
+  if (buttonPressCount == 1) {
+    digitalWrite(LED1_PIN, HIGH);
+  } else if (buttonPressCount == 2) {
+    digitalWrite(LED2_PIN, HIGH);
+  } else if (buttonPressCount == 3) {
+    digitalWrite(LED3_PIN, HIGH);
+  } else if (buttonPressCount >= 4) {
+    digitalWrite(LED1_PIN, LOW);
+    digitalWrite(LED2_PIN, LOW);
+    digitalWrite(LED3_PIN, LOW);
+    buttonPressCount = 0;
+  }
+}

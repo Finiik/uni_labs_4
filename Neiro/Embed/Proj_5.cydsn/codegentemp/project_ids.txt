@@ -1,0 +1,6 @@
+C:\Users\Finik\Desktop\uni_labs_4\Neiro\Embed\Proj_5.cydsn\Proj_5.cyprj|9c07b055-29c5-4037-a8aa-d264d9cdca7f
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|3ea8d0b8-a584-403e-8f66-8d85951a2e58
+C:\Users\Finik\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|86d51691-a2b1-44e1-a35b-33db23a1a803
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|8c490485-043e-47c1-b5c7-b46e3555d1f2
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|54898cb9-9230-412f-9f1b-a649d44a08c1
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|e76c2ccd-a5ca-489b-86d3-ccf9174f42c4

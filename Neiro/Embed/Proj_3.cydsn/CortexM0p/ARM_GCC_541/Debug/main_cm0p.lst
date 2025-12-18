@@ -1,0 +1,2185 @@
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main_cm0p.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB375:
+  27              		.file 1 "main_cm0p.c"
+   1:main_cm0p.c   **** /* ========================================
+   2:main_cm0p.c   ****  *
+   3:main_cm0p.c   ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main_cm0p.c   ****  * All Rights Reserved
+   5:main_cm0p.c   ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main_cm0p.c   ****  *
+   7:main_cm0p.c   ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main_cm0p.c   ****  * WHICH IS THE PROPERTY OF your company.
+   9:main_cm0p.c   ****  *
+  10:main_cm0p.c   ****  * ========================================
+  11:main_cm0p.c   **** */
+  12:main_cm0p.c   **** #include "project.h"
+  13:main_cm0p.c   **** 
+  14:main_cm0p.c   **** int main(void)
+  15:main_cm0p.c   **** {
+  28              		.loc 1 15 0
+  29              		.cfi_startproc
+  30              		@ Volatile: function does not return.
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  37              	.LBB4:
+  38              	.LBB5:
+  39              		.file 2 "Generated_Source\\PSoC6\\pdl\\cmsis/include/cmsis_gcc.h"
+   1:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /**************************************************************************//**
+   2:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
+   3:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 2
+
+
+   4:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @version  V5.0.3
+   5:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @date     16. January 2018
+   6:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  ******************************************************************************/
+   7:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /*
+   8:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Copyright (c) 2009-2017 ARM Limited. All rights reserved.
+   9:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  10:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * SPDX-License-Identifier: Apache-2.0
+  11:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  12:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  13:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * not use this file except in compliance with the License.
+  14:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * You may obtain a copy of the License at
+  15:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  16:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
+  17:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  18:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
+  19:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  20:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  21:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * See the License for the specific language governing permissions and
+  22:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * limitations under the License.
+  23:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  */
+  24:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  25:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
+  26:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #define __CMSIS_GCC_H
+  27:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  28:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* ignore some GCC warnings */
+  29:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic push
+  30:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
+  31:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
+  32:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
+  33:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  34:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* Fallback for __has_builtin */
+  35:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef __has_builtin
+  36:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __has_builtin(x) (0)
+  37:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  38:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  39:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* CMSIS compiler specific defines */
+  40:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __ASM
+  41:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __ASM                                  __asm
+  42:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  43:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __INLINE
+  44:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __INLINE                               inline
+  45:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  46:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __STATIC_INLINE
+  47:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __STATIC_INLINE                        static inline
+  48:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  49:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE                 
+  50:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
+  51:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif                                           
+  52:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __NO_RETURN
+  53:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
+  54:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  55:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __USED
+  56:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
+  57:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  58:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __WEAK
+  59:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
+  60:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 3
+
+
+  61:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __PACKED
+  62:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __PACKED                               __attribute__((packed, aligned(1)))
+  63:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  64:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
+  65:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
+  66:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  67:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __PACKED_UNION
+  68:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
+  69:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  70:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32        /* deprecated */
+  71:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  72:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  73:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  74:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
+  75:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  76:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
+  77:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  78:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_WRITE
+  79:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  80:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  81:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  82:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
+  83:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  84:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
+  85:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  86:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
+  87:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  88:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  89:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  90:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
+  91:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  92:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
+  93:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  94:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_WRITE
+  95:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  96:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  97:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  98:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
+  99:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 100:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-
+ 101:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 102:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_READ
+ 103:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+ 104:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+ 105:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+ 106:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
+ 107:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 108:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
+ 109:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 110:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __ALIGNED
+ 111:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
+ 112:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 113:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __RESTRICT
+ 114:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
+ 115:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 116:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+ 117:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 4
+
+
+ 118:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
+ 119:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+ 120:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
+ 121:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   @{
+ 122:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  */
+ 123:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+ 124:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /**
+ 125:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
+ 126:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
+ 127:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 128:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  */
+ 129:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
+ 130:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** {
+ 131:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
+  40              		.loc 2 131 0
+  41              		.syntax divided
+  42              	@ 131 "Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h" 1
+  43 0002 62B6     		cpsie i
+  44              	@ 0 "" 2
+  45              		.thumb
+  46              		.syntax unified
+  47              	.LBE5:
+  48              	.LBE4:
+  16:main_cm0p.c   ****     __enable_irq(); /* Enable global interrupts. */
+  17:main_cm0p.c   ****     /* Enable CM4.  CY_CORTEX_M4_APPL_ADDR must be updated if CM4 memory layout is changed. */
+  18:main_cm0p.c   ****     Cy_SysEnableCM4(CY_CORTEX_M4_APPL_ADDR); 
+  49              		.loc 1 18 0
+  50 0004 0148     		ldr	r0, .L3
+  51 0006 FFF7FEFF 		bl	Cy_SysEnableCM4
+  52              	.LVL0:
+  53              	.L2:
+  54 000a FEE7     		b	.L2
+  55              	.L4:
+  56              		.align	2
+  57              	.L3:
+  58 000c 00000810 		.word	268959744
+  59              		.cfi_endproc
+  60              	.LFE375:
+  61              		.size	main, .-main
+  62              		.text
+  63              	.Letext0:
+  64              		.file 3 "d:\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\mac
+  65              		.file 4 "d:\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\sys
+  66              		.file 5 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/device/cy_device.h"
+  67              		.file 6 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/tcpwm/cy_tcpwm_pwm.h"
+  68              		.file 7 "Generated_Source\\PSoC6/PWM_3.h"
+  69              		.file 8 "Generated_Source\\PSoC6/PWM_2.h"
+  70              		.file 9 "Generated_Source\\PSoC6/PWM_1.h"
+  71              		.file 10 "./system_psoc6.h"
+  72              		.section	.debug_info,"",%progbits
+  73              	.Ldebug_info0:
+  74 0000 D6060000 		.4byte	0x6d6
+  75 0004 0400     		.2byte	0x4
+  76 0006 00000000 		.4byte	.Ldebug_abbrev0
+  77 000a 04       		.byte	0x4
+  78 000b 01       		.uleb128 0x1
+  79 000c 46060000 		.4byte	.LASF140
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 5
+
+
+  80 0010 0C       		.byte	0xc
+  81 0011 82000000 		.4byte	.LASF141
+  82 0015 C6020000 		.4byte	.LASF142
+  83 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  84 001d 00000000 		.4byte	0
+  85 0021 00000000 		.4byte	.Ldebug_line0
+  86 0025 02       		.uleb128 0x2
+  87 0026 02       		.byte	0x2
+  88 0027 05       		.byte	0x5
+  89 0028 E6050000 		.4byte	.LASF0
+  90 002c 02       		.uleb128 0x2
+  91 002d 01       		.byte	0x1
+  92 002e 08       		.byte	0x8
+  93 002f C4050000 		.4byte	.LASF1
+  94 0033 02       		.uleb128 0x2
+  95 0034 01       		.byte	0x1
+  96 0035 06       		.byte	0x6
+  97 0036 80010000 		.4byte	.LASF2
+  98 003a 03       		.uleb128 0x3
+  99 003b A9000000 		.4byte	.LASF3
+ 100 003f 03       		.byte	0x3
+ 101 0040 1D       		.byte	0x1d
+ 102 0041 2C000000 		.4byte	0x2c
+ 103 0045 03       		.uleb128 0x3
+ 104 0046 BC020000 		.4byte	.LASF4
+ 105 004a 03       		.byte	0x3
+ 106 004b 29       		.byte	0x29
+ 107 004c 25000000 		.4byte	0x25
+ 108 0050 03       		.uleb128 0x3
+ 109 0051 17070000 		.4byte	.LASF5
+ 110 0055 03       		.byte	0x3
+ 111 0056 2B       		.byte	0x2b
+ 112 0057 5B000000 		.4byte	0x5b
+ 113 005b 02       		.uleb128 0x2
+ 114 005c 02       		.byte	0x2
+ 115 005d 07       		.byte	0x7
+ 116 005e 5F070000 		.4byte	.LASF6
+ 117 0062 02       		.uleb128 0x2
+ 118 0063 04       		.byte	0x4
+ 119 0064 05       		.byte	0x5
+ 120 0065 FB010000 		.4byte	.LASF7
+ 121 0069 03       		.uleb128 0x3
+ 122 006a A1020000 		.4byte	.LASF8
+ 123 006e 03       		.byte	0x3
+ 124 006f 41       		.byte	0x41
+ 125 0070 74000000 		.4byte	0x74
+ 126 0074 02       		.uleb128 0x2
+ 127 0075 04       		.byte	0x4
+ 128 0076 07       		.byte	0x7
+ 129 0077 72030000 		.4byte	.LASF9
+ 130 007b 02       		.uleb128 0x2
+ 131 007c 08       		.byte	0x8
+ 132 007d 05       		.byte	0x5
+ 133 007e 72010000 		.4byte	.LASF10
+ 134 0082 02       		.uleb128 0x2
+ 135 0083 08       		.byte	0x8
+ 136 0084 07       		.byte	0x7
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 6
+
+
+ 137 0085 F8000000 		.4byte	.LASF11
+ 138 0089 04       		.uleb128 0x4
+ 139 008a 04       		.byte	0x4
+ 140 008b 05       		.byte	0x5
+ 141 008c 696E7400 		.ascii	"int\000"
+ 142 0090 02       		.uleb128 0x2
+ 143 0091 04       		.byte	0x4
+ 144 0092 07       		.byte	0x7
+ 145 0093 36030000 		.4byte	.LASF12
+ 146 0097 03       		.uleb128 0x3
+ 147 0098 19080000 		.4byte	.LASF13
+ 148 009c 04       		.byte	0x4
+ 149 009d 18       		.byte	0x18
+ 150 009e 3A000000 		.4byte	0x3a
+ 151 00a2 03       		.uleb128 0x3
+ 152 00a3 6A010000 		.4byte	.LASF14
+ 153 00a7 04       		.byte	0x4
+ 154 00a8 20       		.byte	0x20
+ 155 00a9 45000000 		.4byte	0x45
+ 156 00ad 03       		.uleb128 0x3
+ 157 00ae 43030000 		.4byte	.LASF15
+ 158 00b2 04       		.byte	0x4
+ 159 00b3 24       		.byte	0x24
+ 160 00b4 50000000 		.4byte	0x50
+ 161 00b8 03       		.uleb128 0x3
+ 162 00b9 3D060000 		.4byte	.LASF16
+ 163 00bd 04       		.byte	0x4
+ 164 00be 30       		.byte	0x30
+ 165 00bf 69000000 		.4byte	0x69
+ 166 00c3 02       		.uleb128 0x2
+ 167 00c4 04       		.byte	0x4
+ 168 00c5 07       		.byte	0x7
+ 169 00c6 BC040000 		.4byte	.LASF17
+ 170 00ca 02       		.uleb128 0x2
+ 171 00cb 08       		.byte	0x8
+ 172 00cc 04       		.byte	0x4
+ 173 00cd E1060000 		.4byte	.LASF18
+ 174 00d1 05       		.uleb128 0x5
+ 175 00d2 B8       		.byte	0xb8
+ 176 00d3 05       		.byte	0x5
+ 177 00d4 34       		.byte	0x34
+ 178 00d5 E2040000 		.4byte	0x4e2
+ 179 00d9 06       		.uleb128 0x6
+ 180 00da DF000000 		.4byte	.LASF19
+ 181 00de 05       		.byte	0x5
+ 182 00df 37       		.byte	0x37
+ 183 00e0 B8000000 		.4byte	0xb8
+ 184 00e4 00       		.byte	0
+ 185 00e5 06       		.uleb128 0x6
+ 186 00e6 96020000 		.4byte	.LASF20
+ 187 00ea 05       		.byte	0x5
+ 188 00eb 38       		.byte	0x38
+ 189 00ec B8000000 		.4byte	0xb8
+ 190 00f0 04       		.byte	0x4
+ 191 00f1 06       		.uleb128 0x6
+ 192 00f2 1F020000 		.4byte	.LASF21
+ 193 00f6 05       		.byte	0x5
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 7
+
+
+ 194 00f7 39       		.byte	0x39
+ 195 00f8 B8000000 		.4byte	0xb8
+ 196 00fc 08       		.byte	0x8
+ 197 00fd 06       		.uleb128 0x6
+ 198 00fe B6050000 		.4byte	.LASF22
+ 199 0102 05       		.byte	0x5
+ 200 0103 3A       		.byte	0x3a
+ 201 0104 B8000000 		.4byte	0xb8
+ 202 0108 0C       		.byte	0xc
+ 203 0109 06       		.uleb128 0x6
+ 204 010a A1010000 		.4byte	.LASF23
+ 205 010e 05       		.byte	0x5
+ 206 010f 3B       		.byte	0x3b
+ 207 0110 B8000000 		.4byte	0xb8
+ 208 0114 10       		.byte	0x10
+ 209 0115 06       		.uleb128 0x6
+ 210 0116 D9010000 		.4byte	.LASF24
+ 211 011a 05       		.byte	0x5
+ 212 011b 3C       		.byte	0x3c
+ 213 011c B8000000 		.4byte	0xb8
+ 214 0120 14       		.byte	0x14
+ 215 0121 06       		.uleb128 0x6
+ 216 0122 A1030000 		.4byte	.LASF25
+ 217 0126 05       		.byte	0x5
+ 218 0127 3D       		.byte	0x3d
+ 219 0128 B8000000 		.4byte	0xb8
+ 220 012c 18       		.byte	0x18
+ 221 012d 06       		.uleb128 0x6
+ 222 012e 79000000 		.4byte	.LASF26
+ 223 0132 05       		.byte	0x5
+ 224 0133 3E       		.byte	0x3e
+ 225 0134 B8000000 		.4byte	0xb8
+ 226 0138 1C       		.byte	0x1c
+ 227 0139 06       		.uleb128 0x6
+ 228 013a B1080000 		.4byte	.LASF27
+ 229 013e 05       		.byte	0x5
+ 230 013f 3F       		.byte	0x3f
+ 231 0140 B8000000 		.4byte	0xb8
+ 232 0144 20       		.byte	0x20
+ 233 0145 06       		.uleb128 0x6
+ 234 0146 30050000 		.4byte	.LASF28
+ 235 014a 05       		.byte	0x5
+ 236 014b 40       		.byte	0x40
+ 237 014c B8000000 		.4byte	0xb8
+ 238 0150 24       		.byte	0x24
+ 239 0151 06       		.uleb128 0x6
+ 240 0152 8E040000 		.4byte	.LASF29
+ 241 0156 05       		.byte	0x5
+ 242 0157 43       		.byte	0x43
+ 243 0158 97000000 		.4byte	0x97
+ 244 015c 28       		.byte	0x28
+ 245 015d 06       		.uleb128 0x6
+ 246 015e 5F000000 		.4byte	.LASF30
+ 247 0162 05       		.byte	0x5
+ 248 0163 44       		.byte	0x44
+ 249 0164 97000000 		.4byte	0x97
+ 250 0168 29       		.byte	0x29
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 8
+
+
+ 251 0169 06       		.uleb128 0x6
+ 252 016a A7080000 		.4byte	.LASF31
+ 253 016e 05       		.byte	0x5
+ 254 016f 45       		.byte	0x45
+ 255 0170 97000000 		.4byte	0x97
+ 256 0174 2A       		.byte	0x2a
+ 257 0175 06       		.uleb128 0x6
+ 258 0176 22050000 		.4byte	.LASF32
+ 259 017a 05       		.byte	0x5
+ 260 017b 46       		.byte	0x46
+ 261 017c 97000000 		.4byte	0x97
+ 262 0180 2B       		.byte	0x2b
+ 263 0181 06       		.uleb128 0x6
+ 264 0182 20040000 		.4byte	.LASF33
+ 265 0186 05       		.byte	0x5
+ 266 0187 47       		.byte	0x47
+ 267 0188 97000000 		.4byte	0x97
+ 268 018c 2C       		.byte	0x2c
+ 269 018d 06       		.uleb128 0x6
+ 270 018e 35070000 		.4byte	.LASF34
+ 271 0192 05       		.byte	0x5
+ 272 0193 48       		.byte	0x48
+ 273 0194 97000000 		.4byte	0x97
+ 274 0198 2D       		.byte	0x2d
+ 275 0199 06       		.uleb128 0x6
+ 276 019a AA010000 		.4byte	.LASF35
+ 277 019e 05       		.byte	0x5
+ 278 019f 49       		.byte	0x49
+ 279 01a0 97000000 		.4byte	0x97
+ 280 01a4 2E       		.byte	0x2e
+ 281 01a5 06       		.uleb128 0x6
+ 282 01a6 9B040000 		.4byte	.LASF36
+ 283 01aa 05       		.byte	0x5
+ 284 01ab 4A       		.byte	0x4a
+ 285 01ac 97000000 		.4byte	0x97
+ 286 01b0 2F       		.byte	0x2f
+ 287 01b1 06       		.uleb128 0x6
+ 288 01b2 FD060000 		.4byte	.LASF37
+ 289 01b6 05       		.byte	0x5
+ 290 01b7 4B       		.byte	0x4b
+ 291 01b8 97000000 		.4byte	0x97
+ 292 01bc 30       		.byte	0x30
+ 293 01bd 06       		.uleb128 0x6
+ 294 01be 96030000 		.4byte	.LASF38
+ 295 01c2 05       		.byte	0x5
+ 296 01c3 4E       		.byte	0x4e
+ 297 01c4 97000000 		.4byte	0x97
+ 298 01c8 31       		.byte	0x31
+ 299 01c9 06       		.uleb128 0x6
+ 300 01ca 9B000000 		.4byte	.LASF39
+ 301 01ce 05       		.byte	0x5
+ 302 01cf 4F       		.byte	0x4f
+ 303 01d0 97000000 		.4byte	0x97
+ 304 01d4 32       		.byte	0x32
+ 305 01d5 06       		.uleb128 0x6
+ 306 01d6 2A030000 		.4byte	.LASF40
+ 307 01da 05       		.byte	0x5
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 9
+
+
+ 308 01db 50       		.byte	0x50
+ 309 01dc 97000000 		.4byte	0x97
+ 310 01e0 33       		.byte	0x33
+ 311 01e1 06       		.uleb128 0x6
+ 312 01e2 D0040000 		.4byte	.LASF41
+ 313 01e6 05       		.byte	0x5
+ 314 01e7 51       		.byte	0x51
+ 315 01e8 97000000 		.4byte	0x97
+ 316 01ec 34       		.byte	0x34
+ 317 01ed 06       		.uleb128 0x6
+ 318 01ee 98070000 		.4byte	.LASF42
+ 319 01f2 05       		.byte	0x5
+ 320 01f3 52       		.byte	0x52
+ 321 01f4 A2000000 		.4byte	0xa2
+ 322 01f8 36       		.byte	0x36
+ 323 01f9 06       		.uleb128 0x6
+ 324 01fa 39020000 		.4byte	.LASF43
+ 325 01fe 05       		.byte	0x5
+ 326 01ff 53       		.byte	0x53
+ 327 0200 A2000000 		.4byte	0xa2
+ 328 0204 38       		.byte	0x38
+ 329 0205 06       		.uleb128 0x6
+ 330 0206 E6070000 		.4byte	.LASF44
+ 331 020a 05       		.byte	0x5
+ 332 020b 54       		.byte	0x54
+ 333 020c A2000000 		.4byte	0xa2
+ 334 0210 3A       		.byte	0x3a
+ 335 0211 06       		.uleb128 0x6
+ 336 0212 CA010000 		.4byte	.LASF45
+ 337 0216 05       		.byte	0x5
+ 338 0217 55       		.byte	0x55
+ 339 0218 97000000 		.4byte	0x97
+ 340 021c 3C       		.byte	0x3c
+ 341 021d 06       		.uleb128 0x6
+ 342 021e 60020000 		.4byte	.LASF46
+ 343 0222 05       		.byte	0x5
+ 344 0223 56       		.byte	0x56
+ 345 0224 97000000 		.4byte	0x97
+ 346 0228 3D       		.byte	0x3d
+ 347 0229 06       		.uleb128 0x6
+ 348 022a 1F060000 		.4byte	.LASF47
+ 349 022e 05       		.byte	0x5
+ 350 022f 57       		.byte	0x57
+ 351 0230 97000000 		.4byte	0x97
+ 352 0234 3E       		.byte	0x3e
+ 353 0235 06       		.uleb128 0x6
+ 354 0236 6D000000 		.4byte	.LASF48
+ 355 023a 05       		.byte	0x5
+ 356 023b 58       		.byte	0x58
+ 357 023c 97000000 		.4byte	0x97
+ 358 0240 3F       		.byte	0x3f
+ 359 0241 06       		.uleb128 0x6
+ 360 0242 3B050000 		.4byte	.LASF49
+ 361 0246 05       		.byte	0x5
+ 362 0247 59       		.byte	0x59
+ 363 0248 97000000 		.4byte	0x97
+ 364 024c 40       		.byte	0x40
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 10
+
+
+ 365 024d 06       		.uleb128 0x6
+ 366 024e AC020000 		.4byte	.LASF50
+ 367 0252 05       		.byte	0x5
+ 368 0253 5A       		.byte	0x5a
+ 369 0254 97000000 		.4byte	0x97
+ 370 0258 41       		.byte	0x41
+ 371 0259 06       		.uleb128 0x6
+ 372 025a AA030000 		.4byte	.LASF51
+ 373 025e 05       		.byte	0x5
+ 374 025f 5B       		.byte	0x5b
+ 375 0260 97000000 		.4byte	0x97
+ 376 0264 42       		.byte	0x42
+ 377 0265 06       		.uleb128 0x6
+ 378 0266 17050000 		.4byte	.LASF52
+ 379 026a 05       		.byte	0x5
+ 380 026b 5C       		.byte	0x5c
+ 381 026c 97000000 		.4byte	0x97
+ 382 0270 43       		.byte	0x43
+ 383 0271 06       		.uleb128 0x6
+ 384 0272 28020000 		.4byte	.LASF53
+ 385 0276 05       		.byte	0x5
+ 386 0277 5D       		.byte	0x5d
+ 387 0278 97000000 		.4byte	0x97
+ 388 027c 44       		.byte	0x44
+ 389 027d 06       		.uleb128 0x6
+ 390 027e 00000000 		.4byte	.LASF54
+ 391 0282 05       		.byte	0x5
+ 392 0283 5E       		.byte	0x5e
+ 393 0284 B8000000 		.4byte	0xb8
+ 394 0288 48       		.byte	0x48
+ 395 0289 06       		.uleb128 0x6
+ 396 028a 04020000 		.4byte	.LASF55
+ 397 028e 05       		.byte	0x5
+ 398 028f 5F       		.byte	0x5f
+ 399 0290 B8000000 		.4byte	0xb8
+ 400 0294 4C       		.byte	0x4c
+ 401 0295 06       		.uleb128 0x6
+ 402 0296 E1080000 		.4byte	.LASF56
+ 403 029a 05       		.byte	0x5
+ 404 029b 60       		.byte	0x60
+ 405 029c 97000000 		.4byte	0x97
+ 406 02a0 50       		.byte	0x50
+ 407 02a1 06       		.uleb128 0x6
+ 408 02a2 44010000 		.4byte	.LASF57
+ 409 02a6 05       		.byte	0x5
+ 410 02a7 61       		.byte	0x61
+ 411 02a8 97000000 		.4byte	0x97
+ 412 02ac 51       		.byte	0x51
+ 413 02ad 06       		.uleb128 0x6
+ 414 02ae 09080000 		.4byte	.LASF58
+ 415 02b2 05       		.byte	0x5
+ 416 02b3 62       		.byte	0x62
+ 417 02b4 97000000 		.4byte	0x97
+ 418 02b8 52       		.byte	0x52
+ 419 02b9 06       		.uleb128 0x6
+ 420 02ba CF080000 		.4byte	.LASF59
+ 421 02be 05       		.byte	0x5
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 11
+
+
+ 422 02bf 63       		.byte	0x63
+ 423 02c0 97000000 		.4byte	0x97
+ 424 02c4 53       		.byte	0x53
+ 425 02c5 06       		.uleb128 0x6
+ 426 02c6 2D060000 		.4byte	.LASF60
+ 427 02ca 05       		.byte	0x5
+ 428 02cb 64       		.byte	0x64
+ 429 02cc 97000000 		.4byte	0x97
+ 430 02d0 54       		.byte	0x54
+ 431 02d1 06       		.uleb128 0x6
+ 432 02d2 56010000 		.4byte	.LASF61
+ 433 02d6 05       		.byte	0x5
+ 434 02d7 65       		.byte	0x65
+ 435 02d8 97000000 		.4byte	0x97
+ 436 02dc 55       		.byte	0x55
+ 437 02dd 06       		.uleb128 0x6
+ 438 02de 5E030000 		.4byte	.LASF62
+ 439 02e2 05       		.byte	0x5
+ 440 02e3 66       		.byte	0x66
+ 441 02e4 97000000 		.4byte	0x97
+ 442 02e8 56       		.byte	0x56
+ 443 02e9 06       		.uleb128 0x6
+ 444 02ea B6030000 		.4byte	.LASF63
+ 445 02ee 05       		.byte	0x5
+ 446 02ef 67       		.byte	0x67
+ 447 02f0 97000000 		.4byte	0x97
+ 448 02f4 57       		.byte	0x57
+ 449 02f5 06       		.uleb128 0x6
+ 450 02f6 1A000000 		.4byte	.LASF64
+ 451 02fa 05       		.byte	0x5
+ 452 02fb 68       		.byte	0x68
+ 453 02fc 97000000 		.4byte	0x97
+ 454 0300 58       		.byte	0x58
+ 455 0301 06       		.uleb128 0x6
+ 456 0302 D2050000 		.4byte	.LASF65
+ 457 0306 05       		.byte	0x5
+ 458 0307 69       		.byte	0x69
+ 459 0308 97000000 		.4byte	0x97
+ 460 030c 59       		.byte	0x59
+ 461 030d 06       		.uleb128 0x6
+ 462 030e C5040000 		.4byte	.LASF66
+ 463 0312 05       		.byte	0x5
+ 464 0313 6E       		.byte	0x6e
+ 465 0314 AD000000 		.4byte	0xad
+ 466 0318 5A       		.byte	0x5a
+ 467 0319 06       		.uleb128 0x6
+ 468 031a 72070000 		.4byte	.LASF67
+ 469 031e 05       		.byte	0x5
+ 470 031f 6F       		.byte	0x6f
+ 471 0320 AD000000 		.4byte	0xad
+ 472 0324 5C       		.byte	0x5c
+ 473 0325 06       		.uleb128 0x6
+ 474 0326 E9000000 		.4byte	.LASF68
+ 475 032a 05       		.byte	0x5
+ 476 032b 70       		.byte	0x70
+ 477 032c 97000000 		.4byte	0x97
+ 478 0330 5E       		.byte	0x5e
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 12
+
+
+ 479 0331 06       		.uleb128 0x6
+ 480 0332 97050000 		.4byte	.LASF69
+ 481 0336 05       		.byte	0x5
+ 482 0337 71       		.byte	0x71
+ 483 0338 97000000 		.4byte	0x97
+ 484 033c 5F       		.byte	0x5f
+ 485 033d 06       		.uleb128 0x6
+ 486 033e 06050000 		.4byte	.LASF70
+ 487 0342 05       		.byte	0x5
+ 488 0343 72       		.byte	0x72
+ 489 0344 97000000 		.4byte	0x97
+ 490 0348 60       		.byte	0x60
+ 491 0349 06       		.uleb128 0x6
+ 492 034a 63050000 		.4byte	.LASF71
+ 493 034e 05       		.byte	0x5
+ 494 034f 73       		.byte	0x73
+ 495 0350 B8000000 		.4byte	0xb8
+ 496 0354 64       		.byte	0x64
+ 497 0355 06       		.uleb128 0x6
+ 498 0356 1E010000 		.4byte	.LASF72
+ 499 035a 05       		.byte	0x5
+ 500 035b 76       		.byte	0x76
+ 501 035c AD000000 		.4byte	0xad
+ 502 0360 68       		.byte	0x68
+ 503 0361 06       		.uleb128 0x6
+ 504 0362 4C030000 		.4byte	.LASF73
+ 505 0366 05       		.byte	0x5
+ 506 0367 77       		.byte	0x77
+ 507 0368 AD000000 		.4byte	0xad
+ 508 036c 6A       		.byte	0x6a
+ 509 036d 06       		.uleb128 0x6
+ 510 036e D8030000 		.4byte	.LASF74
+ 511 0372 05       		.byte	0x5
+ 512 0373 78       		.byte	0x78
+ 513 0374 AD000000 		.4byte	0xad
+ 514 0378 6C       		.byte	0x6c
+ 515 0379 06       		.uleb128 0x6
+ 516 037a 03040000 		.4byte	.LASF75
+ 517 037e 05       		.byte	0x5
+ 518 037f 79       		.byte	0x79
+ 519 0380 AD000000 		.4byte	0xad
+ 520 0384 6E       		.byte	0x6e
+ 521 0385 06       		.uleb128 0x6
+ 522 0386 F0050000 		.4byte	.LASF76
+ 523 038a 05       		.byte	0x5
+ 524 038b 7B       		.byte	0x7b
+ 525 038c 97000000 		.4byte	0x97
+ 526 0390 70       		.byte	0x70
+ 527 0391 06       		.uleb128 0x6
+ 528 0392 8C010000 		.4byte	.LASF77
+ 529 0396 05       		.byte	0x5
+ 530 0397 7C       		.byte	0x7c
+ 531 0398 97000000 		.4byte	0x97
+ 532 039c 71       		.byte	0x71
+ 533 039d 06       		.uleb128 0x6
+ 534 039e B9080000 		.4byte	.LASF78
+ 535 03a2 05       		.byte	0x5
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 13
+
+
+ 536 03a3 7D       		.byte	0x7d
+ 537 03a4 97000000 		.4byte	0x97
+ 538 03a8 72       		.byte	0x72
+ 539 03a9 06       		.uleb128 0x6
+ 540 03aa E1040000 		.4byte	.LASF79
+ 541 03ae 05       		.byte	0x5
+ 542 03af 7E       		.byte	0x7e
+ 543 03b0 97000000 		.4byte	0x97
+ 544 03b4 73       		.byte	0x73
+ 545 03b5 06       		.uleb128 0x6
+ 546 03b6 70020000 		.4byte	.LASF80
+ 547 03ba 05       		.byte	0x5
+ 548 03bb 80       		.byte	0x80
+ 549 03bc AD000000 		.4byte	0xad
+ 550 03c0 74       		.byte	0x74
+ 551 03c1 06       		.uleb128 0x6
+ 552 03c2 22070000 		.4byte	.LASF81
+ 553 03c6 05       		.byte	0x5
+ 554 03c7 81       		.byte	0x81
+ 555 03c8 AD000000 		.4byte	0xad
+ 556 03cc 76       		.byte	0x76
+ 557 03cd 06       		.uleb128 0x6
+ 558 03ce 4B020000 		.4byte	.LASF82
+ 559 03d2 05       		.byte	0x5
+ 560 03d3 82       		.byte	0x82
+ 561 03d4 AD000000 		.4byte	0xad
+ 562 03d8 78       		.byte	0x78
+ 563 03d9 06       		.uleb128 0x6
+ 564 03da B3000000 		.4byte	.LASF83
+ 565 03de 05       		.byte	0x5
+ 566 03df 83       		.byte	0x83
+ 567 03e0 AD000000 		.4byte	0xad
+ 568 03e4 7A       		.byte	0x7a
+ 569 03e5 06       		.uleb128 0x6
+ 570 03e6 43080000 		.4byte	.LASF84
+ 571 03ea 05       		.byte	0x5
+ 572 03eb 86       		.byte	0x86
+ 573 03ec 97000000 		.4byte	0x97
+ 574 03f0 7C       		.byte	0x7c
+ 575 03f1 06       		.uleb128 0x6
+ 576 03f2 D5070000 		.4byte	.LASF85
+ 577 03f6 05       		.byte	0x5
+ 578 03f7 87       		.byte	0x87
+ 579 03f8 97000000 		.4byte	0x97
+ 580 03fc 7D       		.byte	0x7d
+ 581 03fd 06       		.uleb128 0x6
+ 582 03fe 2E000000 		.4byte	.LASF86
+ 583 0402 05       		.byte	0x5
+ 584 0403 88       		.byte	0x88
+ 585 0404 97000000 		.4byte	0x97
+ 586 0408 7E       		.byte	0x7e
+ 587 0409 06       		.uleb128 0x6
+ 588 040a 82020000 		.4byte	.LASF87
+ 589 040e 05       		.byte	0x5
+ 590 040f 89       		.byte	0x89
+ 591 0410 97000000 		.4byte	0x97
+ 592 0414 7F       		.byte	0x7f
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 14
+
+
+ 593 0415 06       		.uleb128 0x6
+ 594 0416 16030000 		.4byte	.LASF88
+ 595 041a 05       		.byte	0x5
+ 596 041b 8A       		.byte	0x8a
+ 597 041c 97000000 		.4byte	0x97
+ 598 0420 80       		.byte	0x80
+ 599 0421 06       		.uleb128 0x6
+ 600 0422 BE070000 		.4byte	.LASF89
+ 601 0426 05       		.byte	0x5
+ 602 0427 8D       		.byte	0x8d
+ 603 0428 B8000000 		.4byte	0xb8
+ 604 042c 84       		.byte	0x84
+ 605 042d 06       		.uleb128 0x6
+ 606 042e C8000000 		.4byte	.LASF90
+ 607 0432 05       		.byte	0x5
+ 608 0433 8E       		.byte	0x8e
+ 609 0434 B8000000 		.4byte	0xb8
+ 610 0438 88       		.byte	0x88
+ 611 0439 06       		.uleb128 0x6
+ 612 043a 2E080000 		.4byte	.LASF91
+ 613 043e 05       		.byte	0x5
+ 614 043f 8F       		.byte	0x8f
+ 615 0440 B8000000 		.4byte	0xb8
+ 616 0444 8C       		.byte	0x8c
+ 617 0445 06       		.uleb128 0x6
+ 618 0446 A7040000 		.4byte	.LASF92
+ 619 044a 05       		.byte	0x5
+ 620 044b 90       		.byte	0x90
+ 621 044c B8000000 		.4byte	0xb8
+ 622 0450 90       		.byte	0x90
+ 623 0451 06       		.uleb128 0x6
+ 624 0452 01030000 		.4byte	.LASF93
+ 625 0456 05       		.byte	0x5
+ 626 0457 91       		.byte	0x91
+ 627 0458 B8000000 		.4byte	0xb8
+ 628 045c 94       		.byte	0x94
+ 629 045d 06       		.uleb128 0x6
+ 630 045e 6D040000 		.4byte	.LASF94
+ 631 0462 05       		.byte	0x5
+ 632 0463 92       		.byte	0x92
+ 633 0464 B8000000 		.4byte	0xb8
+ 634 0468 98       		.byte	0x98
+ 635 0469 06       		.uleb128 0x6
+ 636 046a 82080000 		.4byte	.LASF95
+ 637 046e 05       		.byte	0x5
+ 638 046f 93       		.byte	0x93
+ 639 0470 B8000000 		.4byte	0xb8
+ 640 0474 9C       		.byte	0x9c
+ 641 0475 06       		.uleb128 0x6
+ 642 0476 2E010000 		.4byte	.LASF96
+ 643 047a 05       		.byte	0x5
+ 644 047b 94       		.byte	0x94
+ 645 047c B8000000 		.4byte	0xb8
+ 646 0480 A0       		.byte	0xa0
+ 647 0481 06       		.uleb128 0x6
+ 648 0482 B5010000 		.4byte	.LASF97
+ 649 0486 05       		.byte	0x5
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 15
+
+
+ 650 0487 95       		.byte	0x95
+ 651 0488 AD000000 		.4byte	0xad
+ 652 048c A4       		.byte	0xa4
+ 653 048d 06       		.uleb128 0x6
+ 654 048e 58040000 		.4byte	.LASF98
+ 655 0492 05       		.byte	0x5
+ 656 0493 96       		.byte	0x96
+ 657 0494 AD000000 		.4byte	0xad
+ 658 0498 A6       		.byte	0xa6
+ 659 0499 06       		.uleb128 0x6
+ 660 049a 8B050000 		.4byte	.LASF99
+ 661 049e 05       		.byte	0x5
+ 662 049f 97       		.byte	0x97
+ 663 04a0 AD000000 		.4byte	0xad
+ 664 04a4 A8       		.byte	0xa8
+ 665 04a5 06       		.uleb128 0x6
+ 666 04a6 09070000 		.4byte	.LASF100
+ 667 04aa 05       		.byte	0x5
+ 668 04ab 98       		.byte	0x98
+ 669 04ac AD000000 		.4byte	0xad
+ 670 04b0 AA       		.byte	0xaa
+ 671 04b1 06       		.uleb128 0x6
+ 672 04b2 E7030000 		.4byte	.LASF101
+ 673 04b6 05       		.byte	0x5
+ 674 04b7 99       		.byte	0x99
+ 675 04b8 AD000000 		.4byte	0xad
+ 676 04bc AC       		.byte	0xac
+ 677 04bd 06       		.uleb128 0x6
+ 678 04be F8040000 		.4byte	.LASF102
+ 679 04c2 05       		.byte	0x5
+ 680 04c3 9A       		.byte	0x9a
+ 681 04c4 AD000000 		.4byte	0xad
+ 682 04c8 AE       		.byte	0xae
+ 683 04c9 06       		.uleb128 0x6
+ 684 04ca 7B070000 		.4byte	.LASF103
+ 685 04ce 05       		.byte	0x5
+ 686 04cf 9D       		.byte	0x9d
+ 687 04d0 AD000000 		.4byte	0xad
+ 688 04d4 B0       		.byte	0xb0
+ 689 04d5 06       		.uleb128 0x6
+ 690 04d6 4B000000 		.4byte	.LASF104
+ 691 04da 05       		.byte	0x5
+ 692 04db 9E       		.byte	0x9e
+ 693 04dc B8000000 		.4byte	0xb8
+ 694 04e0 B4       		.byte	0xb4
+ 695 04e1 00       		.byte	0
+ 696 04e2 03       		.uleb128 0x3
+ 697 04e3 2C040000 		.4byte	.LASF105
+ 698 04e7 05       		.byte	0x5
+ 699 04e8 9F       		.byte	0x9f
+ 700 04e9 D1000000 		.4byte	0xd1
+ 701 04ed 02       		.uleb128 0x2
+ 702 04ee 01       		.byte	0x1
+ 703 04ef 08       		.byte	0x8
+ 704 04f0 ED060000 		.4byte	.LASF106
+ 705 04f4 02       		.uleb128 0x2
+ 706 04f5 04       		.byte	0x4
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 16
+
+
+ 707 04f6 04       		.byte	0x4
+ 708 04f7 5D050000 		.4byte	.LASF107
+ 709 04fb 02       		.uleb128 0x2
+ 710 04fc 08       		.byte	0x8
+ 711 04fd 04       		.byte	0x4
+ 712 04fe 44020000 		.4byte	.LASF108
+ 713 0502 02       		.uleb128 0x2
+ 714 0503 01       		.byte	0x1
+ 715 0504 02       		.byte	0x2
+ 716 0505 BE050000 		.4byte	.LASF109
+ 717 0509 07       		.uleb128 0x7
+ 718 050a E3010000 		.4byte	.LASF143
+ 719 050e 64       		.byte	0x64
+ 720 050f 06       		.byte	0x6
+ 721 0510 2F       		.byte	0x2f
+ 722 0511 42060000 		.4byte	0x642
+ 723 0515 06       		.uleb128 0x6
+ 724 0516 55050000 		.4byte	.LASF110
+ 725 051a 06       		.byte	0x6
+ 726 051b 31       		.byte	0x31
+ 727 051c B8000000 		.4byte	0xb8
+ 728 0520 00       		.byte	0
+ 729 0521 06       		.uleb128 0x6
+ 730 0522 0F010000 		.4byte	.LASF111
+ 731 0526 06       		.byte	0x6
+ 732 0527 33       		.byte	0x33
+ 733 0528 B8000000 		.4byte	0xb8
+ 734 052c 04       		.byte	0x4
+ 735 052d 06       		.uleb128 0x6
+ 736 052e 8E000000 		.4byte	.LASF112
+ 737 0532 06       		.byte	0x6
+ 738 0533 34       		.byte	0x34
+ 739 0534 B8000000 		.4byte	0xb8
+ 740 0538 08       		.byte	0x8
+ 741 0539 06       		.uleb128 0x6
+ 742 053a 49040000 		.4byte	.LASF113
+ 743 053e 06       		.byte	0x6
+ 744 053f 35       		.byte	0x35
+ 745 0540 B8000000 		.4byte	0xb8
+ 746 0544 0C       		.byte	0xc
+ 747 0545 06       		.uleb128 0x6
+ 748 0546 12000000 		.4byte	.LASF114
+ 749 054a 06       		.byte	0x6
+ 750 054b 36       		.byte	0x36
+ 751 054c B8000000 		.4byte	0xb8
+ 752 0550 10       		.byte	0x10
+ 753 0551 06       		.uleb128 0x6
+ 754 0552 A5070000 		.4byte	.LASF115
+ 755 0556 06       		.byte	0x6
+ 756 0557 37       		.byte	0x37
+ 757 0558 B8000000 		.4byte	0xb8
+ 758 055c 14       		.byte	0x14
+ 759 055d 06       		.uleb128 0x6
+ 760 055e AD070000 		.4byte	.LASF116
+ 761 0562 06       		.byte	0x6
+ 762 0563 38       		.byte	0x38
+ 763 0564 B8000000 		.4byte	0xb8
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 17
+
+
+ 764 0568 18       		.byte	0x18
+ 765 0569 06       		.uleb128 0x6
+ 766 056a 04060000 		.4byte	.LASF117
+ 767 056e 06       		.byte	0x6
+ 768 056f 39       		.byte	0x39
+ 769 0570 02050000 		.4byte	0x502
+ 770 0574 1C       		.byte	0x1c
+ 771 0575 06       		.uleb128 0x6
+ 772 0576 D8060000 		.4byte	.LASF118
+ 773 057a 06       		.byte	0x6
+ 774 057b 3A       		.byte	0x3a
+ 775 057c B8000000 		.4byte	0xb8
+ 776 0580 20       		.byte	0x20
+ 777 0581 06       		.uleb128 0x6
+ 778 0582 B5070000 		.4byte	.LASF119
+ 779 0586 06       		.byte	0x6
+ 780 0587 3B       		.byte	0x3b
+ 781 0588 B8000000 		.4byte	0xb8
+ 782 058c 24       		.byte	0x24
+ 783 058d 06       		.uleb128 0x6
+ 784 058e 84030000 		.4byte	.LASF120
+ 785 0592 06       		.byte	0x6
+ 786 0593 3C       		.byte	0x3c
+ 787 0594 02050000 		.4byte	0x502
+ 788 0598 28       		.byte	0x28
+ 789 0599 06       		.uleb128 0x6
+ 790 059a 42070000 		.4byte	.LASF121
+ 791 059e 06       		.byte	0x6
+ 792 059f 3E       		.byte	0x3e
+ 793 05a0 B8000000 		.4byte	0xb8
+ 794 05a4 2C       		.byte	0x2c
+ 795 05a5 06       		.uleb128 0x6
+ 796 05a6 3C040000 		.4byte	.LASF122
+ 797 05aa 06       		.byte	0x6
+ 798 05ab 3F       		.byte	0x3f
+ 799 05ac B8000000 		.4byte	0xb8
+ 800 05b0 30       		.byte	0x30
+ 801 05b1 06       		.uleb128 0x6
+ 802 05b2 FB070000 		.4byte	.LASF123
+ 803 05b6 06       		.byte	0x6
+ 804 05b7 40       		.byte	0x40
+ 805 05b8 B8000000 		.4byte	0xb8
+ 806 05bc 34       		.byte	0x34
+ 807 05bd 06       		.uleb128 0x6
+ 808 05be AD050000 		.4byte	.LASF124
+ 809 05c2 06       		.byte	0x6
+ 810 05c3 41       		.byte	0x41
+ 811 05c4 B8000000 		.4byte	0xb8
+ 812 05c8 38       		.byte	0x38
+ 813 05c9 06       		.uleb128 0x6
+ 814 05ca CA030000 		.4byte	.LASF125
+ 815 05ce 06       		.byte	0x6
+ 816 05cf 42       		.byte	0x42
+ 817 05d0 B8000000 		.4byte	0xb8
+ 818 05d4 3C       		.byte	0x3c
+ 819 05d5 06       		.uleb128 0x6
+ 820 05d6 15060000 		.4byte	.LASF126
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 18
+
+
+ 821 05da 06       		.byte	0x6
+ 822 05db 44       		.byte	0x44
+ 823 05dc B8000000 		.4byte	0xb8
+ 824 05e0 40       		.byte	0x40
+ 825 05e1 06       		.uleb128 0x6
+ 826 05e2 72080000 		.4byte	.LASF127
+ 827 05e6 06       		.byte	0x6
+ 828 05e7 45       		.byte	0x45
+ 829 05e8 B8000000 		.4byte	0xb8
+ 830 05ec 44       		.byte	0x44
+ 831 05ed 06       		.uleb128 0x6
+ 832 05ee 53070000 		.4byte	.LASF128
+ 833 05f2 06       		.byte	0x6
+ 834 05f3 47       		.byte	0x47
+ 835 05f4 B8000000 		.4byte	0xb8
+ 836 05f8 48       		.byte	0x48
+ 837 05f9 06       		.uleb128 0x6
+ 838 05fa 89070000 		.4byte	.LASF129
+ 839 05fe 06       		.byte	0x6
+ 840 05ff 48       		.byte	0x48
+ 841 0600 B8000000 		.4byte	0xb8
+ 842 0604 4C       		.byte	0x4c
+ 843 0605 06       		.uleb128 0x6
+ 844 0606 83040000 		.4byte	.LASF130
+ 845 060a 06       		.byte	0x6
+ 846 060b 4A       		.byte	0x4a
+ 847 060c B8000000 		.4byte	0xb8
+ 848 0610 50       		.byte	0x50
+ 849 0611 06       		.uleb128 0x6
+ 850 0612 F5030000 		.4byte	.LASF131
+ 851 0616 06       		.byte	0x6
+ 852 0617 4B       		.byte	0x4b
+ 853 0618 B8000000 		.4byte	0xb8
+ 854 061c 54       		.byte	0x54
+ 855 061d 06       		.uleb128 0x6
+ 856 061e 41000000 		.4byte	.LASF132
+ 857 0622 06       		.byte	0x6
+ 858 0623 4D       		.byte	0x4d
+ 859 0624 B8000000 		.4byte	0xb8
+ 860 0628 58       		.byte	0x58
+ 861 0629 06       		.uleb128 0x6
+ 862 062a 98080000 		.4byte	.LASF133
+ 863 062e 06       		.byte	0x6
+ 864 062f 4E       		.byte	0x4e
+ 865 0630 B8000000 		.4byte	0xb8
+ 866 0634 5C       		.byte	0x5c
+ 867 0635 06       		.uleb128 0x6
+ 868 0636 F2060000 		.4byte	.LASF134
+ 869 063a 06       		.byte	0x6
+ 870 063b 50       		.byte	0x50
+ 871 063c B8000000 		.4byte	0xb8
+ 872 0640 60       		.byte	0x60
+ 873 0641 00       		.byte	0
+ 874 0642 03       		.uleb128 0x3
+ 875 0643 58080000 		.4byte	.LASF135
+ 876 0647 06       		.byte	0x6
+ 877 0648 51       		.byte	0x51
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 19
+
+
+ 878 0649 09050000 		.4byte	0x509
+ 879 064d 08       		.uleb128 0x8
+ 880 064e 48050000 		.4byte	.LASF144
+ 881 0652 02       		.byte	0x2
+ 882 0653 81       		.byte	0x81
+ 883 0654 03       		.byte	0x3
+ 884 0655 09       		.uleb128 0x9
+ 885 0656 6B020000 		.4byte	.LASF145
+ 886 065a 01       		.byte	0x1
+ 887 065b 0E       		.byte	0xe
+ 888 065c 89000000 		.4byte	0x89
+ 889 0660 00000000 		.4byte	.LFB375
+ 890 0664 10000000 		.4byte	.LFE375-.LFB375
+ 891 0668 01       		.uleb128 0x1
+ 892 0669 9C       		.byte	0x9c
+ 893 066a 91060000 		.4byte	0x691
+ 894 066e 0A       		.uleb128 0xa
+ 895 066f 4D060000 		.4byte	0x64d
+ 896 0673 02000000 		.4byte	.LBB4
+ 897 0677 02000000 		.4byte	.LBE4-.LBB4
+ 898 067b 01       		.byte	0x1
+ 899 067c 10       		.byte	0x10
+ 900 067d 0B       		.uleb128 0xb
+ 901 067e 0A000000 		.4byte	.LVL0
+ 902 0682 CD060000 		.4byte	0x6cd
+ 903 0686 0C       		.uleb128 0xc
+ 904 0687 01       		.uleb128 0x1
+ 905 0688 50       		.byte	0x50
+ 906 0689 05       		.uleb128 0x5
+ 907 068a 0C       		.byte	0xc
+ 908 068b 00000810 		.4byte	0x10080000
+ 909 068f 00       		.byte	0
+ 910 0690 00       		.byte	0
+ 911 0691 0D       		.uleb128 0xd
+ 912 0692 81050000 		.4byte	.LASF136
+ 913 0696 05       		.byte	0x5
+ 914 0697 A7       		.byte	0xa7
+ 915 0698 9C060000 		.4byte	0x69c
+ 916 069c 0E       		.uleb128 0xe
+ 917 069d 04       		.byte	0x4
+ 918 069e A2060000 		.4byte	0x6a2
+ 919 06a2 0F       		.uleb128 0xf
+ 920 06a3 E2040000 		.4byte	0x4e2
+ 921 06a7 0D       		.uleb128 0xd
+ 922 06a8 74050000 		.4byte	.LASF137
+ 923 06ac 07       		.byte	0x7
+ 924 06ad 1F       		.byte	0x1f
+ 925 06ae B2060000 		.4byte	0x6b2
+ 926 06b2 0F       		.uleb128 0xf
+ 927 06b3 42060000 		.4byte	0x642
+ 928 06b7 0D       		.uleb128 0xd
+ 929 06b8 21080000 		.4byte	.LASF138
+ 930 06bc 08       		.byte	0x8
+ 931 06bd 1F       		.byte	0x1f
+ 932 06be B2060000 		.4byte	0x6b2
+ 933 06c2 0D       		.uleb128 0xd
+ 934 06c3 12020000 		.4byte	.LASF139
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 20
+
+
+ 935 06c7 09       		.byte	0x9
+ 936 06c8 1F       		.byte	0x1f
+ 937 06c9 B2060000 		.4byte	0x6b2
+ 938 06cd 10       		.uleb128 0x10
+ 939 06ce 10040000 		.4byte	.LASF146
+ 940 06d2 10040000 		.4byte	.LASF146
+ 941 06d6 0A       		.byte	0xa
+ 942 06d7 2502     		.2byte	0x225
+ 943 06d9 00       		.byte	0
+ 944              		.section	.debug_abbrev,"",%progbits
+ 945              	.Ldebug_abbrev0:
+ 946 0000 01       		.uleb128 0x1
+ 947 0001 11       		.uleb128 0x11
+ 948 0002 01       		.byte	0x1
+ 949 0003 25       		.uleb128 0x25
+ 950 0004 0E       		.uleb128 0xe
+ 951 0005 13       		.uleb128 0x13
+ 952 0006 0B       		.uleb128 0xb
+ 953 0007 03       		.uleb128 0x3
+ 954 0008 0E       		.uleb128 0xe
+ 955 0009 1B       		.uleb128 0x1b
+ 956 000a 0E       		.uleb128 0xe
+ 957 000b 55       		.uleb128 0x55
+ 958 000c 17       		.uleb128 0x17
+ 959 000d 11       		.uleb128 0x11
+ 960 000e 01       		.uleb128 0x1
+ 961 000f 10       		.uleb128 0x10
+ 962 0010 17       		.uleb128 0x17
+ 963 0011 00       		.byte	0
+ 964 0012 00       		.byte	0
+ 965 0013 02       		.uleb128 0x2
+ 966 0014 24       		.uleb128 0x24
+ 967 0015 00       		.byte	0
+ 968 0016 0B       		.uleb128 0xb
+ 969 0017 0B       		.uleb128 0xb
+ 970 0018 3E       		.uleb128 0x3e
+ 971 0019 0B       		.uleb128 0xb
+ 972 001a 03       		.uleb128 0x3
+ 973 001b 0E       		.uleb128 0xe
+ 974 001c 00       		.byte	0
+ 975 001d 00       		.byte	0
+ 976 001e 03       		.uleb128 0x3
+ 977 001f 16       		.uleb128 0x16
+ 978 0020 00       		.byte	0
+ 979 0021 03       		.uleb128 0x3
+ 980 0022 0E       		.uleb128 0xe
+ 981 0023 3A       		.uleb128 0x3a
+ 982 0024 0B       		.uleb128 0xb
+ 983 0025 3B       		.uleb128 0x3b
+ 984 0026 0B       		.uleb128 0xb
+ 985 0027 49       		.uleb128 0x49
+ 986 0028 13       		.uleb128 0x13
+ 987 0029 00       		.byte	0
+ 988 002a 00       		.byte	0
+ 989 002b 04       		.uleb128 0x4
+ 990 002c 24       		.uleb128 0x24
+ 991 002d 00       		.byte	0
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 21
+
+
+ 992 002e 0B       		.uleb128 0xb
+ 993 002f 0B       		.uleb128 0xb
+ 994 0030 3E       		.uleb128 0x3e
+ 995 0031 0B       		.uleb128 0xb
+ 996 0032 03       		.uleb128 0x3
+ 997 0033 08       		.uleb128 0x8
+ 998 0034 00       		.byte	0
+ 999 0035 00       		.byte	0
+ 1000 0036 05       		.uleb128 0x5
+ 1001 0037 13       		.uleb128 0x13
+ 1002 0038 01       		.byte	0x1
+ 1003 0039 0B       		.uleb128 0xb
+ 1004 003a 0B       		.uleb128 0xb
+ 1005 003b 3A       		.uleb128 0x3a
+ 1006 003c 0B       		.uleb128 0xb
+ 1007 003d 3B       		.uleb128 0x3b
+ 1008 003e 0B       		.uleb128 0xb
+ 1009 003f 01       		.uleb128 0x1
+ 1010 0040 13       		.uleb128 0x13
+ 1011 0041 00       		.byte	0
+ 1012 0042 00       		.byte	0
+ 1013 0043 06       		.uleb128 0x6
+ 1014 0044 0D       		.uleb128 0xd
+ 1015 0045 00       		.byte	0
+ 1016 0046 03       		.uleb128 0x3
+ 1017 0047 0E       		.uleb128 0xe
+ 1018 0048 3A       		.uleb128 0x3a
+ 1019 0049 0B       		.uleb128 0xb
+ 1020 004a 3B       		.uleb128 0x3b
+ 1021 004b 0B       		.uleb128 0xb
+ 1022 004c 49       		.uleb128 0x49
+ 1023 004d 13       		.uleb128 0x13
+ 1024 004e 38       		.uleb128 0x38
+ 1025 004f 0B       		.uleb128 0xb
+ 1026 0050 00       		.byte	0
+ 1027 0051 00       		.byte	0
+ 1028 0052 07       		.uleb128 0x7
+ 1029 0053 13       		.uleb128 0x13
+ 1030 0054 01       		.byte	0x1
+ 1031 0055 03       		.uleb128 0x3
+ 1032 0056 0E       		.uleb128 0xe
+ 1033 0057 0B       		.uleb128 0xb
+ 1034 0058 0B       		.uleb128 0xb
+ 1035 0059 3A       		.uleb128 0x3a
+ 1036 005a 0B       		.uleb128 0xb
+ 1037 005b 3B       		.uleb128 0x3b
+ 1038 005c 0B       		.uleb128 0xb
+ 1039 005d 01       		.uleb128 0x1
+ 1040 005e 13       		.uleb128 0x13
+ 1041 005f 00       		.byte	0
+ 1042 0060 00       		.byte	0
+ 1043 0061 08       		.uleb128 0x8
+ 1044 0062 2E       		.uleb128 0x2e
+ 1045 0063 00       		.byte	0
+ 1046 0064 03       		.uleb128 0x3
+ 1047 0065 0E       		.uleb128 0xe
+ 1048 0066 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 22
+
+
+ 1049 0067 0B       		.uleb128 0xb
+ 1050 0068 3B       		.uleb128 0x3b
+ 1051 0069 0B       		.uleb128 0xb
+ 1052 006a 27       		.uleb128 0x27
+ 1053 006b 19       		.uleb128 0x19
+ 1054 006c 20       		.uleb128 0x20
+ 1055 006d 0B       		.uleb128 0xb
+ 1056 006e 00       		.byte	0
+ 1057 006f 00       		.byte	0
+ 1058 0070 09       		.uleb128 0x9
+ 1059 0071 2E       		.uleb128 0x2e
+ 1060 0072 01       		.byte	0x1
+ 1061 0073 3F       		.uleb128 0x3f
+ 1062 0074 19       		.uleb128 0x19
+ 1063 0075 03       		.uleb128 0x3
+ 1064 0076 0E       		.uleb128 0xe
+ 1065 0077 3A       		.uleb128 0x3a
+ 1066 0078 0B       		.uleb128 0xb
+ 1067 0079 3B       		.uleb128 0x3b
+ 1068 007a 0B       		.uleb128 0xb
+ 1069 007b 27       		.uleb128 0x27
+ 1070 007c 19       		.uleb128 0x19
+ 1071 007d 49       		.uleb128 0x49
+ 1072 007e 13       		.uleb128 0x13
+ 1073 007f 8701     		.uleb128 0x87
+ 1074 0081 19       		.uleb128 0x19
+ 1075 0082 11       		.uleb128 0x11
+ 1076 0083 01       		.uleb128 0x1
+ 1077 0084 12       		.uleb128 0x12
+ 1078 0085 06       		.uleb128 0x6
+ 1079 0086 40       		.uleb128 0x40
+ 1080 0087 18       		.uleb128 0x18
+ 1081 0088 9742     		.uleb128 0x2117
+ 1082 008a 19       		.uleb128 0x19
+ 1083 008b 01       		.uleb128 0x1
+ 1084 008c 13       		.uleb128 0x13
+ 1085 008d 00       		.byte	0
+ 1086 008e 00       		.byte	0
+ 1087 008f 0A       		.uleb128 0xa
+ 1088 0090 1D       		.uleb128 0x1d
+ 1089 0091 00       		.byte	0
+ 1090 0092 31       		.uleb128 0x31
+ 1091 0093 13       		.uleb128 0x13
+ 1092 0094 11       		.uleb128 0x11
+ 1093 0095 01       		.uleb128 0x1
+ 1094 0096 12       		.uleb128 0x12
+ 1095 0097 06       		.uleb128 0x6
+ 1096 0098 58       		.uleb128 0x58
+ 1097 0099 0B       		.uleb128 0xb
+ 1098 009a 59       		.uleb128 0x59
+ 1099 009b 0B       		.uleb128 0xb
+ 1100 009c 00       		.byte	0
+ 1101 009d 00       		.byte	0
+ 1102 009e 0B       		.uleb128 0xb
+ 1103 009f 898201   		.uleb128 0x4109
+ 1104 00a2 01       		.byte	0x1
+ 1105 00a3 11       		.uleb128 0x11
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 23
+
+
+ 1106 00a4 01       		.uleb128 0x1
+ 1107 00a5 31       		.uleb128 0x31
+ 1108 00a6 13       		.uleb128 0x13
+ 1109 00a7 00       		.byte	0
+ 1110 00a8 00       		.byte	0
+ 1111 00a9 0C       		.uleb128 0xc
+ 1112 00aa 8A8201   		.uleb128 0x410a
+ 1113 00ad 00       		.byte	0
+ 1114 00ae 02       		.uleb128 0x2
+ 1115 00af 18       		.uleb128 0x18
+ 1116 00b0 9142     		.uleb128 0x2111
+ 1117 00b2 18       		.uleb128 0x18
+ 1118 00b3 00       		.byte	0
+ 1119 00b4 00       		.byte	0
+ 1120 00b5 0D       		.uleb128 0xd
+ 1121 00b6 34       		.uleb128 0x34
+ 1122 00b7 00       		.byte	0
+ 1123 00b8 03       		.uleb128 0x3
+ 1124 00b9 0E       		.uleb128 0xe
+ 1125 00ba 3A       		.uleb128 0x3a
+ 1126 00bb 0B       		.uleb128 0xb
+ 1127 00bc 3B       		.uleb128 0x3b
+ 1128 00bd 0B       		.uleb128 0xb
+ 1129 00be 49       		.uleb128 0x49
+ 1130 00bf 13       		.uleb128 0x13
+ 1131 00c0 3F       		.uleb128 0x3f
+ 1132 00c1 19       		.uleb128 0x19
+ 1133 00c2 3C       		.uleb128 0x3c
+ 1134 00c3 19       		.uleb128 0x19
+ 1135 00c4 00       		.byte	0
+ 1136 00c5 00       		.byte	0
+ 1137 00c6 0E       		.uleb128 0xe
+ 1138 00c7 0F       		.uleb128 0xf
+ 1139 00c8 00       		.byte	0
+ 1140 00c9 0B       		.uleb128 0xb
+ 1141 00ca 0B       		.uleb128 0xb
+ 1142 00cb 49       		.uleb128 0x49
+ 1143 00cc 13       		.uleb128 0x13
+ 1144 00cd 00       		.byte	0
+ 1145 00ce 00       		.byte	0
+ 1146 00cf 0F       		.uleb128 0xf
+ 1147 00d0 26       		.uleb128 0x26
+ 1148 00d1 00       		.byte	0
+ 1149 00d2 49       		.uleb128 0x49
+ 1150 00d3 13       		.uleb128 0x13
+ 1151 00d4 00       		.byte	0
+ 1152 00d5 00       		.byte	0
+ 1153 00d6 10       		.uleb128 0x10
+ 1154 00d7 2E       		.uleb128 0x2e
+ 1155 00d8 00       		.byte	0
+ 1156 00d9 3F       		.uleb128 0x3f
+ 1157 00da 19       		.uleb128 0x19
+ 1158 00db 3C       		.uleb128 0x3c
+ 1159 00dc 19       		.uleb128 0x19
+ 1160 00dd 6E       		.uleb128 0x6e
+ 1161 00de 0E       		.uleb128 0xe
+ 1162 00df 03       		.uleb128 0x3
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 24
+
+
+ 1163 00e0 0E       		.uleb128 0xe
+ 1164 00e1 3A       		.uleb128 0x3a
+ 1165 00e2 0B       		.uleb128 0xb
+ 1166 00e3 3B       		.uleb128 0x3b
+ 1167 00e4 05       		.uleb128 0x5
+ 1168 00e5 00       		.byte	0
+ 1169 00e6 00       		.byte	0
+ 1170 00e7 00       		.byte	0
+ 1171              		.section	.debug_aranges,"",%progbits
+ 1172 0000 1C000000 		.4byte	0x1c
+ 1173 0004 0200     		.2byte	0x2
+ 1174 0006 00000000 		.4byte	.Ldebug_info0
+ 1175 000a 04       		.byte	0x4
+ 1176 000b 00       		.byte	0
+ 1177 000c 0000     		.2byte	0
+ 1178 000e 0000     		.2byte	0
+ 1179 0010 00000000 		.4byte	.LFB375
+ 1180 0014 10000000 		.4byte	.LFE375-.LFB375
+ 1181 0018 00000000 		.4byte	0
+ 1182 001c 00000000 		.4byte	0
+ 1183              		.section	.debug_ranges,"",%progbits
+ 1184              	.Ldebug_ranges0:
+ 1185 0000 00000000 		.4byte	.LFB375
+ 1186 0004 10000000 		.4byte	.LFE375
+ 1187 0008 00000000 		.4byte	0
+ 1188 000c 00000000 		.4byte	0
+ 1189              		.section	.debug_line,"",%progbits
+ 1190              	.Ldebug_line0:
+ 1191 0000 16020000 		.section	.debug_str,"MS",%progbits,1
+ 1191      0200F501 
+ 1191      00000201 
+ 1191      FB0E0D00 
+ 1191      01010101 
+ 1192              	.LASF54:
+ 1193 0000 70726F74 		.ascii	"protBusMasterMask\000"
+ 1193      4275734D 
+ 1193      61737465 
+ 1193      724D6173 
+ 1193      6B00
+ 1194              	.LASF114:
+ 1195 0012 72756E4D 		.ascii	"runMode\000"
+ 1195      6F646500 
+ 1196              	.LASF64:
+ 1197 001a 666C6173 		.ascii	"flashCtlMainWs3Freq\000"
+ 1197      6843746C 
+ 1197      4D61696E 
+ 1197      57733346 
+ 1197      72657100 
+ 1198              	.LASF86:
+ 1199 002e 6770696F 		.ascii	"gpioPrtCfgInOffset\000"
+ 1199      50727443 
+ 1199      6667496E 
+ 1199      4F666673 
+ 1199      657400
+ 1200              	.LASF132:
+ 1201 0041 6B696C6C 		.ascii	"killInput\000"
+ 1201      496E7075 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 25
+
+
+ 1201      7400
+ 1202              	.LASF104:
+ 1203 004b 6970634C 		.ascii	"ipcLockStatusOffset\000"
+ 1203      6F636B53 
+ 1203      74617475 
+ 1203      734F6666 
+ 1203      73657400 
+ 1204              	.LASF30:
+ 1205 005f 63727970 		.ascii	"cryptoVersion\000"
+ 1205      746F5665 
+ 1205      7273696F 
+ 1205      6E00
+ 1206              	.LASF48:
+ 1207 006d 70657269 		.ascii	"periClockNr\000"
+ 1207      436C6F63 
+ 1207      6B4E7200 
+ 1208              	.LASF26:
+ 1209 0079 70617373 		.ascii	"passBase\000"
+ 1209      42617365 
+ 1209      00
+ 1210              	.LASF141:
+ 1211 0082 6D61696E 		.ascii	"main_cm0p.c\000"
+ 1211      5F636D30 
+ 1211      702E6300 
+ 1212              	.LASF112:
+ 1213 008e 70776D41 		.ascii	"pwmAlignment\000"
+ 1213      6C69676E 
+ 1213      6D656E74 
+ 1213      00
+ 1214              	.LASF39:
+ 1215 009b 63707573 		.ascii	"cpussIpcIrqNr\000"
+ 1215      73497063 
+ 1215      4972714E 
+ 1215      7200
+ 1216              	.LASF3:
+ 1217 00a9 5F5F7569 		.ascii	"__uint8_t\000"
+ 1217      6E74385F 
+ 1217      7400
+ 1218              	.LASF83:
+ 1219 00b3 70657269 		.ascii	"periDiv24_5CtlOffset\000"
+ 1219      44697632 
+ 1219      345F3543 
+ 1219      746C4F66 
+ 1219      66736574 
+ 1220              	.LASF90:
+ 1221 00c8 63707573 		.ascii	"cpussCm4ClockCtlOffset\000"
+ 1221      73436D34 
+ 1221      436C6F63 
+ 1221      6B43746C 
+ 1221      4F666673 
+ 1222              	.LASF19:
+ 1223 00df 63707573 		.ascii	"cpussBase\000"
+ 1223      73426173 
+ 1223      6500
+ 1224              	.LASF68:
+ 1225 00e9 64774368 		.ascii	"dwChCtlPrioPos\000"
+ 1225      43746C50 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 26
+
+
+ 1225      72696F50 
+ 1225      6F7300
+ 1226              	.LASF11:
+ 1227 00f8 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1227      206C6F6E 
+ 1227      6720756E 
+ 1227      7369676E 
+ 1227      65642069 
+ 1228              	.LASF111:
+ 1229 010f 636C6F63 		.ascii	"clockPrescaler\000"
+ 1229      6B507265 
+ 1229      7363616C 
+ 1229      657200
+ 1230              	.LASF72:
+ 1231 011e 70657269 		.ascii	"periTrCmdOffset\000"
+ 1231      5472436D 
+ 1231      644F6666 
+ 1231      73657400 
+ 1232              	.LASF96:
+ 1233 012e 63707573 		.ascii	"cpussSysTickCtlOffset\000"
+ 1233      73537973 
+ 1233      5469636B 
+ 1233      43746C4F 
+ 1233      66667365 
+ 1234              	.LASF57:
+ 1235 0144 666C6173 		.ascii	"flashPipeRequired\000"
+ 1235      68506970 
+ 1235      65526571 
+ 1235      75697265 
+ 1235      6400
+ 1236              	.LASF61:
+ 1237 0156 666C6173 		.ascii	"flashCtlMainWs0Freq\000"
+ 1237      6843746C 
+ 1237      4D61696E 
+ 1237      57733046 
+ 1237      72657100 
+ 1238              	.LASF14:
+ 1239 016a 696E7431 		.ascii	"int16_t\000"
+ 1239      365F7400 
+ 1240              	.LASF10:
+ 1241 0172 6C6F6E67 		.ascii	"long long int\000"
+ 1241      206C6F6E 
+ 1241      6720696E 
+ 1241      7400
+ 1242              	.LASF2:
+ 1243 0180 7369676E 		.ascii	"signed char\000"
+ 1243      65642063 
+ 1243      68617200 
+ 1244              	.LASF77:
+ 1245 018c 70657269 		.ascii	"periDivCmdTypeSelPos\000"
+ 1245      44697643 
+ 1245      6D645479 
+ 1245      70655365 
+ 1245      6C506F73 
+ 1246              	.LASF23:
+ 1247 01a1 70726F74 		.ascii	"protBase\000"
+ 1247      42617365 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 27
+
+
+ 1247      00
+ 1248              	.LASF35:
+ 1249 01aa 69706356 		.ascii	"ipcVersion\000"
+ 1249      65727369 
+ 1249      6F6E00
+ 1250              	.LASF97:
+ 1251 01b5 63707573 		.ascii	"cpussCm0NmiCtlOffset\000"
+ 1251      73436D30 
+ 1251      4E6D6943 
+ 1251      746C4F66 
+ 1251      66736574 
+ 1252              	.LASF45:
+ 1253 01ca 73727373 		.ascii	"srssNumClkpath\000"
+ 1253      4E756D43 
+ 1253      6C6B7061 
+ 1253      746800
+ 1254              	.LASF24:
+ 1255 01d9 6873696F 		.ascii	"hsiomBase\000"
+ 1255      6D426173 
+ 1255      6500
+ 1256              	.LASF143:
+ 1257 01e3 63795F73 		.ascii	"cy_stc_tcpwm_pwm_config\000"
+ 1257      74635F74 
+ 1257      6370776D 
+ 1257      5F70776D 
+ 1257      5F636F6E 
+ 1258              	.LASF7:
+ 1259 01fb 6C6F6E67 		.ascii	"long int\000"
+ 1259      20696E74 
+ 1259      00
+ 1260              	.LASF55:
+ 1261 0204 63727970 		.ascii	"cryptoMemSize\000"
+ 1261      746F4D65 
+ 1261      6D53697A 
+ 1261      6500
+ 1262              	.LASF139:
+ 1263 0212 50574D5F 		.ascii	"PWM_1_config\000"
+ 1263      315F636F 
+ 1263      6E666967 
+ 1263      00
+ 1264              	.LASF21:
+ 1265 021f 70657269 		.ascii	"periBase\000"
+ 1265      42617365 
+ 1265      00
+ 1266              	.LASF53:
+ 1267 0228 73797350 		.ascii	"sysPmSimoPresent\000"
+ 1267      6D53696D 
+ 1267      6F507265 
+ 1267      73656E74 
+ 1267      00
+ 1268              	.LASF43:
+ 1269 0239 63707573 		.ascii	"cpussFmIrq\000"
+ 1269      73466D49 
+ 1269      727100
+ 1270              	.LASF108:
+ 1271 0244 646F7562 		.ascii	"double\000"
+ 1271      6C6500
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 28
+
+
+ 1272              	.LASF82:
+ 1273 024b 70657269 		.ascii	"periDiv16_5CtlOffset\000"
+ 1273      44697631 
+ 1273      365F3543 
+ 1273      746C4F66 
+ 1273      66736574 
+ 1274              	.LASF46:
+ 1275 0260 73727373 		.ascii	"srssNumPll\000"
+ 1275      4E756D50 
+ 1275      6C6C00
+ 1276              	.LASF145:
+ 1277 026b 6D61696E 		.ascii	"main\000"
+ 1277      00
+ 1278              	.LASF80:
+ 1279 0270 70657269 		.ascii	"periDiv8CtlOffset\000"
+ 1279      44697638 
+ 1279      43746C4F 
+ 1279      66667365 
+ 1279      7400
+ 1280              	.LASF87:
+ 1281 0282 6770696F 		.ascii	"gpioPrtCfgOutOffset\000"
+ 1281      50727443 
+ 1281      66674F75 
+ 1281      744F6666 
+ 1281      73657400 
+ 1282              	.LASF20:
+ 1283 0296 666C6173 		.ascii	"flashcBase\000"
+ 1283      68634261 
+ 1283      736500
+ 1284              	.LASF8:
+ 1285 02a1 5F5F7569 		.ascii	"__uint32_t\000"
+ 1285      6E743332 
+ 1285      5F7400
+ 1286              	.LASF50:
+ 1287 02ac 70617373 		.ascii	"passSarChannels\000"
+ 1287      53617243 
+ 1287      68616E6E 
+ 1287      656C7300 
+ 1288              	.LASF4:
+ 1289 02bc 5F5F696E 		.ascii	"__int16_t\000"
+ 1289      7431365F 
+ 1289      7400
+ 1290              	.LASF142:
+ 1291 02c6 433A5C55 		.ascii	"C:\\Users\\Finik\\Desktop\\uni_labs_4\\Neiro\\Embed"
+ 1291      73657273 
+ 1291      5C46696E 
+ 1291      696B5C44 
+ 1291      65736B74 
+ 1292 02f3 5C50726F 		.ascii	"\\Proj_3.cydsn\000"
+ 1292      6A5F332E 
+ 1292      63796473 
+ 1292      6E00
+ 1293              	.LASF93:
+ 1294 0301 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
+ 1294      73436D34 
+ 1294      50777243 
+ 1294      746C4F66 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 29
+
+
+ 1294      66736574 
+ 1295              	.LASF88:
+ 1296 0316 6770696F 		.ascii	"gpioPrtCfgSioOffset\000"
+ 1296      50727443 
+ 1296      66675369 
+ 1296      6F4F6666 
+ 1296      73657400 
+ 1297              	.LASF40:
+ 1298 032a 63707573 		.ascii	"cpussDwChNr\000"
+ 1298      73447743 
+ 1298      684E7200 
+ 1299              	.LASF12:
+ 1300 0336 756E7369 		.ascii	"unsigned int\000"
+ 1300      676E6564 
+ 1300      20696E74 
+ 1300      00
+ 1301              	.LASF15:
+ 1302 0343 75696E74 		.ascii	"uint16_t\000"
+ 1302      31365F74 
+ 1302      00
+ 1303              	.LASF73:
+ 1304 034c 70657269 		.ascii	"periTrCmdGrSelMsk\000"
+ 1304      5472436D 
+ 1304      64477253 
+ 1304      656C4D73 
+ 1304      6B00
+ 1305              	.LASF62:
+ 1306 035e 666C6173 		.ascii	"flashCtlMainWs1Freq\000"
+ 1306      6843746C 
+ 1306      4D61696E 
+ 1306      57733146 
+ 1306      72657100 
+ 1307              	.LASF9:
+ 1308 0372 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1308      20756E73 
+ 1308      69676E65 
+ 1308      6420696E 
+ 1308      7400
+ 1309              	.LASF120:
+ 1310 0384 656E6162 		.ascii	"enableCompareSwap\000"
+ 1310      6C65436F 
+ 1310      6D706172 
+ 1310      65537761 
+ 1310      7000
+ 1311              	.LASF38:
+ 1312 0396 63707573 		.ascii	"cpussIpcNr\000"
+ 1312      73497063 
+ 1312      4E7200
+ 1313              	.LASF25:
+ 1314 03a1 6770696F 		.ascii	"gpioBase\000"
+ 1314      42617365 
+ 1314      00
+ 1315              	.LASF51:
+ 1316 03aa 65704D6F 		.ascii	"epMonitorNr\000"
+ 1316      6E69746F 
+ 1316      724E7200 
+ 1317              	.LASF63:
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 30
+
+
+ 1318 03b6 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
+ 1318      6843746C 
+ 1318      4D61696E 
+ 1318      57733246 
+ 1318      72657100 
+ 1319              	.LASF125:
+ 1320 03ca 73776170 		.ascii	"swapInputMode\000"
+ 1320      496E7075 
+ 1320      744D6F64 
+ 1320      6500
+ 1321              	.LASF74:
+ 1322 03d8 70657269 		.ascii	"periTrGrOffset\000"
+ 1322      54724772 
+ 1322      4F666673 
+ 1322      657400
+ 1323              	.LASF101:
+ 1324 03e7 63707573 		.ascii	"cpussRam1Ctl0\000"
+ 1324      7352616D 
+ 1324      3143746C 
+ 1324      3000
+ 1325              	.LASF131:
+ 1326 03f5 6B696C6C 		.ascii	"killInputMode\000"
+ 1326      496E7075 
+ 1326      744D6F64 
+ 1326      6500
+ 1327              	.LASF75:
+ 1328 0403 70657269 		.ascii	"periTrGrSize\000"
+ 1328      54724772 
+ 1328      53697A65 
+ 1328      00
+ 1329              	.LASF146:
+ 1330 0410 43795F53 		.ascii	"Cy_SysEnableCM4\000"
+ 1330      7973456E 
+ 1330      61626C65 
+ 1330      434D3400 
+ 1331              	.LASF33:
+ 1332 0420 6770696F 		.ascii	"gpioVersion\000"
+ 1332      56657273 
+ 1332      696F6E00 
+ 1333              	.LASF105:
+ 1334 042c 63795F73 		.ascii	"cy_stc_device_t\000"
+ 1334      74635F64 
+ 1334      65766963 
+ 1334      655F7400 
+ 1335              	.LASF122:
+ 1336 043c 696E7665 		.ascii	"invertPWMOut\000"
+ 1336      72745057 
+ 1336      4D4F7574 
+ 1336      00
+ 1337              	.LASF113:
+ 1338 0449 64656164 		.ascii	"deadTimeClocks\000"
+ 1338      54696D65 
+ 1338      436C6F63 
+ 1338      6B7300
+ 1339              	.LASF98:
+ 1340 0458 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
+ 1340      73436D34 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 31
+
+
+ 1340      4E6D6943 
+ 1340      746C4F66 
+ 1340      66736574 
+ 1341              	.LASF94:
+ 1342 046d 63707573 		.ascii	"cpussTrimRamCtlOffset\000"
+ 1342      73547269 
+ 1342      6D52616D 
+ 1342      43746C4F 
+ 1342      66667365 
+ 1343              	.LASF130:
+ 1344 0483 73746172 		.ascii	"startInput\000"
+ 1344      74496E70 
+ 1344      757400
+ 1345              	.LASF29:
+ 1346 048e 63707573 		.ascii	"cpussVersion\000"
+ 1346      73566572 
+ 1346      73696F6E 
+ 1346      00
+ 1347              	.LASF36:
+ 1348 049b 70657269 		.ascii	"periVersion\000"
+ 1348      56657273 
+ 1348      696F6E00 
+ 1349              	.LASF92:
+ 1350 04a7 63707573 		.ascii	"cpussCm0StatusOffset\000"
+ 1350      73436D30 
+ 1350      53746174 
+ 1350      75734F66 
+ 1350      66736574 
+ 1351              	.LASF17:
+ 1352 04bc 73697A65 		.ascii	"sizetype\000"
+ 1352      74797065 
+ 1352      00
+ 1353              	.LASF66:
+ 1354 04c5 64774368 		.ascii	"dwChOffset\000"
+ 1354      4F666673 
+ 1354      657400
+ 1355              	.LASF41:
+ 1356 04d0 63707573 		.ascii	"cpussFlashPaSize\000"
+ 1356      73466C61 
+ 1356      73685061 
+ 1356      53697A65 
+ 1356      00
+ 1357              	.LASF79:
+ 1358 04e1 70657269 		.ascii	"periDivCmdPaTypeSelPos\000"
+ 1358      44697643 
+ 1358      6D645061 
+ 1358      54797065 
+ 1358      53656C50 
+ 1359              	.LASF102:
+ 1360 04f8 63707573 		.ascii	"cpussRam2Ctl0\000"
+ 1360      7352616D 
+ 1360      3243746C 
+ 1360      3000
+ 1361              	.LASF70:
+ 1362 0506 64775374 		.ascii	"dwStatusChIdxPos\000"
+ 1362      61747573 
+ 1362      43684964 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 32
+
+
+ 1362      78506F73 
+ 1362      00
+ 1363              	.LASF52:
+ 1364 0517 75646250 		.ascii	"udbPresent\000"
+ 1364      72657365 
+ 1364      6E7400
+ 1365              	.LASF32:
+ 1366 0522 666C6173 		.ascii	"flashcVersion\000"
+ 1366      68635665 
+ 1366      7273696F 
+ 1366      6E00
+ 1367              	.LASF28:
+ 1368 0530 63727970 		.ascii	"cryptoBase\000"
+ 1368      746F4261 
+ 1368      736500
+ 1369              	.LASF49:
+ 1370 053b 736D6966 		.ascii	"smifDeviceNr\000"
+ 1370      44657669 
+ 1370      63654E72 
+ 1370      00
+ 1371              	.LASF144:
+ 1372 0548 5F5F656E 		.ascii	"__enable_irq\000"
+ 1372      61626C65 
+ 1372      5F697271 
+ 1372      00
+ 1373              	.LASF110:
+ 1374 0555 70776D4D 		.ascii	"pwmMode\000"
+ 1374      6F646500 
+ 1375              	.LASF107:
+ 1376 055d 666C6F61 		.ascii	"float\000"
+ 1376      7400
+ 1377              	.LASF71:
+ 1378 0563 64775374 		.ascii	"dwStatusChIdxMsk\000"
+ 1378      61747573 
+ 1378      43684964 
+ 1378      784D736B 
+ 1378      00
+ 1379              	.LASF137:
+ 1380 0574 50574D5F 		.ascii	"PWM_3_config\000"
+ 1380      335F636F 
+ 1380      6E666967 
+ 1380      00
+ 1381              	.LASF136:
+ 1382 0581 63795F64 		.ascii	"cy_device\000"
+ 1382      65766963 
+ 1382      6500
+ 1383              	.LASF99:
+ 1384 058b 63707573 		.ascii	"cpussRomCtl\000"
+ 1384      73526F6D 
+ 1384      43746C00 
+ 1385              	.LASF69:
+ 1386 0597 64774368 		.ascii	"dwChCtlPreemptablePos\000"
+ 1386      43746C50 
+ 1386      7265656D 
+ 1386      70746162 
+ 1386      6C65506F 
+ 1387              	.LASF124:
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 33
+
+
+ 1388 05ad 6B696C6C 		.ascii	"killMode\000"
+ 1388      4D6F6465 
+ 1388      00
+ 1389              	.LASF22:
+ 1390 05b6 75646242 		.ascii	"udbBase\000"
+ 1390      61736500 
+ 1391              	.LASF109:
+ 1392 05be 5F426F6F 		.ascii	"_Bool\000"
+ 1392      6C00
+ 1393              	.LASF1:
+ 1394 05c4 756E7369 		.ascii	"unsigned char\000"
+ 1394      676E6564 
+ 1394      20636861 
+ 1394      7200
+ 1395              	.LASF65:
+ 1396 05d2 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
+ 1396      6843746C 
+ 1396      4D61696E 
+ 1396      57733446 
+ 1396      72657100 
+ 1397              	.LASF0:
+ 1398 05e6 73686F72 		.ascii	"short int\000"
+ 1398      7420696E 
+ 1398      7400
+ 1399              	.LASF76:
+ 1400 05f0 70657269 		.ascii	"periDivCmdDivSelMsk\000"
+ 1400      44697643 
+ 1400      6D644469 
+ 1400      7653656C 
+ 1400      4D736B00 
+ 1401              	.LASF117:
+ 1402 0604 656E6162 		.ascii	"enablePeriodSwap\000"
+ 1402      6C655065 
+ 1402      72696F64 
+ 1402      53776170 
+ 1402      00
+ 1403              	.LASF126:
+ 1404 0615 73776170 		.ascii	"swapInput\000"
+ 1404      496E7075 
+ 1404      7400
+ 1405              	.LASF47:
+ 1406 061f 73727373 		.ascii	"srssNumHfroot\000"
+ 1406      4E756D48 
+ 1406      66726F6F 
+ 1406      7400
+ 1407              	.LASF60:
+ 1408 062d 666C6173 		.ascii	"flashEraseDelay\000"
+ 1408      68457261 
+ 1408      73654465 
+ 1408      6C617900 
+ 1409              	.LASF16:
+ 1410 063d 75696E74 		.ascii	"uint32_t\000"
+ 1410      33325F74 
+ 1410      00
+ 1411              	.LASF140:
+ 1412 0646 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1412      43313120 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 34
+
+
+ 1412      352E342E 
+ 1412      31203230 
+ 1412      31363036 
+ 1413 0679 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 1413      20726576 
+ 1413      6973696F 
+ 1413      6E203233 
+ 1413      37373135 
+ 1414 06ac 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 1414      67202D66 
+ 1414      66756E63 
+ 1414      74696F6E 
+ 1414      2D736563 
+ 1415              	.LASF118:
+ 1416 06d8 636F6D70 		.ascii	"compare0\000"
+ 1416      61726530 
+ 1416      00
+ 1417              	.LASF18:
+ 1418 06e1 6C6F6E67 		.ascii	"long double\000"
+ 1418      20646F75 
+ 1418      626C6500 
+ 1419              	.LASF106:
+ 1420 06ed 63686172 		.ascii	"char\000"
+ 1420      00
+ 1421              	.LASF134:
+ 1422 06f2 636F756E 		.ascii	"countInput\000"
+ 1422      74496E70 
+ 1422      757400
+ 1423              	.LASF37:
+ 1424 06fd 70726F74 		.ascii	"protVersion\000"
+ 1424      56657273 
+ 1424      696F6E00 
+ 1425              	.LASF100:
+ 1426 0709 63707573 		.ascii	"cpussRam0Ctl0\000"
+ 1426      7352616D 
+ 1426      3043746C 
+ 1426      3000
+ 1427              	.LASF5:
+ 1428 0717 5F5F7569 		.ascii	"__uint16_t\000"
+ 1428      6E743136 
+ 1428      5F7400
+ 1429              	.LASF81:
+ 1430 0722 70657269 		.ascii	"periDiv16CtlOffset\000"
+ 1430      44697631 
+ 1430      3643746C 
+ 1430      4F666673 
+ 1430      657400
+ 1431              	.LASF34:
+ 1432 0735 6873696F 		.ascii	"hsiomVersion\000"
+ 1432      6D566572 
+ 1432      73696F6E 
+ 1432      00
+ 1433              	.LASF121:
+ 1434 0742 696E7465 		.ascii	"interruptSources\000"
+ 1434      72727570 
+ 1434      74536F75 
+ 1434      72636573 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 35
+
+
+ 1434      00
+ 1435              	.LASF128:
+ 1436 0753 72656C6F 		.ascii	"reloadInput\000"
+ 1436      6164496E 
+ 1436      70757400 
+ 1437              	.LASF6:
+ 1438 075f 73686F72 		.ascii	"short unsigned int\000"
+ 1438      7420756E 
+ 1438      7369676E 
+ 1438      65642069 
+ 1438      6E7400
+ 1439              	.LASF67:
+ 1440 0772 64774368 		.ascii	"dwChSize\000"
+ 1440      53697A65 
+ 1440      00
+ 1441              	.LASF103:
+ 1442 077b 69706353 		.ascii	"ipcStructSize\000"
+ 1442      74727563 
+ 1442      7453697A 
+ 1442      6500
+ 1443              	.LASF129:
+ 1444 0789 73746172 		.ascii	"startInputMode\000"
+ 1444      74496E70 
+ 1444      75744D6F 
+ 1444      646500
+ 1445              	.LASF42:
+ 1446 0798 63707573 		.ascii	"cpussIpc0Irq\000"
+ 1446      73497063 
+ 1446      30497271 
+ 1446      00
+ 1447              	.LASF115:
+ 1448 07a5 70657269 		.ascii	"period0\000"
+ 1448      6F643000 
+ 1449              	.LASF116:
+ 1450 07ad 70657269 		.ascii	"period1\000"
+ 1450      6F643100 
+ 1451              	.LASF119:
+ 1452 07b5 636F6D70 		.ascii	"compare1\000"
+ 1452      61726531 
+ 1452      00
+ 1453              	.LASF89:
+ 1454 07be 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
+ 1454      73436D30 
+ 1454      436C6F63 
+ 1454      6B43746C 
+ 1454      4F666673 
+ 1455              	.LASF85:
+ 1456 07d5 6770696F 		.ascii	"gpioPrtCfgOffset\000"
+ 1456      50727443 
+ 1456      66674F66 
+ 1456      66736574 
+ 1456      00
+ 1457              	.LASF44:
+ 1458 07e6 63707573 		.ascii	"cpussNotConnectedIrq\000"
+ 1458      734E6F74 
+ 1458      436F6E6E 
+ 1458      65637465 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 36
+
+
+ 1458      64497271 
+ 1459              	.LASF123:
+ 1460 07fb 696E7665 		.ascii	"invertPWMOutN\000"
+ 1460      72745057 
+ 1460      4D4F7574 
+ 1460      4E00
+ 1461              	.LASF58:
+ 1462 0809 666C6173 		.ascii	"flashWriteDelay\000"
+ 1462      68577269 
+ 1462      74654465 
+ 1462      6C617900 
+ 1463              	.LASF13:
+ 1464 0819 75696E74 		.ascii	"uint8_t\000"
+ 1464      385F7400 
+ 1465              	.LASF138:
+ 1466 0821 50574D5F 		.ascii	"PWM_2_config\000"
+ 1466      325F636F 
+ 1466      6E666967 
+ 1466      00
+ 1467              	.LASF91:
+ 1468 082e 63707573 		.ascii	"cpussCm4StatusOffset\000"
+ 1468      73436D34 
+ 1468      53746174 
+ 1468      75734F66 
+ 1468      66736574 
+ 1469              	.LASF84:
+ 1470 0843 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
+ 1470      50727449 
+ 1470      6E747243 
+ 1470      66674F66 
+ 1470      66736574 
+ 1471              	.LASF135:
+ 1472 0858 63795F73 		.ascii	"cy_stc_tcpwm_pwm_config_t\000"
+ 1472      74635F74 
+ 1472      6370776D 
+ 1472      5F70776D 
+ 1472      5F636F6E 
+ 1473              	.LASF127:
+ 1474 0872 72656C6F 		.ascii	"reloadInputMode\000"
+ 1474      6164496E 
+ 1474      7075744D 
+ 1474      6F646500 
+ 1475              	.LASF95:
+ 1476 0882 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
+ 1476      73547269 
+ 1476      6D526F6D 
+ 1476      43746C4F 
+ 1476      66667365 
+ 1477              	.LASF133:
+ 1478 0898 636F756E 		.ascii	"countInputMode\000"
+ 1478      74496E70 
+ 1478      75744D6F 
+ 1478      646500
+ 1479              	.LASF31:
+ 1480 08a7 64775665 		.ascii	"dwVersion\000"
+ 1480      7273696F 
+ 1480      6E00
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccTsSuUV.s 			page 37
+
+
+ 1481              	.LASF27:
+ 1482 08b1 69706342 		.ascii	"ipcBase\000"
+ 1482      61736500 
+ 1483              	.LASF78:
+ 1484 08b9 70657269 		.ascii	"periDivCmdPaDivSelPos\000"
+ 1484      44697643 
+ 1484      6D645061 
+ 1484      44697653 
+ 1484      656C506F 
+ 1485              	.LASF59:
+ 1486 08cf 666C6173 		.ascii	"flashProgramDelay\000"
+ 1486      6850726F 
+ 1486      6772616D 
+ 1486      44656C61 
+ 1486      7900
+ 1487              	.LASF56:
+ 1488 08e1 666C6173 		.ascii	"flashRwwRequired\000"
+ 1488      68527777 
+ 1488      52657175 
+ 1488      69726564 
+ 1488      00
+ 1489              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

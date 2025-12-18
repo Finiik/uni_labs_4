@@ -1,0 +1,2543 @@
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main_cm0p.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB389:
+  27              		.file 1 "main_cm0p.c"
+   1:main_cm0p.c   **** /* ========================================
+   2:main_cm0p.c   ****  *
+   3:main_cm0p.c   ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main_cm0p.c   ****  * All Rights Reserved
+   5:main_cm0p.c   ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main_cm0p.c   ****  *
+   7:main_cm0p.c   ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main_cm0p.c   ****  * WHICH IS THE PROPERTY OF your company.
+   9:main_cm0p.c   ****  *
+  10:main_cm0p.c   ****  * ========================================
+  11:main_cm0p.c   **** */
+  12:main_cm0p.c   **** #include "project.h"
+  13:main_cm0p.c   **** 
+  14:main_cm0p.c   **** int main(void)
+  15:main_cm0p.c   **** {
+  28              		.loc 1 15 0
+  29              		.cfi_startproc
+  30              		@ Volatile: function does not return.
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  37              	.LBB4:
+  38              	.LBB5:
+  39              		.file 2 "Generated_Source\\PSoC6\\pdl\\cmsis/include/cmsis_gcc.h"
+   1:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /**************************************************************************//**
+   2:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
+   3:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 2
+
+
+   4:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @version  V5.0.3
+   5:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @date     16. January 2018
+   6:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  ******************************************************************************/
+   7:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /*
+   8:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Copyright (c) 2009-2017 ARM Limited. All rights reserved.
+   9:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  10:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * SPDX-License-Identifier: Apache-2.0
+  11:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  12:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  13:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * not use this file except in compliance with the License.
+  14:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * You may obtain a copy of the License at
+  15:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  16:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
+  17:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  18:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
+  19:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  20:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  21:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * See the License for the specific language governing permissions and
+  22:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * limitations under the License.
+  23:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  */
+  24:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  25:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
+  26:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #define __CMSIS_GCC_H
+  27:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  28:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* ignore some GCC warnings */
+  29:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic push
+  30:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
+  31:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
+  32:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
+  33:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  34:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* Fallback for __has_builtin */
+  35:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef __has_builtin
+  36:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __has_builtin(x) (0)
+  37:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  38:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  39:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* CMSIS compiler specific defines */
+  40:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __ASM
+  41:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __ASM                                  __asm
+  42:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  43:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __INLINE
+  44:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __INLINE                               inline
+  45:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  46:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __STATIC_INLINE
+  47:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __STATIC_INLINE                        static inline
+  48:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  49:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE                 
+  50:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
+  51:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif                                           
+  52:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __NO_RETURN
+  53:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
+  54:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  55:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __USED
+  56:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
+  57:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  58:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __WEAK
+  59:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
+  60:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 3
+
+
+  61:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __PACKED
+  62:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __PACKED                               __attribute__((packed, aligned(1)))
+  63:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  64:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
+  65:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
+  66:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  67:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __PACKED_UNION
+  68:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
+  69:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  70:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32        /* deprecated */
+  71:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  72:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  73:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  74:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
+  75:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  76:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
+  77:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  78:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_WRITE
+  79:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  80:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  81:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  82:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
+  83:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  84:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
+  85:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  86:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
+  87:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  88:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  89:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  90:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
+  91:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  92:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
+  93:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  94:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_WRITE
+  95:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  96:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  97:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  98:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
+  99:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 100:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-
+ 101:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 102:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_READ
+ 103:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+ 104:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+ 105:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+ 106:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
+ 107:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 108:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
+ 109:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 110:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __ALIGNED
+ 111:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
+ 112:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 113:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __RESTRICT
+ 114:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
+ 115:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+ 116:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+ 117:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 4
+
+
+ 118:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
+ 119:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+ 120:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
+ 121:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   @{
+ 122:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  */
+ 123:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+ 124:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /**
+ 125:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
+ 126:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
+ 127:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 128:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  */
+ 129:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
+ 130:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** {
+ 131:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
+  40              		.loc 2 131 0
+  41              		.syntax divided
+  42              	@ 131 "Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h" 1
+  43 0002 62B6     		cpsie i
+  44              	@ 0 "" 2
+  45              		.thumb
+  46              		.syntax unified
+  47              	.LBE5:
+  48              	.LBE4:
+  16:main_cm0p.c   ****     __enable_irq(); /* Enable global interrupts. */
+  17:main_cm0p.c   ****     /* Enable CM4.  CY_CORTEX_M4_APPL_ADDR must be updated if CM4 memory layout is changed. */
+  18:main_cm0p.c   ****     Cy_SysEnableCM4(CY_CORTEX_M4_APPL_ADDR); 
+  49              		.loc 1 18 0
+  50 0004 0148     		ldr	r0, .L3
+  51 0006 FFF7FEFF 		bl	Cy_SysEnableCM4
+  52              	.LVL0:
+  53              	.L2:
+  54 000a FEE7     		b	.L2
+  55              	.L4:
+  56              		.align	2
+  57              	.L3:
+  58 000c 00000810 		.word	268959744
+  59              		.cfi_endproc
+  60              	.LFE389:
+  61              		.size	main, .-main
+  62              		.text
+  63              	.Letext0:
+  64              		.file 3 "d:\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\mac
+  65              		.file 4 "d:\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\sys
+  66              		.file 5 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/device/cy_device.h"
+  67              		.file 6 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/sysclk/cy_sysclk.h"
+  68              		.file 7 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/ctdac/cy_ctdac.h"
+  69              		.file 8 "Generated_Source\\PSoC6/VDAC_1.h"
+  70              		.file 9 "./system_psoc6.h"
+  71              		.section	.debug_info,"",%progbits
+  72              	.Ldebug_info0:
+  73 0000 F9070000 		.4byte	0x7f9
+  74 0004 0400     		.2byte	0x4
+  75 0006 00000000 		.4byte	.Ldebug_abbrev0
+  76 000a 04       		.byte	0x4
+  77 000b 01       		.uleb128 0x1
+  78 000c 94080000 		.4byte	.LASF165
+  79 0010 0C       		.byte	0xc
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 5
+
+
+  80 0011 8C000000 		.4byte	.LASF166
+  81 0015 0B040000 		.4byte	.LASF167
+  82 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  83 001d 00000000 		.4byte	0
+  84 0021 00000000 		.4byte	.Ldebug_line0
+  85 0025 02       		.uleb128 0x2
+  86 0026 02       		.byte	0x2
+  87 0027 05       		.byte	0x5
+  88 0028 FB070000 		.4byte	.LASF0
+  89 002c 02       		.uleb128 0x2
+  90 002d 01       		.byte	0x1
+  91 002e 08       		.byte	0x8
+  92 002f CD070000 		.4byte	.LASF1
+  93 0033 02       		.uleb128 0x2
+  94 0034 01       		.byte	0x1
+  95 0035 06       		.byte	0x6
+  96 0036 28020000 		.4byte	.LASF2
+  97 003a 03       		.uleb128 0x3
+  98 003b 8A080000 		.4byte	.LASF3
+  99 003f 03       		.byte	0x3
+ 100 0040 1D       		.byte	0x1d
+ 101 0041 2C000000 		.4byte	0x2c
+ 102 0045 03       		.uleb128 0x3
+ 103 0046 96030000 		.4byte	.LASF4
+ 104 004a 03       		.byte	0x3
+ 105 004b 29       		.byte	0x29
+ 106 004c 25000000 		.4byte	0x25
+ 107 0050 03       		.uleb128 0x3
+ 108 0051 4F090000 		.4byte	.LASF5
+ 109 0055 03       		.byte	0x3
+ 110 0056 2B       		.byte	0x2b
+ 111 0057 5B000000 		.4byte	0x5b
+ 112 005b 02       		.uleb128 0x2
+ 113 005c 02       		.byte	0x2
+ 114 005d 07       		.byte	0x7
+ 115 005e D5090000 		.4byte	.LASF6
+ 116 0062 03       		.uleb128 0x3
+ 117 0063 6D090000 		.4byte	.LASF7
+ 118 0067 03       		.byte	0x3
+ 119 0068 3F       		.byte	0x3f
+ 120 0069 6D000000 		.4byte	0x6d
+ 121 006d 02       		.uleb128 0x2
+ 122 006e 04       		.byte	0x4
+ 123 006f 05       		.byte	0x5
+ 124 0070 BB020000 		.4byte	.LASF8
+ 125 0074 03       		.uleb128 0x3
+ 126 0075 6C030000 		.4byte	.LASF9
+ 127 0079 03       		.byte	0x3
+ 128 007a 41       		.byte	0x41
+ 129 007b 7F000000 		.4byte	0x7f
+ 130 007f 02       		.uleb128 0x2
+ 131 0080 04       		.byte	0x4
+ 132 0081 07       		.byte	0x7
+ 133 0082 F9030000 		.4byte	.LASF10
+ 134 0086 02       		.uleb128 0x2
+ 135 0087 08       		.byte	0x8
+ 136 0088 05       		.byte	0x5
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 6
+
+
+ 137 0089 1A020000 		.4byte	.LASF11
+ 138 008d 02       		.uleb128 0x2
+ 139 008e 08       		.byte	0x8
+ 140 008f 07       		.byte	0x7
+ 141 0090 41010000 		.4byte	.LASF12
+ 142 0094 04       		.uleb128 0x4
+ 143 0095 04       		.byte	0x4
+ 144 0096 05       		.byte	0x5
+ 145 0097 696E7400 		.ascii	"int\000"
+ 146 009b 02       		.uleb128 0x2
+ 147 009c 04       		.byte	0x4
+ 148 009d 07       		.byte	0x7
+ 149 009e D1030000 		.4byte	.LASF13
+ 150 00a2 03       		.uleb128 0x3
+ 151 00a3 D00A0000 		.4byte	.LASF14
+ 152 00a7 04       		.byte	0x4
+ 153 00a8 18       		.byte	0x18
+ 154 00a9 3A000000 		.4byte	0x3a
+ 155 00ad 03       		.uleb128 0x3
+ 156 00ae 12020000 		.4byte	.LASF15
+ 157 00b2 04       		.byte	0x4
+ 158 00b3 20       		.byte	0x20
+ 159 00b4 45000000 		.4byte	0x45
+ 160 00b8 03       		.uleb128 0x3
+ 161 00b9 F9040000 		.4byte	.LASF16
+ 162 00bd 04       		.byte	0x4
+ 163 00be 24       		.byte	0x24
+ 164 00bf 50000000 		.4byte	0x50
+ 165 00c3 03       		.uleb128 0x3
+ 166 00c4 C5070000 		.4byte	.LASF17
+ 167 00c8 04       		.byte	0x4
+ 168 00c9 2C       		.byte	0x2c
+ 169 00ca 62000000 		.4byte	0x62
+ 170 00ce 03       		.uleb128 0x3
+ 171 00cf 81080000 		.4byte	.LASF18
+ 172 00d3 04       		.byte	0x4
+ 173 00d4 30       		.byte	0x30
+ 174 00d5 74000000 		.4byte	0x74
+ 175 00d9 02       		.uleb128 0x2
+ 176 00da 04       		.byte	0x4
+ 177 00db 07       		.byte	0x7
+ 178 00dc DE030000 		.4byte	.LASF19
+ 179 00e0 02       		.uleb128 0x2
+ 180 00e1 08       		.byte	0x8
+ 181 00e2 04       		.byte	0x4
+ 182 00e3 26090000 		.4byte	.LASF20
+ 183 00e7 05       		.uleb128 0x5
+ 184 00e8 B8       		.byte	0xb8
+ 185 00e9 05       		.byte	0x5
+ 186 00ea 34       		.byte	0x34
+ 187 00eb F8040000 		.4byte	0x4f8
+ 188 00ef 06       		.uleb128 0x6
+ 189 00f0 EF000000 		.4byte	.LASF21
+ 190 00f4 05       		.byte	0x5
+ 191 00f5 37       		.byte	0x37
+ 192 00f6 CE000000 		.4byte	0xce
+ 193 00fa 00       		.byte	0
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 7
+
+
+ 194 00fb 06       		.uleb128 0x6
+ 195 00fc 61030000 		.4byte	.LASF22
+ 196 0100 05       		.byte	0x5
+ 197 0101 38       		.byte	0x38
+ 198 0102 CE000000 		.4byte	0xce
+ 199 0106 04       		.byte	0x4
+ 200 0107 06       		.uleb128 0x6
+ 201 0108 EA020000 		.4byte	.LASF23
+ 202 010c 05       		.byte	0x5
+ 203 010d 39       		.byte	0x39
+ 204 010e CE000000 		.4byte	0xce
+ 205 0112 08       		.byte	0x8
+ 206 0113 06       		.uleb128 0x6
+ 207 0114 B7070000 		.4byte	.LASF24
+ 208 0118 05       		.byte	0x5
+ 209 0119 3A       		.byte	0x3a
+ 210 011a CE000000 		.4byte	0xce
+ 211 011e 0C       		.byte	0xc
+ 212 011f 06       		.uleb128 0x6
+ 213 0120 08070000 		.4byte	.LASF25
+ 214 0124 05       		.byte	0x5
+ 215 0125 3B       		.byte	0x3b
+ 216 0126 CE000000 		.4byte	0xce
+ 217 012a 10       		.byte	0x10
+ 218 012b 06       		.uleb128 0x6
+ 219 012c 7F020000 		.4byte	.LASF26
+ 220 0130 05       		.byte	0x5
+ 221 0131 3C       		.byte	0x3c
+ 222 0132 CE000000 		.4byte	0xce
+ 223 0136 14       		.byte	0x14
+ 224 0137 06       		.uleb128 0x6
+ 225 0138 5C040000 		.4byte	.LASF27
+ 226 013c 05       		.byte	0x5
+ 227 013d 3D       		.byte	0x3d
+ 228 013e CE000000 		.4byte	0xce
+ 229 0142 18       		.byte	0x18
+ 230 0143 06       		.uleb128 0x6
+ 231 0144 2C060000 		.4byte	.LASF28
+ 232 0148 05       		.byte	0x5
+ 233 0149 3E       		.byte	0x3e
+ 234 014a CE000000 		.4byte	0xce
+ 235 014e 1C       		.byte	0x1c
+ 236 014f 06       		.uleb128 0x6
+ 237 0150 5B0B0000 		.4byte	.LASF29
+ 238 0154 05       		.byte	0x5
+ 239 0155 3F       		.byte	0x3f
+ 240 0156 CE000000 		.4byte	0xce
+ 241 015a 20       		.byte	0x20
+ 242 015b 06       		.uleb128 0x6
+ 243 015c 1F070000 		.4byte	.LASF30
+ 244 0160 05       		.byte	0x5
+ 245 0161 40       		.byte	0x40
+ 246 0162 CE000000 		.4byte	0xce
+ 247 0166 24       		.byte	0x24
+ 248 0167 06       		.uleb128 0x6
+ 249 0168 C6050000 		.4byte	.LASF31
+ 250 016c 05       		.byte	0x5
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 8
+
+
+ 251 016d 43       		.byte	0x43
+ 252 016e A2000000 		.4byte	0xa2
+ 253 0172 28       		.byte	0x28
+ 254 0173 06       		.uleb128 0x6
+ 255 0174 68000000 		.4byte	.LASF32
+ 256 0178 05       		.byte	0x5
+ 257 0179 44       		.byte	0x44
+ 258 017a A2000000 		.4byte	0xa2
+ 259 017e 29       		.byte	0x29
+ 260 017f 06       		.uleb128 0x6
+ 261 0180 510B0000 		.4byte	.LASF33
+ 262 0184 05       		.byte	0x5
+ 263 0185 45       		.byte	0x45
+ 264 0186 A2000000 		.4byte	0xa2
+ 265 018a 2A       		.byte	0x2a
+ 266 018b 06       		.uleb128 0x6
+ 267 018c 11070000 		.4byte	.LASF34
+ 268 0190 05       		.byte	0x5
+ 269 0191 46       		.byte	0x46
+ 270 0192 A2000000 		.4byte	0xa2
+ 271 0196 2B       		.byte	0x2b
+ 272 0197 06       		.uleb128 0x6
+ 273 0198 ED040000 		.4byte	.LASF35
+ 274 019c 05       		.byte	0x5
+ 275 019d 47       		.byte	0x47
+ 276 019e A2000000 		.4byte	0xa2
+ 277 01a2 2C       		.byte	0x2c
+ 278 01a3 06       		.uleb128 0x6
+ 279 01a4 77090000 		.4byte	.LASF36
+ 280 01a8 05       		.byte	0x5
+ 281 01a9 48       		.byte	0x48
+ 282 01aa A2000000 		.4byte	0xa2
+ 283 01ae 2D       		.byte	0x2d
+ 284 01af 06       		.uleb128 0x6
+ 285 01b0 5F020000 		.4byte	.LASF37
+ 286 01b4 05       		.byte	0x5
+ 287 01b5 49       		.byte	0x49
+ 288 01b6 A2000000 		.4byte	0xa2
+ 289 01ba 2E       		.byte	0x2e
+ 290 01bb 06       		.uleb128 0x6
+ 291 01bc D3050000 		.4byte	.LASF38
+ 292 01c0 05       		.byte	0x5
+ 293 01c1 4A       		.byte	0x4a
+ 294 01c2 A2000000 		.4byte	0xa2
+ 295 01c6 2F       		.byte	0x2f
+ 296 01c7 06       		.uleb128 0x6
+ 297 01c8 CA060000 		.4byte	.LASF39
+ 298 01cc 05       		.byte	0x5
+ 299 01cd 4B       		.byte	0x4b
+ 300 01ce A2000000 		.4byte	0xa2
+ 301 01d2 30       		.byte	0x30
+ 302 01d3 06       		.uleb128 0x6
+ 303 01d4 46040000 		.4byte	.LASF40
+ 304 01d8 05       		.byte	0x5
+ 305 01d9 4E       		.byte	0x4e
+ 306 01da A2000000 		.4byte	0xa2
+ 307 01de 31       		.byte	0x31
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 9
+
+
+ 308 01df 06       		.uleb128 0x6
+ 309 01e0 98000000 		.4byte	.LASF41
+ 310 01e4 05       		.byte	0x5
+ 311 01e5 4F       		.byte	0x4f
+ 312 01e6 A2000000 		.4byte	0xa2
+ 313 01ea 32       		.byte	0x32
+ 314 01eb 06       		.uleb128 0x6
+ 315 01ec C5030000 		.4byte	.LASF42
+ 316 01f0 05       		.byte	0x5
+ 317 01f1 50       		.byte	0x50
+ 318 01f2 A2000000 		.4byte	0xa2
+ 319 01f6 33       		.byte	0x33
+ 320 01f7 06       		.uleb128 0x6
+ 321 01f8 35060000 		.4byte	.LASF43
+ 322 01fc 05       		.byte	0x5
+ 323 01fd 51       		.byte	0x51
+ 324 01fe A2000000 		.4byte	0xa2
+ 325 0202 34       		.byte	0x34
+ 326 0203 06       		.uleb128 0x6
+ 327 0204 0C0A0000 		.4byte	.LASF44
+ 328 0208 05       		.byte	0x5
+ 329 0209 52       		.byte	0x52
+ 330 020a AD000000 		.4byte	0xad
+ 331 020e 36       		.byte	0x36
+ 332 020f 06       		.uleb128 0x6
+ 333 0210 04030000 		.4byte	.LASF45
+ 334 0214 05       		.byte	0x5
+ 335 0215 53       		.byte	0x53
+ 336 0216 AD000000 		.4byte	0xad
+ 337 021a 38       		.byte	0x38
+ 338 021b 06       		.uleb128 0x6
+ 339 021c 9E0A0000 		.4byte	.LASF46
+ 340 0220 05       		.byte	0x5
+ 341 0221 54       		.byte	0x54
+ 342 0222 AD000000 		.4byte	0xad
+ 343 0226 3A       		.byte	0x3a
+ 344 0227 06       		.uleb128 0x6
+ 345 0228 420B0000 		.4byte	.LASF47
+ 346 022c 05       		.byte	0x5
+ 347 022d 55       		.byte	0x55
+ 348 022e A2000000 		.4byte	0xa2
+ 349 0232 3C       		.byte	0x3c
+ 350 0233 06       		.uleb128 0x6
+ 351 0234 2B030000 		.4byte	.LASF48
+ 352 0238 05       		.byte	0x5
+ 353 0239 56       		.byte	0x56
+ 354 023a A2000000 		.4byte	0xa2
+ 355 023e 3D       		.byte	0x3d
+ 356 023f 06       		.uleb128 0x6
+ 357 0240 63080000 		.4byte	.LASF49
+ 358 0244 05       		.byte	0x5
+ 359 0245 57       		.byte	0x57
+ 360 0246 A2000000 		.4byte	0xa2
+ 361 024a 3E       		.byte	0x3e
+ 362 024b 06       		.uleb128 0x6
+ 363 024c 76000000 		.4byte	.LASF50
+ 364 0250 05       		.byte	0x5
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 10
+
+
+ 365 0251 58       		.byte	0x58
+ 366 0252 A2000000 		.4byte	0xa2
+ 367 0256 3F       		.byte	0x3f
+ 368 0257 06       		.uleb128 0x6
+ 369 0258 2A070000 		.4byte	.LASF51
+ 370 025c 05       		.byte	0x5
+ 371 025d 59       		.byte	0x59
+ 372 025e A2000000 		.4byte	0xa2
+ 373 0262 40       		.byte	0x40
+ 374 0263 06       		.uleb128 0x6
+ 375 0264 F1090000 		.4byte	.LASF52
+ 376 0268 05       		.byte	0x5
+ 377 0269 5A       		.byte	0x5a
+ 378 026a A2000000 		.4byte	0xa2
+ 379 026e 41       		.byte	0x41
+ 380 026f 06       		.uleb128 0x6
+ 381 0270 5C050000 		.4byte	.LASF53
+ 382 0274 05       		.byte	0x5
+ 383 0275 5B       		.byte	0x5b
+ 384 0276 A2000000 		.4byte	0xa2
+ 385 027a 42       		.byte	0x42
+ 386 027b 06       		.uleb128 0x6
+ 387 027c E7060000 		.4byte	.LASF54
+ 388 0280 05       		.byte	0x5
+ 389 0281 5C       		.byte	0x5c
+ 390 0282 A2000000 		.4byte	0xa2
+ 391 0286 43       		.byte	0x43
+ 392 0287 06       		.uleb128 0x6
+ 393 0288 F3020000 		.4byte	.LASF55
+ 394 028c 05       		.byte	0x5
+ 395 028d 5D       		.byte	0x5d
+ 396 028e A2000000 		.4byte	0xa2
+ 397 0292 44       		.byte	0x44
+ 398 0293 06       		.uleb128 0x6
+ 399 0294 00000000 		.4byte	.LASF56
+ 400 0298 05       		.byte	0x5
+ 401 0299 5E       		.byte	0x5e
+ 402 029a CE000000 		.4byte	0xce
+ 403 029e 48       		.byte	0x48
+ 404 029f 06       		.uleb128 0x6
+ 405 02a0 C4020000 		.4byte	.LASF57
+ 406 02a4 05       		.byte	0x5
+ 407 02a5 5F       		.byte	0x5f
+ 408 02a6 CE000000 		.4byte	0xce
+ 409 02aa 4C       		.byte	0x4c
+ 410 02ab 06       		.uleb128 0x6
+ 411 02ac 6F010000 		.4byte	.LASF58
+ 412 02b0 05       		.byte	0x5
+ 413 02b1 60       		.byte	0x60
+ 414 02b2 A2000000 		.4byte	0xa2
+ 415 02b6 50       		.byte	0x50
+ 416 02b7 06       		.uleb128 0x6
+ 417 02b8 D5010000 		.4byte	.LASF59
+ 418 02bc 05       		.byte	0x5
+ 419 02bd 61       		.byte	0x61
+ 420 02be A2000000 		.4byte	0xa2
+ 421 02c2 51       		.byte	0x51
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 11
+
+
+ 422 02c3 06       		.uleb128 0x6
+ 423 02c4 C00A0000 		.4byte	.LASF60
+ 424 02c8 05       		.byte	0x5
+ 425 02c9 62       		.byte	0x62
+ 426 02ca A2000000 		.4byte	0xa2
+ 427 02ce 52       		.byte	0x52
+ 428 02cf 06       		.uleb128 0x6
+ 429 02d0 84090000 		.4byte	.LASF61
+ 430 02d4 05       		.byte	0x5
+ 431 02d5 63       		.byte	0x63
+ 432 02d6 A2000000 		.4byte	0xa2
+ 433 02da 53       		.byte	0x53
+ 434 02db 06       		.uleb128 0x6
+ 435 02dc 71080000 		.4byte	.LASF62
+ 436 02e0 05       		.byte	0x5
+ 437 02e1 64       		.byte	0x64
+ 438 02e2 A2000000 		.4byte	0xa2
+ 439 02e6 54       		.byte	0x54
+ 440 02e7 06       		.uleb128 0x6
+ 441 02e8 FE010000 		.4byte	.LASF63
+ 442 02ec 05       		.byte	0x5
+ 443 02ed 65       		.byte	0x65
+ 444 02ee A2000000 		.4byte	0xa2
+ 445 02f2 55       		.byte	0x55
+ 446 02f3 06       		.uleb128 0x6
+ 447 02f4 B1090000 		.4byte	.LASF64
+ 448 02f8 05       		.byte	0x5
+ 449 02f9 66       		.byte	0x66
+ 450 02fa A2000000 		.4byte	0xa2
+ 451 02fe 56       		.byte	0x56
+ 452 02ff 06       		.uleb128 0x6
+ 453 0300 71040000 		.4byte	.LASF65
+ 454 0304 05       		.byte	0x5
+ 455 0305 67       		.byte	0x67
+ 456 0306 A2000000 		.4byte	0xa2
+ 457 030a 57       		.byte	0x57
+ 458 030b 06       		.uleb128 0x6
+ 459 030c 2D000000 		.4byte	.LASF66
+ 460 0310 05       		.byte	0x5
+ 461 0311 68       		.byte	0x68
+ 462 0312 A2000000 		.4byte	0xa2
+ 463 0316 58       		.byte	0x58
+ 464 0317 06       		.uleb128 0x6
+ 465 0318 DB070000 		.4byte	.LASF67
+ 466 031c 05       		.byte	0x5
+ 467 031d 69       		.byte	0x69
+ 468 031e A2000000 		.4byte	0xa2
+ 469 0322 59       		.byte	0x59
+ 470 0323 06       		.uleb128 0x6
+ 471 0324 21060000 		.4byte	.LASF68
+ 472 0328 05       		.byte	0x5
+ 473 0329 6E       		.byte	0x6e
+ 474 032a B8000000 		.4byte	0xb8
+ 475 032e 5A       		.byte	0x5a
+ 476 032f 06       		.uleb128 0x6
+ 477 0330 E8090000 		.4byte	.LASF69
+ 478 0334 05       		.byte	0x5
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 12
+
+
+ 479 0335 6F       		.byte	0x6f
+ 480 0336 B8000000 		.4byte	0xb8
+ 481 033a 5C       		.byte	0x5c
+ 482 033b 06       		.uleb128 0x6
+ 483 033c F9000000 		.4byte	.LASF70
+ 484 0340 05       		.byte	0x5
+ 485 0341 70       		.byte	0x70
+ 486 0342 A2000000 		.4byte	0xa2
+ 487 0346 5E       		.byte	0x5e
+ 488 0347 06       		.uleb128 0x6
+ 489 0348 8C070000 		.4byte	.LASF71
+ 490 034c 05       		.byte	0x5
+ 491 034d 71       		.byte	0x71
+ 492 034e A2000000 		.4byte	0xa2
+ 493 0352 5F       		.byte	0x5f
+ 494 0353 06       		.uleb128 0x6
+ 495 0354 D6060000 		.4byte	.LASF72
+ 496 0358 05       		.byte	0x5
+ 497 0359 72       		.byte	0x72
+ 498 035a A2000000 		.4byte	0xa2
+ 499 035e 60       		.byte	0x60
+ 500 035f 06       		.uleb128 0x6
+ 501 0360 4B070000 		.4byte	.LASF73
+ 502 0364 05       		.byte	0x5
+ 503 0365 73       		.byte	0x73
+ 504 0366 CE000000 		.4byte	0xce
+ 505 036a 64       		.byte	0x64
+ 506 036b 06       		.uleb128 0x6
+ 507 036c 05080000 		.4byte	.LASF74
+ 508 0370 05       		.byte	0x5
+ 509 0371 76       		.byte	0x76
+ 510 0372 B8000000 		.4byte	0xb8
+ 511 0376 68       		.byte	0x68
+ 512 0377 06       		.uleb128 0x6
+ 513 0378 E7030000 		.4byte	.LASF75
+ 514 037c 05       		.byte	0x5
+ 515 037d 77       		.byte	0x77
+ 516 037e B8000000 		.4byte	0xb8
+ 517 0382 6A       		.byte	0x6a
+ 518 0383 06       		.uleb128 0x6
+ 519 0384 85040000 		.4byte	.LASF76
+ 520 0388 05       		.byte	0x5
+ 521 0389 78       		.byte	0x78
+ 522 038a B8000000 		.4byte	0xb8
+ 523 038e 6C       		.byte	0x6c
+ 524 038f 06       		.uleb128 0x6
+ 525 0390 B9040000 		.4byte	.LASF77
+ 526 0394 05       		.byte	0x5
+ 527 0395 79       		.byte	0x79
+ 528 0396 B8000000 		.4byte	0xb8
+ 529 039a 6E       		.byte	0x6e
+ 530 039b 06       		.uleb128 0x6
+ 531 039c 36080000 		.4byte	.LASF78
+ 532 03a0 05       		.byte	0x5
+ 533 03a1 7B       		.byte	0x7b
+ 534 03a2 A2000000 		.4byte	0xa2
+ 535 03a6 70       		.byte	0x70
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 13
+
+
+ 536 03a7 06       		.uleb128 0x6
+ 537 03a8 34020000 		.4byte	.LASF79
+ 538 03ac 05       		.byte	0x5
+ 539 03ad 7C       		.byte	0x7c
+ 540 03ae A2000000 		.4byte	0xa2
+ 541 03b2 71       		.byte	0x71
+ 542 03b3 06       		.uleb128 0x6
+ 543 03b4 630B0000 		.4byte	.LASF80
+ 544 03b8 05       		.byte	0x5
+ 545 03b9 7D       		.byte	0x7d
+ 546 03ba A2000000 		.4byte	0xa2
+ 547 03be 72       		.byte	0x72
+ 548 03bf 06       		.uleb128 0x6
+ 549 03c0 46060000 		.4byte	.LASF81
+ 550 03c4 05       		.byte	0x5
+ 551 03c5 7E       		.byte	0x7e
+ 552 03c6 A2000000 		.4byte	0xa2
+ 553 03ca 73       		.byte	0x73
+ 554 03cb 06       		.uleb128 0x6
+ 555 03cc 3B030000 		.4byte	.LASF82
+ 556 03d0 05       		.byte	0x5
+ 557 03d1 80       		.byte	0x80
+ 558 03d2 B8000000 		.4byte	0xb8
+ 559 03d6 74       		.byte	0x74
+ 560 03d7 06       		.uleb128 0x6
+ 561 03d8 5A090000 		.4byte	.LASF83
+ 562 03dc 05       		.byte	0x5
+ 563 03dd 81       		.byte	0x81
+ 564 03de B8000000 		.4byte	0xb8
+ 565 03e2 76       		.byte	0x76
+ 566 03e3 06       		.uleb128 0x6
+ 567 03e4 16030000 		.4byte	.LASF84
+ 568 03e8 05       		.byte	0x5
+ 569 03e9 82       		.byte	0x82
+ 570 03ea B8000000 		.4byte	0xb8
+ 571 03ee 78       		.byte	0x78
+ 572 03ef 06       		.uleb128 0x6
+ 573 03f0 B6000000 		.4byte	.LASF85
+ 574 03f4 05       		.byte	0x5
+ 575 03f5 83       		.byte	0x83
+ 576 03f6 B8000000 		.4byte	0xb8
+ 577 03fa 7A       		.byte	0x7a
+ 578 03fb 06       		.uleb128 0x6
+ 579 03fc ED0A0000 		.4byte	.LASF86
+ 580 0400 05       		.byte	0x5
+ 581 0401 86       		.byte	0x86
+ 582 0402 A2000000 		.4byte	0xa2
+ 583 0406 7C       		.byte	0x7c
+ 584 0407 06       		.uleb128 0x6
+ 585 0408 510A0000 		.4byte	.LASF87
+ 586 040c 05       		.byte	0x5
+ 587 040d 87       		.byte	0x87
+ 588 040e A2000000 		.4byte	0xa2
+ 589 0412 7D       		.byte	0x7d
+ 590 0413 06       		.uleb128 0x6
+ 591 0414 41000000 		.4byte	.LASF88
+ 592 0418 05       		.byte	0x5
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 14
+
+
+ 593 0419 88       		.byte	0x88
+ 594 041a A2000000 		.4byte	0xa2
+ 595 041e 7E       		.byte	0x7e
+ 596 041f 06       		.uleb128 0x6
+ 597 0420 4D030000 		.4byte	.LASF89
+ 598 0424 05       		.byte	0x5
+ 599 0425 89       		.byte	0x89
+ 600 0426 A2000000 		.4byte	0xa2
+ 601 042a 7F       		.byte	0x7f
+ 602 042b 06       		.uleb128 0x6
+ 603 042c B1030000 		.4byte	.LASF90
+ 604 0430 05       		.byte	0x5
+ 605 0431 8A       		.byte	0x8a
+ 606 0432 A2000000 		.4byte	0xa2
+ 607 0436 80       		.byte	0x80
+ 608 0437 06       		.uleb128 0x6
+ 609 0438 3A0A0000 		.4byte	.LASF91
+ 610 043c 05       		.byte	0x5
+ 611 043d 8D       		.byte	0x8d
+ 612 043e CE000000 		.4byte	0xce
+ 613 0442 84       		.byte	0x84
+ 614 0443 06       		.uleb128 0x6
+ 615 0444 CB000000 		.4byte	.LASF92
+ 616 0448 05       		.byte	0x5
+ 617 0449 8E       		.byte	0x8e
+ 618 044a CE000000 		.4byte	0xce
+ 619 044e 88       		.byte	0x88
+ 620 044f 06       		.uleb128 0x6
+ 621 0450 D80A0000 		.4byte	.LASF93
+ 622 0454 05       		.byte	0x5
+ 623 0455 8F       		.byte	0x8f
+ 624 0456 CE000000 		.4byte	0xce
+ 625 045a 8C       		.byte	0x8c
+ 626 045b 06       		.uleb128 0x6
+ 627 045c DF050000 		.4byte	.LASF94
+ 628 0460 05       		.byte	0x5
+ 629 0461 90       		.byte	0x90
+ 630 0462 CE000000 		.4byte	0xce
+ 631 0466 90       		.byte	0x90
+ 632 0467 06       		.uleb128 0x6
+ 633 0468 2D050000 		.4byte	.LASF95
+ 634 046c 05       		.byte	0x5
+ 635 046d 91       		.byte	0x91
+ 636 046e CE000000 		.4byte	0xce
+ 637 0472 94       		.byte	0x94
+ 638 0473 06       		.uleb128 0x6
+ 639 0474 8A050000 		.4byte	.LASF96
+ 640 0478 05       		.byte	0x5
+ 641 0479 92       		.byte	0x92
+ 642 047a CE000000 		.4byte	0xce
+ 643 047e 98       		.byte	0x98
+ 644 047f 06       		.uleb128 0x6
+ 645 0480 170B0000 		.4byte	.LASF97
+ 646 0484 05       		.byte	0x5
+ 647 0485 93       		.byte	0x93
+ 648 0486 CE000000 		.4byte	0xce
+ 649 048a 9C       		.byte	0x9c
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 15
+
+
+ 650 048b 06       		.uleb128 0x6
+ 651 048c 99010000 		.4byte	.LASF98
+ 652 0490 05       		.byte	0x5
+ 653 0491 94       		.byte	0x94
+ 654 0492 CE000000 		.4byte	0xce
+ 655 0496 A0       		.byte	0xa0
+ 656 0497 06       		.uleb128 0x6
+ 657 0498 6A020000 		.4byte	.LASF99
+ 658 049c 05       		.byte	0x5
+ 659 049d 95       		.byte	0x95
+ 660 049e B8000000 		.4byte	0xb8
+ 661 04a2 A4       		.byte	0xa4
+ 662 04a3 06       		.uleb128 0x6
+ 663 04a4 68050000 		.4byte	.LASF100
+ 664 04a8 05       		.byte	0x5
+ 665 04a9 96       		.byte	0x96
+ 666 04aa B8000000 		.4byte	0xb8
+ 667 04ae A6       		.byte	0xa6
+ 668 04af 06       		.uleb128 0x6
+ 669 04b0 66070000 		.4byte	.LASF101
+ 670 04b4 05       		.byte	0x5
+ 671 04b5 97       		.byte	0x97
+ 672 04b6 B8000000 		.4byte	0xb8
+ 673 04ba A8       		.byte	0xa8
+ 674 04bb 06       		.uleb128 0x6
+ 675 04bc 41090000 		.4byte	.LASF102
+ 676 04c0 05       		.byte	0x5
+ 677 04c1 98       		.byte	0x98
+ 678 04c2 B8000000 		.4byte	0xb8
+ 679 04c6 AA       		.byte	0xaa
+ 680 04c7 06       		.uleb128 0x6
+ 681 04c8 94040000 		.4byte	.LASF103
+ 682 04cc 05       		.byte	0x5
+ 683 04cd 99       		.byte	0x99
+ 684 04ce B8000000 		.4byte	0xb8
+ 685 04d2 AC       		.byte	0xac
+ 686 04d3 06       		.uleb128 0x6
+ 687 04d4 8C060000 		.4byte	.LASF104
+ 688 04d8 05       		.byte	0x5
+ 689 04d9 9A       		.byte	0x9a
+ 690 04da B8000000 		.4byte	0xb8
+ 691 04de AE       		.byte	0xae
+ 692 04df 06       		.uleb128 0x6
+ 693 04e0 37070000 		.4byte	.LASF105
+ 694 04e4 05       		.byte	0x5
+ 695 04e5 9D       		.byte	0x9d
+ 696 04e6 B8000000 		.4byte	0xb8
+ 697 04ea B0       		.byte	0xb0
+ 698 04eb 06       		.uleb128 0x6
+ 699 04ec 54000000 		.4byte	.LASF106
+ 700 04f0 05       		.byte	0x5
+ 701 04f1 9E       		.byte	0x9e
+ 702 04f2 CE000000 		.4byte	0xce
+ 703 04f6 B4       		.byte	0xb4
+ 704 04f7 00       		.byte	0
+ 705 04f8 03       		.uleb128 0x3
+ 706 04f9 02050000 		.4byte	.LASF107
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 16
+
+
+ 707 04fd 05       		.byte	0x5
+ 708 04fe 9F       		.byte	0x9f
+ 709 04ff E7000000 		.4byte	0xe7
+ 710 0503 02       		.uleb128 0x2
+ 711 0504 01       		.byte	0x1
+ 712 0505 08       		.byte	0x8
+ 713 0506 32090000 		.4byte	.LASF108
+ 714 050a 02       		.uleb128 0x2
+ 715 050b 04       		.byte	0x4
+ 716 050c 04       		.byte	0x4
+ 717 050d 45070000 		.4byte	.LASF109
+ 718 0511 02       		.uleb128 0x2
+ 719 0512 08       		.byte	0x8
+ 720 0513 04       		.byte	0x4
+ 721 0514 0F030000 		.4byte	.LASF110
+ 722 0518 02       		.uleb128 0x2
+ 723 0519 01       		.byte	0x1
+ 724 051a 02       		.byte	0x2
+ 725 051b BF070000 		.4byte	.LASF111
+ 726 051f 07       		.uleb128 0x7
+ 727 0520 01       		.byte	0x1
+ 728 0521 2C000000 		.4byte	0x2c
+ 729 0525 06       		.byte	0x6
+ 730 0526 2107     		.2byte	0x721
+ 731 0528 45050000 		.4byte	0x545
+ 732 052c 08       		.uleb128 0x8
+ 733 052d B6060000 		.4byte	.LASF112
+ 734 0531 00       		.byte	0
+ 735 0532 08       		.uleb128 0x8
+ 736 0533 2D0B0000 		.4byte	.LASF113
+ 737 0537 01       		.byte	0x1
+ 738 0538 08       		.uleb128 0x8
+ 739 0539 D6040000 		.4byte	.LASF114
+ 740 053d 02       		.byte	0x2
+ 741 053e 08       		.uleb128 0x8
+ 742 053f 58010000 		.4byte	.LASF115
+ 743 0543 03       		.byte	0x3
+ 744 0544 00       		.byte	0
+ 745 0545 09       		.uleb128 0x9
+ 746 0546 F2060000 		.4byte	.LASF116
+ 747 054a 06       		.byte	0x6
+ 748 054b 2607     		.2byte	0x726
+ 749 054d 1F050000 		.4byte	0x51f
+ 750 0551 07       		.uleb128 0x7
+ 751 0552 01       		.byte	0x1
+ 752 0553 2C000000 		.4byte	0x2c
+ 753 0557 07       		.byte	0x7
+ 754 0558 B101     		.2byte	0x1b1
+ 755 055a 7D050000 		.4byte	0x57d
+ 756 055e 08       		.uleb128 0x8
+ 757 055f 89020000 		.4byte	.LASF117
+ 758 0563 00       		.byte	0
+ 759 0564 08       		.uleb128 0x8
+ 760 0565 77030000 		.4byte	.LASF118
+ 761 0569 01       		.byte	0x1
+ 762 056a 08       		.uleb128 0x8
+ 763 056b 15080000 		.4byte	.LASF119
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 17
+
+
+ 764 056f 02       		.byte	0x2
+ 765 0570 08       		.uleb128 0x8
+ 766 0571 A0050000 		.4byte	.LASF120
+ 767 0575 03       		.byte	0x3
+ 768 0576 08       		.uleb128 0x8
+ 769 0577 810A0000 		.4byte	.LASF121
+ 770 057b 04       		.byte	0x4
+ 771 057c 00       		.byte	0
+ 772 057d 09       		.uleb128 0x9
+ 773 057e 020B0000 		.4byte	.LASF122
+ 774 0582 07       		.byte	0x7
+ 775 0583 B701     		.2byte	0x1b7
+ 776 0585 51050000 		.4byte	0x551
+ 777 0589 07       		.uleb128 0x7
+ 778 058a 04       		.byte	0x4
+ 779 058b 9B000000 		.4byte	0x9b
+ 780 058f 07       		.byte	0x7
+ 781 0590 BC01     		.2byte	0x1bc
+ 782 0592 A6050000 		.4byte	0x5a6
+ 783 0596 08       		.uleb128 0x8
+ 784 0597 4A080000 		.4byte	.LASF123
+ 785 059b 00       		.byte	0
+ 786 059c 0A       		.uleb128 0xa
+ 787 059d E7010000 		.4byte	.LASF124
+ 788 05a1 00000001 		.4byte	0x1000000
+ 789 05a5 00       		.byte	0
+ 790 05a6 09       		.uleb128 0x9
+ 791 05a7 A6020000 		.4byte	.LASF125
+ 792 05ab 07       		.byte	0x7
+ 793 05ac BF01     		.2byte	0x1bf
+ 794 05ae 89050000 		.4byte	0x589
+ 795 05b2 07       		.uleb128 0x7
+ 796 05b3 04       		.byte	0x4
+ 797 05b4 9B000000 		.4byte	0x9b
+ 798 05b8 07       		.byte	0x7
+ 799 05b9 C401     		.2byte	0x1c4
+ 800 05bb CF050000 		.4byte	0x5cf
+ 801 05bf 08       		.uleb128 0x8
+ 802 05c0 12050000 		.4byte	.LASF126
+ 803 05c4 00       		.byte	0
+ 804 05c5 0A       		.uleb128 0xa
+ 805 05c6 42050000 		.4byte	.LASF127
+ 806 05ca 00000040 		.4byte	0x40000000
+ 807 05ce 00       		.byte	0
+ 808 05cf 09       		.uleb128 0x9
+ 809 05d0 73060000 		.4byte	.LASF128
+ 810 05d4 07       		.byte	0x7
+ 811 05d5 C701     		.2byte	0x1c7
+ 812 05d7 B2050000 		.4byte	0x5b2
+ 813 05db 07       		.uleb128 0x7
+ 814 05dc 04       		.byte	0x4
+ 815 05dd 9B000000 		.4byte	0x9b
+ 816 05e1 07       		.byte	0x7
+ 817 05e2 CC01     		.2byte	0x1cc
+ 818 05e4 13060000 		.4byte	0x613
+ 819 05e8 08       		.uleb128 0x8
+ 820 05e9 08010000 		.4byte	.LASF129
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 18
+
+
+ 821 05ed 00       		.byte	0
+ 822 05ee 0A       		.uleb128 0xa
+ 823 05ef 5D060000 		.4byte	.LASF130
+ 824 05f3 00004000 		.4byte	0x400000
+ 825 05f7 0A       		.uleb128 0xa
+ 826 05f8 F4050000 		.4byte	.LASF131
+ 827 05fc 0000C000 		.4byte	0xc00000
+ 828 0600 0A       		.uleb128 0xa
+ 829 0601 A2070000 		.4byte	.LASF132
+ 830 0605 00000008 		.4byte	0x8000000
+ 831 0609 0A       		.uleb128 0xa
+ 832 060a 790B0000 		.4byte	.LASF133
+ 833 060e 00008008 		.4byte	0x8800000
+ 834 0612 00       		.byte	0
+ 835 0613 09       		.uleb128 0x9
+ 836 0614 72070000 		.4byte	.LASF134
+ 837 0618 07       		.byte	0x7
+ 838 0619 D401     		.2byte	0x1d4
+ 839 061b DB050000 		.4byte	0x5db
+ 840 061f 07       		.uleb128 0x7
+ 841 0620 02       		.byte	0x2
+ 842 0621 5B000000 		.4byte	0x5b
+ 843 0625 07       		.byte	0x7
+ 844 0626 DA01     		.2byte	0x1da
+ 845 0628 48060000 		.4byte	0x648
+ 846 062c 08       		.uleb128 0x8
+ 847 062d BA010000 		.4byte	.LASF135
+ 848 0631 00       		.byte	0
+ 849 0632 0B       		.uleb128 0xb
+ 850 0633 190A0000 		.4byte	.LASF136
+ 851 0637 0001     		.2byte	0x100
+ 852 0639 0B       		.uleb128 0xb
+ 853 063a 620A0000 		.4byte	.LASF137
+ 854 063e 0002     		.2byte	0x200
+ 855 0640 0B       		.uleb128 0xb
+ 856 0641 96090000 		.4byte	.LASF138
+ 857 0645 0003     		.2byte	0x300
+ 858 0647 00       		.byte	0
+ 859 0648 09       		.uleb128 0x9
+ 860 0649 A2040000 		.4byte	.LASF139
+ 861 064d 07       		.byte	0x7
+ 862 064e E001     		.2byte	0x1e0
+ 863 0650 1F060000 		.4byte	0x61f
+ 864 0654 07       		.uleb128 0x7
+ 865 0655 01       		.byte	0x1
+ 866 0656 2C000000 		.4byte	0x2c
+ 867 065a 07       		.byte	0x7
+ 868 065b E701     		.2byte	0x1e7
+ 869 065d 6E060000 		.4byte	0x66e
+ 870 0661 08       		.uleb128 0x8
+ 871 0662 9A060000 		.4byte	.LASF140
+ 872 0666 00       		.byte	0
+ 873 0667 08       		.uleb128 0x8
+ 874 0668 D2020000 		.4byte	.LASF141
+ 875 066c 01       		.byte	0x1
+ 876 066d 00       		.byte	0
+ 877 066e 09       		.uleb128 0x9
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 19
+
+
+ 878 066f 1E010000 		.4byte	.LASF142
+ 879 0673 07       		.byte	0x7
+ 880 0674 EA01     		.2byte	0x1ea
+ 881 0676 54060000 		.4byte	0x654
+ 882 067a 07       		.uleb128 0x7
+ 883 067b 01       		.byte	0x1
+ 884 067c 2C000000 		.4byte	0x2c
+ 885 0680 07       		.byte	0x7
+ 886 0681 F101     		.2byte	0x1f1
+ 887 0683 94060000 		.4byte	0x694
+ 888 0687 08       		.uleb128 0x8
+ 889 0688 80010000 		.4byte	.LASF143
+ 890 068c 00       		.byte	0
+ 891 068d 08       		.uleb128 0x8
+ 892 068e 12000000 		.4byte	.LASF144
+ 893 0692 01       		.byte	0x1
+ 894 0693 00       		.byte	0
+ 895 0694 09       		.uleb128 0x9
+ 896 0695 8E0B0000 		.4byte	.LASF145
+ 897 0699 07       		.byte	0x7
+ 898 069a F401     		.2byte	0x1f4
+ 899 069c 7A060000 		.4byte	0x67a
+ 900 06a0 0C       		.uleb128 0xc
+ 901 06a1 34       		.byte	0x34
+ 902 06a2 07       		.byte	0x7
+ 903 06a3 1702     		.2byte	0x217
+ 904 06a5 7A070000 		.4byte	0x77a
+ 905 06a9 0D       		.uleb128 0xd
+ 906 06aa 37010000 		.4byte	.LASF146
+ 907 06ae 07       		.byte	0x7
+ 908 06af 1902     		.2byte	0x219
+ 909 06b1 6E060000 		.4byte	0x66e
+ 910 06b5 00       		.byte	0
+ 911 06b6 0D       		.uleb128 0xd
+ 912 06b7 A0030000 		.4byte	.LASF147
+ 913 06bb 07       		.byte	0x7
+ 914 06bc 1A02     		.2byte	0x21a
+ 915 06be A6050000 		.4byte	0x5a6
+ 916 06c2 04       		.byte	0x4
+ 917 06c3 0D       		.uleb128 0xd
+ 918 06c4 51040000 		.4byte	.LASF148
+ 919 06c8 07       		.byte	0x7
+ 920 06c9 1B02     		.2byte	0x21b
+ 921 06cb 7D050000 		.4byte	0x57d
+ 922 06cf 08       		.byte	0x8
+ 923 06d0 0D       		.uleb128 0xd
+ 924 06d1 7D050000 		.4byte	.LASF149
+ 925 06d5 07       		.byte	0x7
+ 926 06d6 1C02     		.2byte	0x21c
+ 927 06d8 48060000 		.4byte	0x648
+ 928 06dc 0A       		.byte	0xa
+ 929 06dd 0D       		.uleb128 0xd
+ 930 06de 010A0000 		.4byte	.LASF150
+ 931 06e2 07       		.byte	0x7
+ 932 06e3 1D02     		.2byte	0x21d
+ 933 06e5 13060000 		.4byte	0x613
+ 934 06e9 0C       		.byte	0xc
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 20
+
+
+ 935 06ea 0D       		.uleb128 0xd
+ 936 06eb B30A0000 		.4byte	.LASF151
+ 937 06ef 07       		.byte	0x7
+ 938 06f0 1E02     		.2byte	0x21e
+ 939 06f2 94060000 		.4byte	0x694
+ 940 06f6 10       		.byte	0x10
+ 941 06f7 0D       		.uleb128 0xd
+ 942 06f8 37090000 		.4byte	.LASF152
+ 943 06fc 07       		.byte	0x7
+ 944 06fd 1F02     		.2byte	0x21f
+ 945 06ff CF050000 		.4byte	0x5cf
+ 946 0703 14       		.byte	0x14
+ 947 0704 0D       		.uleb128 0xd
+ 948 0705 AA0B0000 		.4byte	.LASF153
+ 949 0709 07       		.byte	0x7
+ 950 070a 2002     		.2byte	0x220
+ 951 070c CE000000 		.4byte	0xce
+ 952 0710 18       		.byte	0x18
+ 953 0711 0D       		.uleb128 0xd
+ 954 0712 AB030000 		.4byte	.LASF154
+ 955 0716 07       		.byte	0x7
+ 956 0717 2102     		.2byte	0x221
+ 957 0719 C3000000 		.4byte	0xc3
+ 958 071d 1C       		.byte	0x1c
+ 959 071e 0D       		.uleb128 0xd
+ 960 071f 82000000 		.4byte	.LASF155
+ 961 0723 07       		.byte	0x7
+ 962 0724 2202     		.2byte	0x222
+ 963 0726 C3000000 		.4byte	0xc3
+ 964 072a 20       		.byte	0x20
+ 965 072b 0D       		.uleb128 0xd
+ 966 072c C5090000 		.4byte	.LASF156
+ 967 0730 07       		.byte	0x7
+ 968 0731 2302     		.2byte	0x223
+ 969 0733 18050000 		.4byte	0x518
+ 970 0737 24       		.byte	0x24
+ 971 0738 0D       		.uleb128 0xd
+ 972 0739 65040000 		.4byte	.LASF157
+ 973 073d 07       		.byte	0x7
+ 974 073e 2602     		.2byte	0x226
+ 975 0740 18050000 		.4byte	0x518
+ 976 0744 25       		.byte	0x25
+ 977 0745 0D       		.uleb128 0xd
+ 978 0746 EF070000 		.4byte	.LASF158
+ 979 074a 07       		.byte	0x7
+ 980 074b 2702     		.2byte	0x227
+ 981 074d 45050000 		.4byte	0x545
+ 982 0751 26       		.byte	0x26
+ 983 0752 0D       		.uleb128 0xd
+ 984 0753 AF010000 		.4byte	.LASF159
+ 985 0757 07       		.byte	0x7
+ 986 0758 2802     		.2byte	0x228
+ 987 075a CE000000 		.4byte	0xce
+ 988 075e 28       		.byte	0x28
+ 989 075f 0D       		.uleb128 0xd
+ 990 0760 A6000000 		.4byte	.LASF160
+ 991 0764 07       		.byte	0x7
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 21
+
+
+ 992 0765 2902     		.2byte	0x229
+ 993 0767 CE000000 		.4byte	0xce
+ 994 076b 2C       		.byte	0x2c
+ 995 076c 0D       		.uleb128 0xd
+ 996 076d 10060000 		.4byte	.LASF161
+ 997 0771 07       		.byte	0x7
+ 998 0772 2A02     		.2byte	0x22a
+ 999 0774 CE000000 		.4byte	0xce
+ 1000 0778 30       		.byte	0x30
+ 1001 0779 00       		.byte	0
+ 1002 077a 09       		.uleb128 0x9
+ 1003 077b 49020000 		.4byte	.LASF162
+ 1004 077f 07       		.byte	0x7
+ 1005 0780 2B02     		.2byte	0x22b
+ 1006 0782 A0060000 		.4byte	0x6a0
+ 1007 0786 0E       		.uleb128 0xe
+ 1008 0787 E2000000 		.4byte	.LASF168
+ 1009 078b 02       		.byte	0x2
+ 1010 078c 81       		.byte	0x81
+ 1011 078d 03       		.byte	0x3
+ 1012 078e 0F       		.uleb128 0xf
+ 1013 078f 36030000 		.4byte	.LASF169
+ 1014 0793 01       		.byte	0x1
+ 1015 0794 0E       		.byte	0xe
+ 1016 0795 94000000 		.4byte	0x94
+ 1017 0799 00000000 		.4byte	.LFB389
+ 1018 079d 10000000 		.4byte	.LFE389-.LFB389
+ 1019 07a1 01       		.uleb128 0x1
+ 1020 07a2 9C       		.byte	0x9c
+ 1021 07a3 CA070000 		.4byte	0x7ca
+ 1022 07a7 10       		.uleb128 0x10
+ 1023 07a8 86070000 		.4byte	0x786
+ 1024 07ac 02000000 		.4byte	.LBB4
+ 1025 07b0 02000000 		.4byte	.LBE4-.LBB4
+ 1026 07b4 01       		.byte	0x1
+ 1027 07b5 10       		.byte	0x10
+ 1028 07b6 11       		.uleb128 0x11
+ 1029 07b7 0A000000 		.4byte	.LVL0
+ 1030 07bb F0070000 		.4byte	0x7f0
+ 1031 07bf 12       		.uleb128 0x12
+ 1032 07c0 01       		.uleb128 0x1
+ 1033 07c1 50       		.byte	0x50
+ 1034 07c2 05       		.uleb128 0x5
+ 1035 07c3 0C       		.byte	0xc
+ 1036 07c4 00000810 		.4byte	0x10080000
+ 1037 07c8 00       		.byte	0
+ 1038 07c9 00       		.byte	0
+ 1039 07ca 13       		.uleb128 0x13
+ 1040 07cb 5C070000 		.4byte	.LASF163
+ 1041 07cf 05       		.byte	0x5
+ 1042 07d0 A7       		.byte	0xa7
+ 1043 07d1 D5070000 		.4byte	0x7d5
+ 1044 07d5 14       		.uleb128 0x14
+ 1045 07d6 04       		.byte	0x4
+ 1046 07d7 DB070000 		.4byte	0x7db
+ 1047 07db 15       		.uleb128 0x15
+ 1048 07dc F8040000 		.4byte	0x4f8
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 22
+
+
+ 1049 07e0 13       		.uleb128 0x13
+ 1050 07e1 B90B0000 		.4byte	.LASF164
+ 1051 07e5 08       		.byte	0x8
+ 1052 07e6 5A       		.byte	0x5a
+ 1053 07e7 EB070000 		.4byte	0x7eb
+ 1054 07eb 15       		.uleb128 0x15
+ 1055 07ec 7A070000 		.4byte	0x77a
+ 1056 07f0 16       		.uleb128 0x16
+ 1057 07f1 C6040000 		.4byte	.LASF170
+ 1058 07f5 C6040000 		.4byte	.LASF170
+ 1059 07f9 09       		.byte	0x9
+ 1060 07fa 2502     		.2byte	0x225
+ 1061 07fc 00       		.byte	0
+ 1062              		.section	.debug_abbrev,"",%progbits
+ 1063              	.Ldebug_abbrev0:
+ 1064 0000 01       		.uleb128 0x1
+ 1065 0001 11       		.uleb128 0x11
+ 1066 0002 01       		.byte	0x1
+ 1067 0003 25       		.uleb128 0x25
+ 1068 0004 0E       		.uleb128 0xe
+ 1069 0005 13       		.uleb128 0x13
+ 1070 0006 0B       		.uleb128 0xb
+ 1071 0007 03       		.uleb128 0x3
+ 1072 0008 0E       		.uleb128 0xe
+ 1073 0009 1B       		.uleb128 0x1b
+ 1074 000a 0E       		.uleb128 0xe
+ 1075 000b 55       		.uleb128 0x55
+ 1076 000c 17       		.uleb128 0x17
+ 1077 000d 11       		.uleb128 0x11
+ 1078 000e 01       		.uleb128 0x1
+ 1079 000f 10       		.uleb128 0x10
+ 1080 0010 17       		.uleb128 0x17
+ 1081 0011 00       		.byte	0
+ 1082 0012 00       		.byte	0
+ 1083 0013 02       		.uleb128 0x2
+ 1084 0014 24       		.uleb128 0x24
+ 1085 0015 00       		.byte	0
+ 1086 0016 0B       		.uleb128 0xb
+ 1087 0017 0B       		.uleb128 0xb
+ 1088 0018 3E       		.uleb128 0x3e
+ 1089 0019 0B       		.uleb128 0xb
+ 1090 001a 03       		.uleb128 0x3
+ 1091 001b 0E       		.uleb128 0xe
+ 1092 001c 00       		.byte	0
+ 1093 001d 00       		.byte	0
+ 1094 001e 03       		.uleb128 0x3
+ 1095 001f 16       		.uleb128 0x16
+ 1096 0020 00       		.byte	0
+ 1097 0021 03       		.uleb128 0x3
+ 1098 0022 0E       		.uleb128 0xe
+ 1099 0023 3A       		.uleb128 0x3a
+ 1100 0024 0B       		.uleb128 0xb
+ 1101 0025 3B       		.uleb128 0x3b
+ 1102 0026 0B       		.uleb128 0xb
+ 1103 0027 49       		.uleb128 0x49
+ 1104 0028 13       		.uleb128 0x13
+ 1105 0029 00       		.byte	0
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 23
+
+
+ 1106 002a 00       		.byte	0
+ 1107 002b 04       		.uleb128 0x4
+ 1108 002c 24       		.uleb128 0x24
+ 1109 002d 00       		.byte	0
+ 1110 002e 0B       		.uleb128 0xb
+ 1111 002f 0B       		.uleb128 0xb
+ 1112 0030 3E       		.uleb128 0x3e
+ 1113 0031 0B       		.uleb128 0xb
+ 1114 0032 03       		.uleb128 0x3
+ 1115 0033 08       		.uleb128 0x8
+ 1116 0034 00       		.byte	0
+ 1117 0035 00       		.byte	0
+ 1118 0036 05       		.uleb128 0x5
+ 1119 0037 13       		.uleb128 0x13
+ 1120 0038 01       		.byte	0x1
+ 1121 0039 0B       		.uleb128 0xb
+ 1122 003a 0B       		.uleb128 0xb
+ 1123 003b 3A       		.uleb128 0x3a
+ 1124 003c 0B       		.uleb128 0xb
+ 1125 003d 3B       		.uleb128 0x3b
+ 1126 003e 0B       		.uleb128 0xb
+ 1127 003f 01       		.uleb128 0x1
+ 1128 0040 13       		.uleb128 0x13
+ 1129 0041 00       		.byte	0
+ 1130 0042 00       		.byte	0
+ 1131 0043 06       		.uleb128 0x6
+ 1132 0044 0D       		.uleb128 0xd
+ 1133 0045 00       		.byte	0
+ 1134 0046 03       		.uleb128 0x3
+ 1135 0047 0E       		.uleb128 0xe
+ 1136 0048 3A       		.uleb128 0x3a
+ 1137 0049 0B       		.uleb128 0xb
+ 1138 004a 3B       		.uleb128 0x3b
+ 1139 004b 0B       		.uleb128 0xb
+ 1140 004c 49       		.uleb128 0x49
+ 1141 004d 13       		.uleb128 0x13
+ 1142 004e 38       		.uleb128 0x38
+ 1143 004f 0B       		.uleb128 0xb
+ 1144 0050 00       		.byte	0
+ 1145 0051 00       		.byte	0
+ 1146 0052 07       		.uleb128 0x7
+ 1147 0053 04       		.uleb128 0x4
+ 1148 0054 01       		.byte	0x1
+ 1149 0055 0B       		.uleb128 0xb
+ 1150 0056 0B       		.uleb128 0xb
+ 1151 0057 49       		.uleb128 0x49
+ 1152 0058 13       		.uleb128 0x13
+ 1153 0059 3A       		.uleb128 0x3a
+ 1154 005a 0B       		.uleb128 0xb
+ 1155 005b 3B       		.uleb128 0x3b
+ 1156 005c 05       		.uleb128 0x5
+ 1157 005d 01       		.uleb128 0x1
+ 1158 005e 13       		.uleb128 0x13
+ 1159 005f 00       		.byte	0
+ 1160 0060 00       		.byte	0
+ 1161 0061 08       		.uleb128 0x8
+ 1162 0062 28       		.uleb128 0x28
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 24
+
+
+ 1163 0063 00       		.byte	0
+ 1164 0064 03       		.uleb128 0x3
+ 1165 0065 0E       		.uleb128 0xe
+ 1166 0066 1C       		.uleb128 0x1c
+ 1167 0067 0B       		.uleb128 0xb
+ 1168 0068 00       		.byte	0
+ 1169 0069 00       		.byte	0
+ 1170 006a 09       		.uleb128 0x9
+ 1171 006b 16       		.uleb128 0x16
+ 1172 006c 00       		.byte	0
+ 1173 006d 03       		.uleb128 0x3
+ 1174 006e 0E       		.uleb128 0xe
+ 1175 006f 3A       		.uleb128 0x3a
+ 1176 0070 0B       		.uleb128 0xb
+ 1177 0071 3B       		.uleb128 0x3b
+ 1178 0072 05       		.uleb128 0x5
+ 1179 0073 49       		.uleb128 0x49
+ 1180 0074 13       		.uleb128 0x13
+ 1181 0075 00       		.byte	0
+ 1182 0076 00       		.byte	0
+ 1183 0077 0A       		.uleb128 0xa
+ 1184 0078 28       		.uleb128 0x28
+ 1185 0079 00       		.byte	0
+ 1186 007a 03       		.uleb128 0x3
+ 1187 007b 0E       		.uleb128 0xe
+ 1188 007c 1C       		.uleb128 0x1c
+ 1189 007d 06       		.uleb128 0x6
+ 1190 007e 00       		.byte	0
+ 1191 007f 00       		.byte	0
+ 1192 0080 0B       		.uleb128 0xb
+ 1193 0081 28       		.uleb128 0x28
+ 1194 0082 00       		.byte	0
+ 1195 0083 03       		.uleb128 0x3
+ 1196 0084 0E       		.uleb128 0xe
+ 1197 0085 1C       		.uleb128 0x1c
+ 1198 0086 05       		.uleb128 0x5
+ 1199 0087 00       		.byte	0
+ 1200 0088 00       		.byte	0
+ 1201 0089 0C       		.uleb128 0xc
+ 1202 008a 13       		.uleb128 0x13
+ 1203 008b 01       		.byte	0x1
+ 1204 008c 0B       		.uleb128 0xb
+ 1205 008d 0B       		.uleb128 0xb
+ 1206 008e 3A       		.uleb128 0x3a
+ 1207 008f 0B       		.uleb128 0xb
+ 1208 0090 3B       		.uleb128 0x3b
+ 1209 0091 05       		.uleb128 0x5
+ 1210 0092 01       		.uleb128 0x1
+ 1211 0093 13       		.uleb128 0x13
+ 1212 0094 00       		.byte	0
+ 1213 0095 00       		.byte	0
+ 1214 0096 0D       		.uleb128 0xd
+ 1215 0097 0D       		.uleb128 0xd
+ 1216 0098 00       		.byte	0
+ 1217 0099 03       		.uleb128 0x3
+ 1218 009a 0E       		.uleb128 0xe
+ 1219 009b 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 25
+
+
+ 1220 009c 0B       		.uleb128 0xb
+ 1221 009d 3B       		.uleb128 0x3b
+ 1222 009e 05       		.uleb128 0x5
+ 1223 009f 49       		.uleb128 0x49
+ 1224 00a0 13       		.uleb128 0x13
+ 1225 00a1 38       		.uleb128 0x38
+ 1226 00a2 0B       		.uleb128 0xb
+ 1227 00a3 00       		.byte	0
+ 1228 00a4 00       		.byte	0
+ 1229 00a5 0E       		.uleb128 0xe
+ 1230 00a6 2E       		.uleb128 0x2e
+ 1231 00a7 00       		.byte	0
+ 1232 00a8 03       		.uleb128 0x3
+ 1233 00a9 0E       		.uleb128 0xe
+ 1234 00aa 3A       		.uleb128 0x3a
+ 1235 00ab 0B       		.uleb128 0xb
+ 1236 00ac 3B       		.uleb128 0x3b
+ 1237 00ad 0B       		.uleb128 0xb
+ 1238 00ae 27       		.uleb128 0x27
+ 1239 00af 19       		.uleb128 0x19
+ 1240 00b0 20       		.uleb128 0x20
+ 1241 00b1 0B       		.uleb128 0xb
+ 1242 00b2 00       		.byte	0
+ 1243 00b3 00       		.byte	0
+ 1244 00b4 0F       		.uleb128 0xf
+ 1245 00b5 2E       		.uleb128 0x2e
+ 1246 00b6 01       		.byte	0x1
+ 1247 00b7 3F       		.uleb128 0x3f
+ 1248 00b8 19       		.uleb128 0x19
+ 1249 00b9 03       		.uleb128 0x3
+ 1250 00ba 0E       		.uleb128 0xe
+ 1251 00bb 3A       		.uleb128 0x3a
+ 1252 00bc 0B       		.uleb128 0xb
+ 1253 00bd 3B       		.uleb128 0x3b
+ 1254 00be 0B       		.uleb128 0xb
+ 1255 00bf 27       		.uleb128 0x27
+ 1256 00c0 19       		.uleb128 0x19
+ 1257 00c1 49       		.uleb128 0x49
+ 1258 00c2 13       		.uleb128 0x13
+ 1259 00c3 8701     		.uleb128 0x87
+ 1260 00c5 19       		.uleb128 0x19
+ 1261 00c6 11       		.uleb128 0x11
+ 1262 00c7 01       		.uleb128 0x1
+ 1263 00c8 12       		.uleb128 0x12
+ 1264 00c9 06       		.uleb128 0x6
+ 1265 00ca 40       		.uleb128 0x40
+ 1266 00cb 18       		.uleb128 0x18
+ 1267 00cc 9742     		.uleb128 0x2117
+ 1268 00ce 19       		.uleb128 0x19
+ 1269 00cf 01       		.uleb128 0x1
+ 1270 00d0 13       		.uleb128 0x13
+ 1271 00d1 00       		.byte	0
+ 1272 00d2 00       		.byte	0
+ 1273 00d3 10       		.uleb128 0x10
+ 1274 00d4 1D       		.uleb128 0x1d
+ 1275 00d5 00       		.byte	0
+ 1276 00d6 31       		.uleb128 0x31
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 26
+
+
+ 1277 00d7 13       		.uleb128 0x13
+ 1278 00d8 11       		.uleb128 0x11
+ 1279 00d9 01       		.uleb128 0x1
+ 1280 00da 12       		.uleb128 0x12
+ 1281 00db 06       		.uleb128 0x6
+ 1282 00dc 58       		.uleb128 0x58
+ 1283 00dd 0B       		.uleb128 0xb
+ 1284 00de 59       		.uleb128 0x59
+ 1285 00df 0B       		.uleb128 0xb
+ 1286 00e0 00       		.byte	0
+ 1287 00e1 00       		.byte	0
+ 1288 00e2 11       		.uleb128 0x11
+ 1289 00e3 898201   		.uleb128 0x4109
+ 1290 00e6 01       		.byte	0x1
+ 1291 00e7 11       		.uleb128 0x11
+ 1292 00e8 01       		.uleb128 0x1
+ 1293 00e9 31       		.uleb128 0x31
+ 1294 00ea 13       		.uleb128 0x13
+ 1295 00eb 00       		.byte	0
+ 1296 00ec 00       		.byte	0
+ 1297 00ed 12       		.uleb128 0x12
+ 1298 00ee 8A8201   		.uleb128 0x410a
+ 1299 00f1 00       		.byte	0
+ 1300 00f2 02       		.uleb128 0x2
+ 1301 00f3 18       		.uleb128 0x18
+ 1302 00f4 9142     		.uleb128 0x2111
+ 1303 00f6 18       		.uleb128 0x18
+ 1304 00f7 00       		.byte	0
+ 1305 00f8 00       		.byte	0
+ 1306 00f9 13       		.uleb128 0x13
+ 1307 00fa 34       		.uleb128 0x34
+ 1308 00fb 00       		.byte	0
+ 1309 00fc 03       		.uleb128 0x3
+ 1310 00fd 0E       		.uleb128 0xe
+ 1311 00fe 3A       		.uleb128 0x3a
+ 1312 00ff 0B       		.uleb128 0xb
+ 1313 0100 3B       		.uleb128 0x3b
+ 1314 0101 0B       		.uleb128 0xb
+ 1315 0102 49       		.uleb128 0x49
+ 1316 0103 13       		.uleb128 0x13
+ 1317 0104 3F       		.uleb128 0x3f
+ 1318 0105 19       		.uleb128 0x19
+ 1319 0106 3C       		.uleb128 0x3c
+ 1320 0107 19       		.uleb128 0x19
+ 1321 0108 00       		.byte	0
+ 1322 0109 00       		.byte	0
+ 1323 010a 14       		.uleb128 0x14
+ 1324 010b 0F       		.uleb128 0xf
+ 1325 010c 00       		.byte	0
+ 1326 010d 0B       		.uleb128 0xb
+ 1327 010e 0B       		.uleb128 0xb
+ 1328 010f 49       		.uleb128 0x49
+ 1329 0110 13       		.uleb128 0x13
+ 1330 0111 00       		.byte	0
+ 1331 0112 00       		.byte	0
+ 1332 0113 15       		.uleb128 0x15
+ 1333 0114 26       		.uleb128 0x26
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 27
+
+
+ 1334 0115 00       		.byte	0
+ 1335 0116 49       		.uleb128 0x49
+ 1336 0117 13       		.uleb128 0x13
+ 1337 0118 00       		.byte	0
+ 1338 0119 00       		.byte	0
+ 1339 011a 16       		.uleb128 0x16
+ 1340 011b 2E       		.uleb128 0x2e
+ 1341 011c 00       		.byte	0
+ 1342 011d 3F       		.uleb128 0x3f
+ 1343 011e 19       		.uleb128 0x19
+ 1344 011f 3C       		.uleb128 0x3c
+ 1345 0120 19       		.uleb128 0x19
+ 1346 0121 6E       		.uleb128 0x6e
+ 1347 0122 0E       		.uleb128 0xe
+ 1348 0123 03       		.uleb128 0x3
+ 1349 0124 0E       		.uleb128 0xe
+ 1350 0125 3A       		.uleb128 0x3a
+ 1351 0126 0B       		.uleb128 0xb
+ 1352 0127 3B       		.uleb128 0x3b
+ 1353 0128 05       		.uleb128 0x5
+ 1354 0129 00       		.byte	0
+ 1355 012a 00       		.byte	0
+ 1356 012b 00       		.byte	0
+ 1357              		.section	.debug_aranges,"",%progbits
+ 1358 0000 1C000000 		.4byte	0x1c
+ 1359 0004 0200     		.2byte	0x2
+ 1360 0006 00000000 		.4byte	.Ldebug_info0
+ 1361 000a 04       		.byte	0x4
+ 1362 000b 00       		.byte	0
+ 1363 000c 0000     		.2byte	0
+ 1364 000e 0000     		.2byte	0
+ 1365 0010 00000000 		.4byte	.LFB389
+ 1366 0014 10000000 		.4byte	.LFE389-.LFB389
+ 1367 0018 00000000 		.4byte	0
+ 1368 001c 00000000 		.4byte	0
+ 1369              		.section	.debug_ranges,"",%progbits
+ 1370              	.Ldebug_ranges0:
+ 1371 0000 00000000 		.4byte	.LFB389
+ 1372 0004 10000000 		.4byte	.LFE389
+ 1373 0008 00000000 		.4byte	0
+ 1374 000c 00000000 		.4byte	0
+ 1375              		.section	.debug_line,"",%progbits
+ 1376              	.Ldebug_line0:
+ 1377 0000 41020000 		.section	.debug_str,"MS",%progbits,1
+ 1377      02002002 
+ 1377      00000201 
+ 1377      FB0E0D00 
+ 1377      01010101 
+ 1378              	.LASF56:
+ 1379 0000 70726F74 		.ascii	"protBusMasterMask\000"
+ 1379      4275734D 
+ 1379      61737465 
+ 1379      724D6173 
+ 1379      6B00
+ 1380              	.LASF144:
+ 1381 0012 43595F43 		.ascii	"CY_CTDAC_OUTPUT_UNBUFFERED\000"
+ 1381      54444143 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 28
+
+
+ 1381      5F4F5554 
+ 1381      5055545F 
+ 1381      554E4255 
+ 1382              	.LASF66:
+ 1383 002d 666C6173 		.ascii	"flashCtlMainWs3Freq\000"
+ 1383      6843746C 
+ 1383      4D61696E 
+ 1383      57733346 
+ 1383      72657100 
+ 1384              	.LASF88:
+ 1385 0041 6770696F 		.ascii	"gpioPrtCfgInOffset\000"
+ 1385      50727443 
+ 1385      6667496E 
+ 1385      4F666673 
+ 1385      657400
+ 1386              	.LASF106:
+ 1387 0054 6970634C 		.ascii	"ipcLockStatusOffset\000"
+ 1387      6F636B53 
+ 1387      74617475 
+ 1387      734F6666 
+ 1387      73657400 
+ 1388              	.LASF32:
+ 1389 0068 63727970 		.ascii	"cryptoVersion\000"
+ 1389      746F5665 
+ 1389      7273696F 
+ 1389      6E00
+ 1390              	.LASF50:
+ 1391 0076 70657269 		.ascii	"periClockNr\000"
+ 1391      436C6F63 
+ 1391      6B4E7200 
+ 1392              	.LASF155:
+ 1393 0082 6E657874 		.ascii	"nextValue\000"
+ 1393      56616C75 
+ 1393      6500
+ 1394              	.LASF166:
+ 1395 008c 6D61696E 		.ascii	"main_cm0p.c\000"
+ 1395      5F636D30 
+ 1395      702E6300 
+ 1396              	.LASF41:
+ 1397 0098 63707573 		.ascii	"cpussIpcIrqNr\000"
+ 1397      73497063 
+ 1397      4972714E 
+ 1397      7200
+ 1398              	.LASF160:
+ 1399 00a6 64697669 		.ascii	"dividerIntValue\000"
+ 1399      64657249 
+ 1399      6E745661 
+ 1399      6C756500 
+ 1400              	.LASF85:
+ 1401 00b6 70657269 		.ascii	"periDiv24_5CtlOffset\000"
+ 1401      44697632 
+ 1401      345F3543 
+ 1401      746C4F66 
+ 1401      66736574 
+ 1402              	.LASF92:
+ 1403 00cb 63707573 		.ascii	"cpussCm4ClockCtlOffset\000"
+ 1403      73436D34 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 29
+
+
+ 1403      436C6F63 
+ 1403      6B43746C 
+ 1403      4F666673 
+ 1404              	.LASF168:
+ 1405 00e2 5F5F656E 		.ascii	"__enable_irq\000"
+ 1405      61626C65 
+ 1405      5F697271 
+ 1405      00
+ 1406              	.LASF21:
+ 1407 00ef 63707573 		.ascii	"cpussBase\000"
+ 1407      73426173 
+ 1407      6500
+ 1408              	.LASF70:
+ 1409 00f9 64774368 		.ascii	"dwChCtlPrioPos\000"
+ 1409      43746C50 
+ 1409      72696F50 
+ 1409      6F7300
+ 1410              	.LASF129:
+ 1411 0108 43595F43 		.ascii	"CY_CTDAC_OUTPUT_HIGHZ\000"
+ 1411      54444143 
+ 1411      5F4F5554 
+ 1411      5055545F 
+ 1411      48494748 
+ 1412              	.LASF142:
+ 1413 011e 63795F65 		.ascii	"cy_en_ctdac_ref_source_t\000"
+ 1413      6E5F6374 
+ 1413      6461635F 
+ 1413      7265665F 
+ 1413      736F7572 
+ 1414              	.LASF146:
+ 1415 0137 72656653 		.ascii	"refSource\000"
+ 1415      6F757263 
+ 1415      6500
+ 1416              	.LASF12:
+ 1417 0141 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1417      206C6F6E 
+ 1417      6720756E 
+ 1417      7369676E 
+ 1417      65642069 
+ 1418              	.LASF115:
+ 1419 0158 43595F53 		.ascii	"CY_SYSCLK_DIV_24_5_BIT\000"
+ 1419      5953434C 
+ 1419      4B5F4449 
+ 1419      565F3234 
+ 1419      5F355F42 
+ 1420              	.LASF58:
+ 1421 016f 666C6173 		.ascii	"flashRwwRequired\000"
+ 1421      68527777 
+ 1421      52657175 
+ 1421      69726564 
+ 1421      00
+ 1422              	.LASF143:
+ 1423 0180 43595F43 		.ascii	"CY_CTDAC_OUTPUT_BUFFERED\000"
+ 1423      54444143 
+ 1423      5F4F5554 
+ 1423      5055545F 
+ 1423      42554646 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 30
+
+
+ 1424              	.LASF98:
+ 1425 0199 63707573 		.ascii	"cpussSysTickCtlOffset\000"
+ 1425      73537973 
+ 1425      5469636B 
+ 1425      43746C4F 
+ 1425      66667365 
+ 1426              	.LASF159:
+ 1427 01af 64697669 		.ascii	"dividerNum\000"
+ 1427      6465724E 
+ 1427      756D00
+ 1428              	.LASF135:
+ 1429 01ba 43595F43 		.ascii	"CY_CTDAC_DEGLITCHMODE_NONE\000"
+ 1429      54444143 
+ 1429      5F444547 
+ 1429      4C495443 
+ 1429      484D4F44 
+ 1430              	.LASF59:
+ 1431 01d5 666C6173 		.ascii	"flashPipeRequired\000"
+ 1431      68506970 
+ 1431      65526571 
+ 1431      75697265 
+ 1431      6400
+ 1432              	.LASF124:
+ 1433 01e7 43595F43 		.ascii	"CY_CTDAC_FORMAT_SIGNED\000"
+ 1433      54444143 
+ 1433      5F464F52 
+ 1433      4D41545F 
+ 1433      5349474E 
+ 1434              	.LASF63:
+ 1435 01fe 666C6173 		.ascii	"flashCtlMainWs0Freq\000"
+ 1435      6843746C 
+ 1435      4D61696E 
+ 1435      57733046 
+ 1435      72657100 
+ 1436              	.LASF15:
+ 1437 0212 696E7431 		.ascii	"int16_t\000"
+ 1437      365F7400 
+ 1438              	.LASF11:
+ 1439 021a 6C6F6E67 		.ascii	"long long int\000"
+ 1439      206C6F6E 
+ 1439      6720696E 
+ 1439      7400
+ 1440              	.LASF2:
+ 1441 0228 7369676E 		.ascii	"signed char\000"
+ 1441      65642063 
+ 1441      68617200 
+ 1442              	.LASF79:
+ 1443 0234 70657269 		.ascii	"periDivCmdTypeSelPos\000"
+ 1443      44697643 
+ 1443      6D645479 
+ 1443      70655365 
+ 1443      6C506F73 
+ 1444              	.LASF162:
+ 1445 0249 63795F73 		.ascii	"cy_stc_ctdac_config_t\000"
+ 1445      74635F63 
+ 1445      74646163 
+ 1445      5F636F6E 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 31
+
+
+ 1445      6669675F 
+ 1446              	.LASF37:
+ 1447 025f 69706356 		.ascii	"ipcVersion\000"
+ 1447      65727369 
+ 1447      6F6E00
+ 1448              	.LASF99:
+ 1449 026a 63707573 		.ascii	"cpussCm0NmiCtlOffset\000"
+ 1449      73436D30 
+ 1449      4E6D6943 
+ 1449      746C4F66 
+ 1449      66736574 
+ 1450              	.LASF26:
+ 1451 027f 6873696F 		.ascii	"hsiomBase\000"
+ 1451      6D426173 
+ 1451      6500
+ 1452              	.LASF117:
+ 1453 0289 43595F43 		.ascii	"CY_CTDAC_UPDATE_DIRECT_WRITE\000"
+ 1453      54444143 
+ 1453      5F555044 
+ 1453      4154455F 
+ 1453      44495245 
+ 1454              	.LASF125:
+ 1455 02a6 63795F65 		.ascii	"cy_en_ctdac_format_t\000"
+ 1455      6E5F6374 
+ 1455      6461635F 
+ 1455      666F726D 
+ 1455      61745F74 
+ 1456              	.LASF8:
+ 1457 02bb 6C6F6E67 		.ascii	"long int\000"
+ 1457      20696E74 
+ 1457      00
+ 1458              	.LASF57:
+ 1459 02c4 63727970 		.ascii	"cryptoMemSize\000"
+ 1459      746F4D65 
+ 1459      6D53697A 
+ 1459      6500
+ 1460              	.LASF141:
+ 1461 02d2 43595F43 		.ascii	"CY_CTDAC_REFSOURCE_VDDA\000"
+ 1461      54444143 
+ 1461      5F524546 
+ 1461      534F5552 
+ 1461      43455F56 
+ 1462              	.LASF23:
+ 1463 02ea 70657269 		.ascii	"periBase\000"
+ 1463      42617365 
+ 1463      00
+ 1464              	.LASF55:
+ 1465 02f3 73797350 		.ascii	"sysPmSimoPresent\000"
+ 1465      6D53696D 
+ 1465      6F507265 
+ 1465      73656E74 
+ 1465      00
+ 1466              	.LASF45:
+ 1467 0304 63707573 		.ascii	"cpussFmIrq\000"
+ 1467      73466D49 
+ 1467      727100
+ 1468              	.LASF110:
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 32
+
+
+ 1469 030f 646F7562 		.ascii	"double\000"
+ 1469      6C6500
+ 1470              	.LASF84:
+ 1471 0316 70657269 		.ascii	"periDiv16_5CtlOffset\000"
+ 1471      44697631 
+ 1471      365F3543 
+ 1471      746C4F66 
+ 1471      66736574 
+ 1472              	.LASF48:
+ 1473 032b 73727373 		.ascii	"srssNumPll\000"
+ 1473      4E756D50 
+ 1473      6C6C00
+ 1474              	.LASF169:
+ 1475 0336 6D61696E 		.ascii	"main\000"
+ 1475      00
+ 1476              	.LASF82:
+ 1477 033b 70657269 		.ascii	"periDiv8CtlOffset\000"
+ 1477      44697638 
+ 1477      43746C4F 
+ 1477      66667365 
+ 1477      7400
+ 1478              	.LASF89:
+ 1479 034d 6770696F 		.ascii	"gpioPrtCfgOutOffset\000"
+ 1479      50727443 
+ 1479      66674F75 
+ 1479      744F6666 
+ 1479      73657400 
+ 1480              	.LASF22:
+ 1481 0361 666C6173 		.ascii	"flashcBase\000"
+ 1481      68634261 
+ 1481      736500
+ 1482              	.LASF9:
+ 1483 036c 5F5F7569 		.ascii	"__uint32_t\000"
+ 1483      6E743332 
+ 1483      5F7400
+ 1484              	.LASF118:
+ 1485 0377 43595F43 		.ascii	"CY_CTDAC_UPDATE_BUFFERED_WRITE\000"
+ 1485      54444143 
+ 1485      5F555044 
+ 1485      4154455F 
+ 1485      42554646 
+ 1486              	.LASF4:
+ 1487 0396 5F5F696E 		.ascii	"__int16_t\000"
+ 1487      7431365F 
+ 1487      7400
+ 1488              	.LASF147:
+ 1489 03a0 666F726D 		.ascii	"formatMode\000"
+ 1489      61744D6F 
+ 1489      646500
+ 1490              	.LASF154:
+ 1491 03ab 76616C75 		.ascii	"value\000"
+ 1491      6500
+ 1492              	.LASF90:
+ 1493 03b1 6770696F 		.ascii	"gpioPrtCfgSioOffset\000"
+ 1493      50727443 
+ 1493      66675369 
+ 1493      6F4F6666 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 33
+
+
+ 1493      73657400 
+ 1494              	.LASF42:
+ 1495 03c5 63707573 		.ascii	"cpussDwChNr\000"
+ 1495      73447743 
+ 1495      684E7200 
+ 1496              	.LASF13:
+ 1497 03d1 756E7369 		.ascii	"unsigned int\000"
+ 1497      676E6564 
+ 1497      20696E74 
+ 1497      00
+ 1498              	.LASF19:
+ 1499 03de 73697A65 		.ascii	"sizetype\000"
+ 1499      74797065 
+ 1499      00
+ 1500              	.LASF75:
+ 1501 03e7 70657269 		.ascii	"periTrCmdGrSelMsk\000"
+ 1501      5472436D 
+ 1501      64477253 
+ 1501      656C4D73 
+ 1501      6B00
+ 1502              	.LASF10:
+ 1503 03f9 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1503      20756E73 
+ 1503      69676E65 
+ 1503      6420696E 
+ 1503      7400
+ 1504              	.LASF167:
+ 1505 040b 433A5C55 		.ascii	"C:\\Users\\Finik\\Desktop\\uni_labs_4\\Neiro\\Embed"
+ 1505      73657273 
+ 1505      5C46696E 
+ 1505      696B5C44 
+ 1505      65736B74 
+ 1506 0438 5C50726F 		.ascii	"\\Proj_7.cydsn\000"
+ 1506      6A5F372E 
+ 1506      63796473 
+ 1506      6E00
+ 1507              	.LASF40:
+ 1508 0446 63707573 		.ascii	"cpussIpcNr\000"
+ 1508      73497063 
+ 1508      4E7200
+ 1509              	.LASF148:
+ 1510 0451 75706461 		.ascii	"updateMode\000"
+ 1510      74654D6F 
+ 1510      646500
+ 1511              	.LASF27:
+ 1512 045c 6770696F 		.ascii	"gpioBase\000"
+ 1512      42617365 
+ 1512      00
+ 1513              	.LASF157:
+ 1514 0465 636F6E66 		.ascii	"configClock\000"
+ 1514      6967436C 
+ 1514      6F636B00 
+ 1515              	.LASF65:
+ 1516 0471 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
+ 1516      6843746C 
+ 1516      4D61696E 
+ 1516      57733246 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 34
+
+
+ 1516      72657100 
+ 1517              	.LASF76:
+ 1518 0485 70657269 		.ascii	"periTrGrOffset\000"
+ 1518      54724772 
+ 1518      4F666673 
+ 1518      657400
+ 1519              	.LASF103:
+ 1520 0494 63707573 		.ascii	"cpussRam1Ctl0\000"
+ 1520      7352616D 
+ 1520      3143746C 
+ 1520      3000
+ 1521              	.LASF139:
+ 1522 04a2 63795F65 		.ascii	"cy_en_ctdac_deglitch_t\000"
+ 1522      6E5F6374 
+ 1522      6461635F 
+ 1522      6465676C 
+ 1522      69746368 
+ 1523              	.LASF77:
+ 1524 04b9 70657269 		.ascii	"periTrGrSize\000"
+ 1524      54724772 
+ 1524      53697A65 
+ 1524      00
+ 1525              	.LASF170:
+ 1526 04c6 43795F53 		.ascii	"Cy_SysEnableCM4\000"
+ 1526      7973456E 
+ 1526      61626C65 
+ 1526      434D3400 
+ 1527              	.LASF114:
+ 1528 04d6 43595F53 		.ascii	"CY_SYSCLK_DIV_16_5_BIT\000"
+ 1528      5953434C 
+ 1528      4B5F4449 
+ 1528      565F3136 
+ 1528      5F355F42 
+ 1529              	.LASF35:
+ 1530 04ed 6770696F 		.ascii	"gpioVersion\000"
+ 1530      56657273 
+ 1530      696F6E00 
+ 1531              	.LASF16:
+ 1532 04f9 75696E74 		.ascii	"uint16_t\000"
+ 1532      31365F74 
+ 1532      00
+ 1533              	.LASF107:
+ 1534 0502 63795F73 		.ascii	"cy_stc_device_t\000"
+ 1534      74635F64 
+ 1534      65766963 
+ 1534      655F7400 
+ 1535              	.LASF126:
+ 1536 0512 43595F43 		.ascii	"CY_CTDAC_DEEPSLEEP_DISABLE\000"
+ 1536      54444143 
+ 1536      5F444545 
+ 1536      50534C45 
+ 1536      45505F44 
+ 1537              	.LASF95:
+ 1538 052d 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
+ 1538      73436D34 
+ 1538      50777243 
+ 1538      746C4F66 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 35
+
+
+ 1538      66736574 
+ 1539              	.LASF127:
+ 1540 0542 43595F43 		.ascii	"CY_CTDAC_DEEPSLEEP_ENABLE\000"
+ 1540      54444143 
+ 1540      5F444545 
+ 1540      50534C45 
+ 1540      45505F45 
+ 1541              	.LASF53:
+ 1542 055c 65704D6F 		.ascii	"epMonitorNr\000"
+ 1542      6E69746F 
+ 1542      724E7200 
+ 1543              	.LASF100:
+ 1544 0568 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
+ 1544      73436D34 
+ 1544      4E6D6943 
+ 1544      746C4F66 
+ 1544      66736574 
+ 1545              	.LASF149:
+ 1546 057d 6465676C 		.ascii	"deglitchMode\000"
+ 1546      69746368 
+ 1546      4D6F6465 
+ 1546      00
+ 1547              	.LASF96:
+ 1548 058a 63707573 		.ascii	"cpussTrimRamCtlOffset\000"
+ 1548      73547269 
+ 1548      6D52616D 
+ 1548      43746C4F 
+ 1548      66667365 
+ 1549              	.LASF120:
+ 1550 05a0 43595F43 		.ascii	"CY_CTDAC_UPDATE_STROBE_EDGE_IMMEDIATE\000"
+ 1550      54444143 
+ 1550      5F555044 
+ 1550      4154455F 
+ 1550      5354524F 
+ 1551              	.LASF31:
+ 1552 05c6 63707573 		.ascii	"cpussVersion\000"
+ 1552      73566572 
+ 1552      73696F6E 
+ 1552      00
+ 1553              	.LASF38:
+ 1554 05d3 70657269 		.ascii	"periVersion\000"
+ 1554      56657273 
+ 1554      696F6E00 
+ 1555              	.LASF94:
+ 1556 05df 63707573 		.ascii	"cpussCm0StatusOffset\000"
+ 1556      73436D30 
+ 1556      53746174 
+ 1556      75734F66 
+ 1556      66736574 
+ 1557              	.LASF131:
+ 1558 05f4 43595F43 		.ascii	"CY_CTDAC_OUTPUT_VALUE_PLUS1\000"
+ 1558      54444143 
+ 1558      5F4F5554 
+ 1558      5055545F 
+ 1558      56414C55 
+ 1559              	.LASF161:
+ 1560 0610 64697669 		.ascii	"dividerFracValue\000"
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 36
+
+
+ 1560      64657246 
+ 1560      72616356 
+ 1560      616C7565 
+ 1560      00
+ 1561              	.LASF68:
+ 1562 0621 64774368 		.ascii	"dwChOffset\000"
+ 1562      4F666673 
+ 1562      657400
+ 1563              	.LASF28:
+ 1564 062c 70617373 		.ascii	"passBase\000"
+ 1564      42617365 
+ 1564      00
+ 1565              	.LASF43:
+ 1566 0635 63707573 		.ascii	"cpussFlashPaSize\000"
+ 1566      73466C61 
+ 1566      73685061 
+ 1566      53697A65 
+ 1566      00
+ 1567              	.LASF81:
+ 1568 0646 70657269 		.ascii	"periDivCmdPaTypeSelPos\000"
+ 1568      44697643 
+ 1568      6D645061 
+ 1568      54797065 
+ 1568      53656C50 
+ 1569              	.LASF130:
+ 1570 065d 43595F43 		.ascii	"CY_CTDAC_OUTPUT_VALUE\000"
+ 1570      54444143 
+ 1570      5F4F5554 
+ 1570      5055545F 
+ 1570      56414C55 
+ 1571              	.LASF128:
+ 1572 0673 63795F65 		.ascii	"cy_en_ctdac_deep_sleep_t\000"
+ 1572      6E5F6374 
+ 1572      6461635F 
+ 1572      64656570 
+ 1572      5F736C65 
+ 1573              	.LASF104:
+ 1574 068c 63707573 		.ascii	"cpussRam2Ctl0\000"
+ 1574      7352616D 
+ 1574      3243746C 
+ 1574      3000
+ 1575              	.LASF140:
+ 1576 069a 43595F43 		.ascii	"CY_CTDAC_REFSOURCE_EXTERNAL\000"
+ 1576      54444143 
+ 1576      5F524546 
+ 1576      534F5552 
+ 1576      43455F45 
+ 1577              	.LASF112:
+ 1578 06b6 43595F53 		.ascii	"CY_SYSCLK_DIV_8_BIT\000"
+ 1578      5953434C 
+ 1578      4B5F4449 
+ 1578      565F385F 
+ 1578      42495400 
+ 1579              	.LASF39:
+ 1580 06ca 70726F74 		.ascii	"protVersion\000"
+ 1580      56657273 
+ 1580      696F6E00 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 37
+
+
+ 1581              	.LASF72:
+ 1582 06d6 64775374 		.ascii	"dwStatusChIdxPos\000"
+ 1582      61747573 
+ 1582      43684964 
+ 1582      78506F73 
+ 1582      00
+ 1583              	.LASF54:
+ 1584 06e7 75646250 		.ascii	"udbPresent\000"
+ 1584      72657365 
+ 1584      6E7400
+ 1585              	.LASF116:
+ 1586 06f2 63795F65 		.ascii	"cy_en_divider_types_t\000"
+ 1586      6E5F6469 
+ 1586      76696465 
+ 1586      725F7479 
+ 1586      7065735F 
+ 1587              	.LASF25:
+ 1588 0708 70726F74 		.ascii	"protBase\000"
+ 1588      42617365 
+ 1588      00
+ 1589              	.LASF34:
+ 1590 0711 666C6173 		.ascii	"flashcVersion\000"
+ 1590      68635665 
+ 1590      7273696F 
+ 1590      6E00
+ 1591              	.LASF30:
+ 1592 071f 63727970 		.ascii	"cryptoBase\000"
+ 1592      746F4261 
+ 1592      736500
+ 1593              	.LASF51:
+ 1594 072a 736D6966 		.ascii	"smifDeviceNr\000"
+ 1594      44657669 
+ 1594      63654E72 
+ 1594      00
+ 1595              	.LASF105:
+ 1596 0737 69706353 		.ascii	"ipcStructSize\000"
+ 1596      74727563 
+ 1596      7453697A 
+ 1596      6500
+ 1597              	.LASF109:
+ 1598 0745 666C6F61 		.ascii	"float\000"
+ 1598      7400
+ 1599              	.LASF73:
+ 1600 074b 64775374 		.ascii	"dwStatusChIdxMsk\000"
+ 1600      61747573 
+ 1600      43684964 
+ 1600      784D736B 
+ 1600      00
+ 1601              	.LASF163:
+ 1602 075c 63795F64 		.ascii	"cy_device\000"
+ 1602      65766963 
+ 1602      6500
+ 1603              	.LASF101:
+ 1604 0766 63707573 		.ascii	"cpussRomCtl\000"
+ 1604      73526F6D 
+ 1604      43746C00 
+ 1605              	.LASF134:
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 38
+
+
+ 1606 0772 63795F65 		.ascii	"cy_en_ctdac_output_mode_t\000"
+ 1606      6E5F6374 
+ 1606      6461635F 
+ 1606      6F757470 
+ 1606      75745F6D 
+ 1607              	.LASF71:
+ 1608 078c 64774368 		.ascii	"dwChCtlPreemptablePos\000"
+ 1608      43746C50 
+ 1608      7265656D 
+ 1608      70746162 
+ 1608      6C65506F 
+ 1609              	.LASF132:
+ 1610 07a2 43595F43 		.ascii	"CY_CTDAC_OUTPUT_VSSA\000"
+ 1610      54444143 
+ 1610      5F4F5554 
+ 1610      5055545F 
+ 1610      56535341 
+ 1611              	.LASF24:
+ 1612 07b7 75646242 		.ascii	"udbBase\000"
+ 1612      61736500 
+ 1613              	.LASF111:
+ 1614 07bf 5F426F6F 		.ascii	"_Bool\000"
+ 1614      6C00
+ 1615              	.LASF17:
+ 1616 07c5 696E7433 		.ascii	"int32_t\000"
+ 1616      325F7400 
+ 1617              	.LASF1:
+ 1618 07cd 756E7369 		.ascii	"unsigned char\000"
+ 1618      676E6564 
+ 1618      20636861 
+ 1618      7200
+ 1619              	.LASF67:
+ 1620 07db 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
+ 1620      6843746C 
+ 1620      4D61696E 
+ 1620      57733446 
+ 1620      72657100 
+ 1621              	.LASF158:
+ 1622 07ef 64697669 		.ascii	"dividerType\000"
+ 1622      64657254 
+ 1622      79706500 
+ 1623              	.LASF0:
+ 1624 07fb 73686F72 		.ascii	"short int\000"
+ 1624      7420696E 
+ 1624      7400
+ 1625              	.LASF74:
+ 1626 0805 70657269 		.ascii	"periTrCmdOffset\000"
+ 1626      5472436D 
+ 1626      644F6666 
+ 1626      73657400 
+ 1627              	.LASF119:
+ 1628 0815 43595F43 		.ascii	"CY_CTDAC_UPDATE_STROBE_EDGE_SYNC\000"
+ 1628      54444143 
+ 1628      5F555044 
+ 1628      4154455F 
+ 1628      5354524F 
+ 1629              	.LASF78:
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 39
+
+
+ 1630 0836 70657269 		.ascii	"periDivCmdDivSelMsk\000"
+ 1630      44697643 
+ 1630      6D644469 
+ 1630      7653656C 
+ 1630      4D736B00 
+ 1631              	.LASF123:
+ 1632 084a 43595F43 		.ascii	"CY_CTDAC_FORMAT_UNSIGNED\000"
+ 1632      54444143 
+ 1632      5F464F52 
+ 1632      4D41545F 
+ 1632      554E5349 
+ 1633              	.LASF49:
+ 1634 0863 73727373 		.ascii	"srssNumHfroot\000"
+ 1634      4E756D48 
+ 1634      66726F6F 
+ 1634      7400
+ 1635              	.LASF62:
+ 1636 0871 666C6173 		.ascii	"flashEraseDelay\000"
+ 1636      68457261 
+ 1636      73654465 
+ 1636      6C617900 
+ 1637              	.LASF18:
+ 1638 0881 75696E74 		.ascii	"uint32_t\000"
+ 1638      33325F74 
+ 1638      00
+ 1639              	.LASF3:
+ 1640 088a 5F5F7569 		.ascii	"__uint8_t\000"
+ 1640      6E74385F 
+ 1640      7400
+ 1641              	.LASF165:
+ 1642 0894 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1642      43313120 
+ 1642      352E342E 
+ 1642      31203230 
+ 1642      31363036 
+ 1643 08c7 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 1643      20726576 
+ 1643      6973696F 
+ 1643      6E203233 
+ 1643      37373135 
+ 1644 08fa 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 1644      67202D66 
+ 1644      66756E63 
+ 1644      74696F6E 
+ 1644      2D736563 
+ 1645              	.LASF20:
+ 1646 0926 6C6F6E67 		.ascii	"long double\000"
+ 1646      20646F75 
+ 1646      626C6500 
+ 1647              	.LASF108:
+ 1648 0932 63686172 		.ascii	"char\000"
+ 1648      00
+ 1649              	.LASF152:
+ 1650 0937 64656570 		.ascii	"deepSleep\000"
+ 1650      536C6565 
+ 1650      7000
+ 1651              	.LASF102:
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 40
+
+
+ 1652 0941 63707573 		.ascii	"cpussRam0Ctl0\000"
+ 1652      7352616D 
+ 1652      3043746C 
+ 1652      3000
+ 1653              	.LASF5:
+ 1654 094f 5F5F7569 		.ascii	"__uint16_t\000"
+ 1654      6E743136 
+ 1654      5F7400
+ 1655              	.LASF83:
+ 1656 095a 70657269 		.ascii	"periDiv16CtlOffset\000"
+ 1656      44697631 
+ 1656      3643746C 
+ 1656      4F666673 
+ 1656      657400
+ 1657              	.LASF7:
+ 1658 096d 5F5F696E 		.ascii	"__int32_t\000"
+ 1658      7433325F 
+ 1658      7400
+ 1659              	.LASF36:
+ 1660 0977 6873696F 		.ascii	"hsiomVersion\000"
+ 1660      6D566572 
+ 1660      73696F6E 
+ 1660      00
+ 1661              	.LASF61:
+ 1662 0984 666C6173 		.ascii	"flashProgramDelay\000"
+ 1662      6850726F 
+ 1662      6772616D 
+ 1662      44656C61 
+ 1662      7900
+ 1663              	.LASF138:
+ 1664 0996 43595F43 		.ascii	"CY_CTDAC_DEGLITCHMODE_BOTH\000"
+ 1664      54444143 
+ 1664      5F444547 
+ 1664      4C495443 
+ 1664      484D4F44 
+ 1665              	.LASF64:
+ 1666 09b1 666C6173 		.ascii	"flashCtlMainWs1Freq\000"
+ 1666      6843746C 
+ 1666      4D61696E 
+ 1666      57733146 
+ 1666      72657100 
+ 1667              	.LASF156:
+ 1668 09c5 656E6162 		.ascii	"enableInterrupt\000"
+ 1668      6C65496E 
+ 1668      74657272 
+ 1668      75707400 
+ 1669              	.LASF6:
+ 1670 09d5 73686F72 		.ascii	"short unsigned int\000"
+ 1670      7420756E 
+ 1670      7369676E 
+ 1670      65642069 
+ 1670      6E7400
+ 1671              	.LASF69:
+ 1672 09e8 64774368 		.ascii	"dwChSize\000"
+ 1672      53697A65 
+ 1672      00
+ 1673              	.LASF52:
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 41
+
+
+ 1674 09f1 70617373 		.ascii	"passSarChannels\000"
+ 1674      53617243 
+ 1674      68616E6E 
+ 1674      656C7300 
+ 1675              	.LASF150:
+ 1676 0a01 6F757470 		.ascii	"outputMode\000"
+ 1676      75744D6F 
+ 1676      646500
+ 1677              	.LASF44:
+ 1678 0a0c 63707573 		.ascii	"cpussIpc0Irq\000"
+ 1678      73497063 
+ 1678      30497271 
+ 1678      00
+ 1679              	.LASF136:
+ 1680 0a19 43595F43 		.ascii	"CY_CTDAC_DEGLITCHMODE_UNBUFFERED\000"
+ 1680      54444143 
+ 1680      5F444547 
+ 1680      4C495443 
+ 1680      484D4F44 
+ 1681              	.LASF91:
+ 1682 0a3a 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
+ 1682      73436D30 
+ 1682      436C6F63 
+ 1682      6B43746C 
+ 1682      4F666673 
+ 1683              	.LASF87:
+ 1684 0a51 6770696F 		.ascii	"gpioPrtCfgOffset\000"
+ 1684      50727443 
+ 1684      66674F66 
+ 1684      66736574 
+ 1684      00
+ 1685              	.LASF137:
+ 1686 0a62 43595F43 		.ascii	"CY_CTDAC_DEGLITCHMODE_BUFFERED\000"
+ 1686      54444143 
+ 1686      5F444547 
+ 1686      4C495443 
+ 1686      484D4F44 
+ 1687              	.LASF121:
+ 1688 0a81 43595F43 		.ascii	"CY_CTDAC_UPDATE_STROBE_LEVEL\000"
+ 1688      54444143 
+ 1688      5F555044 
+ 1688      4154455F 
+ 1688      5354524F 
+ 1689              	.LASF46:
+ 1690 0a9e 63707573 		.ascii	"cpussNotConnectedIrq\000"
+ 1690      734E6F74 
+ 1690      436F6E6E 
+ 1690      65637465 
+ 1690      64497271 
+ 1691              	.LASF151:
+ 1692 0ab3 6F757470 		.ascii	"outputBuffer\000"
+ 1692      75744275 
+ 1692      66666572 
+ 1692      00
+ 1693              	.LASF60:
+ 1694 0ac0 666C6173 		.ascii	"flashWriteDelay\000"
+ 1694      68577269 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 42
+
+
+ 1694      74654465 
+ 1694      6C617900 
+ 1695              	.LASF14:
+ 1696 0ad0 75696E74 		.ascii	"uint8_t\000"
+ 1696      385F7400 
+ 1697              	.LASF93:
+ 1698 0ad8 63707573 		.ascii	"cpussCm4StatusOffset\000"
+ 1698      73436D34 
+ 1698      53746174 
+ 1698      75734F66 
+ 1698      66736574 
+ 1699              	.LASF86:
+ 1700 0aed 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
+ 1700      50727449 
+ 1700      6E747243 
+ 1700      66674F66 
+ 1700      66736574 
+ 1701              	.LASF122:
+ 1702 0b02 63795F65 		.ascii	"cy_en_ctdac_update_t\000"
+ 1702      6E5F6374 
+ 1702      6461635F 
+ 1702      75706461 
+ 1702      74655F74 
+ 1703              	.LASF97:
+ 1704 0b17 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
+ 1704      73547269 
+ 1704      6D526F6D 
+ 1704      43746C4F 
+ 1704      66667365 
+ 1705              	.LASF113:
+ 1706 0b2d 43595F53 		.ascii	"CY_SYSCLK_DIV_16_BIT\000"
+ 1706      5953434C 
+ 1706      4B5F4449 
+ 1706      565F3136 
+ 1706      5F424954 
+ 1707              	.LASF47:
+ 1708 0b42 73727373 		.ascii	"srssNumClkpath\000"
+ 1708      4E756D43 
+ 1708      6C6B7061 
+ 1708      746800
+ 1709              	.LASF33:
+ 1710 0b51 64775665 		.ascii	"dwVersion\000"
+ 1710      7273696F 
+ 1710      6E00
+ 1711              	.LASF29:
+ 1712 0b5b 69706342 		.ascii	"ipcBase\000"
+ 1712      61736500 
+ 1713              	.LASF80:
+ 1714 0b63 70657269 		.ascii	"periDivCmdPaDivSelPos\000"
+ 1714      44697643 
+ 1714      6D645061 
+ 1714      44697653 
+ 1714      656C506F 
+ 1715              	.LASF133:
+ 1716 0b79 43595F43 		.ascii	"CY_CTDAC_OUTPUT_VREF\000"
+ 1716      54444143 
+ 1716      5F4F5554 
+ARM GAS  C:\Users\Finik\AppData\Local\Temp\ccLRiu5x.s 			page 43
+
+
+ 1716      5055545F 
+ 1716      56524546 
+ 1717              	.LASF145:
+ 1718 0b8e 63795F65 		.ascii	"cy_en_ctdac_output_buffer_t\000"
+ 1718      6E5F6374 
+ 1718      6461635F 
+ 1718      6F757470 
+ 1718      75745F62 
+ 1719              	.LASF153:
+ 1720 0baa 6465676C 		.ascii	"deglitchCycles\000"
+ 1720      69746368 
+ 1720      4379636C 
+ 1720      657300
+ 1721              	.LASF164:
+ 1722 0bb9 56444143 		.ascii	"VDAC_1_ctdacConfig\000"
+ 1722      5F315F63 
+ 1722      74646163 
+ 1722      436F6E66 
+ 1722      696700
+ 1723              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

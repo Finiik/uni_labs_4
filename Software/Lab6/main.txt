@@ -1,0 +1,154 @@
+/**
+  @file main.ino
+  @brief Програма для керування сервоприводом та вимірювання температури за допомогою ESP32.
+  @author Mykyta Siryk
+  @date 2025-09-21
+*/
+
+// --- Включення бібліотек ---
+#include <ESP32Servo.h>
+#include <DHT.h>
+
+// --- Конфігурація пінів ---
+
+/**
+  @def button1Pin
+  @brief Пін GPIO для першої кнопки (Button 1).
+  @details Використовується для обертання сервопривода за годинниковою стрілкою в ручному режимі.
+*/
+const int button1Pin = 18;
+
+/**
+  @def button2Pin
+  @brief Пін GPIO для другої кнопки (Button 2).
+  @details Використовується для обертання сервопривода проти годинникової стрілки в ручному режимі.
+*/
+const int button2Pin = 5;
+
+/**
+  @def button3Pin
+  @brief Пін GPIO для третьої кнопки (Button 3).
+  @details Ця кнопка перемикає режими роботи: автоматичний (керування за температурою) та ручний (керування кнопками).
+*/
+const int button3Pin = 19;
+
+/**
+  @def servoPin
+  @brief Пін GPIO для підключення сервопривода.
+*/
+const int servoPin = 35;
+
+/**
+  @def dhtPin
+  @brief Пін GPIO для підключення датчика температури та вологості DHT22.
+*/
+const int dhtPin = 7;
+
+/**
+  @def ledPin
+  @brief Пін GPIO для світлодіода (LED).
+  @details На даний момент не використовується в коді.
+*/
+const int ledPin = 13;
+
+// --- Ініціалізація об'єктів та змінних ---
+
+/**
+  @var servo
+  @brief Об'єкт класу Servo для керування сервоприводом.
+*/
+Servo servo;
+
+/**
+  @var pos
+  @brief Поточна позиція сервопривода в градусах (від 0 до 180).
+  @details Ініціалізується значенням 1.
+*/
+int pos = 1;
+
+/**
+  @var dht
+  @brief Об'єкт класу DHT для роботи з датчиком DHT22.
+  @details Конструктор приймає пін та тип датчика.
+*/
+DHT dht(dhtPin, DHT22);
+
+// --- Функції ---
+
+/**
+  @brief Функція налаштування (виконується один раз при старті).
+  @details Ініціалізує послідовний порт для налагодження, підключає сервопривід до піна,
+  запускає роботу датчика DHT та налаштовує піни кнопок.
+  Кнопки Button 1 та Button 2 налаштовані як INPUT_PULLUP, що дозволяє використовувати їх без зовнішніх підтягувальних резисторів.
+*/
+void setup() {
+  Serial.begin(9600);
+  servo.attach(servoPin);
+  dht.begin();
+  pinMode(button1Pin, INPUT_PULLUP);
+  pinMode(button2Pin, INPUT_PULLUP);
+  pinMode(button3Pin, INPUT);
+}
+
+/**
+  @brief Функція для обертання сервопривода за годинниковою стрілкою.
+  @details Поступово збільшує поточну позицію сервопривода.
+  Якщо позиція досягає 180 градусів, вона скидається до 1, і сервопривід повертається в початкове положення.
+*/
+void rotateServoClockwise() {
+  if (pos > 0 && pos < 180) {
+    servo.write(pos);
+    pos += 1;
+    delay(5);
+  } else {
+    pos = 1;
+    servo.write(pos);
+    delay(500);
+  }
+}
+
+/**
+  @brief Функція для обертання сервопривода проти годинникової стрілки.
+  @details Поступово зменшує поточну позицію сервопривода.
+  Якщо позиція досягає 0 градусів, вона скидається до 179, і сервопривід повертається в початкове положення.
+*/
+void rotateServoCounterClockwise() {
+  if (pos > 0 && pos < 180) {
+    servo.write(pos);
+    pos -= 1;
+    delay(5);
+  } else {
+    pos = 179;
+    servo.write(pos);
+    delay(500);
+  }
+}
+
+/**
+  @brief Головний цикл програми (виконується безперервно).
+  @details Зчитує значення температури з датчика DHT та стан третьої кнопки.
+  Залежно від стану кнопки, програма працює в одному з двох режимів:
+  - **Автоматичний режим (кнопка 3 увімкнена):** Сервопривід обертається за годинниковою стрілкою, якщо температура в межах від 15°C до 25°C, інакше - проти годинникової стрілки.
+  - **Ручний режим (кнопка 3 вимкнена):** Сервопривід керується кнопками Button 1 (за годинниковою стрілкою) та Button 2 (проти годинникової стрілки).
+*/
+void loop() {
+  float temperature = dht.readTemperature();
+
+  int mode = digitalRead(button3Pin);
+
+  if (!mode) {
+    if ((temperature >= 15.0) || (temperature <= 25.0)) {
+      rotateServoClockwise();
+    } else {
+      rotateServoCounterClockwise();
+    }
+  } else {
+    if (!digitalRead(button1Pin)) {
+      rotateServoClockwise();
+    }
+
+    if (!digitalRead(button2Pin)) {
+      rotateServoCounterClockwise();
+    }
+  }
+}

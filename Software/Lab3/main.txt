@@ -1,0 +1,112 @@
+/**
+   @file main.ino
+   @brief Програма для керування трьома світлодіодами за допомогою ШІМ на ESP32.
+   @author Mykyta Siryk
+   @date 2025-09-14
+*/
+
+// --- Конфігурація ШІМ та пінів ---
+
+/**
+   @def PWM_FREQ
+   @brief Частота ШІМ-сигналу в герцах (Гц).
+   @details Використання 500 Гц забезпечує стабільне світіння без видимого мерехтіння.
+*/
+const int PWM_FREQ = 500;
+
+/**
+   @def PWM_RESOLUTION
+   @brief Роздільна здатність ШІМ в бітах.
+   @details Використання 10 біт дає 2^10 = 1024 градації яскравості (від 0 до 1023),
+   що дозволяє досягти дуже плавного переходу.
+*/
+const int PWM_RESOLUTION = 10;
+
+/**
+   @def MAX_DUTY_CYCLE
+   @brief Максимальне значення коефіцієнта заповнення (duty cycle) для ШІМ.
+   @details Розраховується як (2^PWM_RESOLUTION) - 1.
+   Для 10 біт це буде (2^10) - 1 = 1023.
+*/
+const int MAX_DUTY_CYCLE = (0x01 << PWM_RESOLUTION) - 1;
+
+/**
+   @def LED1_PIN
+   @brief Пін GPIO для підключення першого світлодіода (LED1).
+*/
+const int LED1_PIN = 18;
+
+/**
+   @def LED2_PIN
+   @brief Пін GPIO для підключення другого світлодіода (LED2).
+*/
+const int LED2_PIN = 19;
+
+/**
+   @def LED3_PIN
+   @brief Пін GPIO для підключення третього світлодіода (LED3).
+*/
+const int LED3_PIN = 21;
+
+/**
+   @def DELAY_MS
+   @brief Розрахункова затримка між кроками зміни яскравості в мілісекундах.
+   @details Загальний час засвічування/загасання становить 5 секунд (5000 мс).
+   Це значення ділиться на кількість кроків (MAX_DUTY_CYCLE),
+   щоб кожен крок займав рівномірну частину часу.
+*/
+const float DELAY_MS = 5000.0 / (MAX_DUTY_CYCLE);
+
+/**
+   @brief Функція налаштування (виконується один раз при старті).
+   @details Ініціалізує канали ШІМ для кожного світлодіода за допомогою нового API `ledcAttach()`.
+   Функція автоматично прив'язує пін до вільного каналу ШІМ і налаштовує його частоту та роздільну здатність.
+*/
+void setup() {
+  ledcAttach(LED1_PIN, PWM_FREQ, PWM_RESOLUTION);
+  ledcAttach(LED2_PIN, PWM_FREQ, PWM_RESOLUTION);
+  ledcAttach(LED3_PIN, PWM_FREQ, PWM_RESOLUTION);
+}
+
+/**
+   @brief Головний цикл програми (виконується безперервно).
+   @details Реалізує послідовний алгоритм засвічування та загасання світлодіодів.
+   Використовує цикли `for` для плавної зміни яскравості та функцію `delay()`
+   для створення затримок між етапами.
+*/
+void loop() {
+  // Плавно засвічуємо LED1 від 0 до MAX_DUTY_CYCLE
+  for (int dutyCycle = 0; dutyCycle <= MAX_DUTY_CYCLE; dutyCycle++) {
+    ledcWrite(LED1_PIN, dutyCycle);
+    delay(DELAY_MS);
+  }
+
+  // Чекаємо 1 секунду перед початком наступного етапу
+  delay(1000);
+
+  // Плавно засвічуємо LED2 та одночасно загасаємо LED1
+  for (int dutyCycle = 0; dutyCycle <= MAX_DUTY_CYCLE; dutyCycle++) {
+    ledcWrite(LED2_PIN, dutyCycle);
+    ledcWrite(LED1_PIN, MAX_DUTY_CYCLE - dutyCycle);
+    delay(DELAY_MS);
+  }
+
+  // Чекаємо 1 секунду
+  delay(1000);
+
+  // Плавно засвічуємо LED3 та одночасно загасаємо LED2
+  for (int dutyCycle = 0; dutyCycle <= MAX_DUTY_CYCLE; dutyCycle++) {
+    ledcWrite(LED3_PIN, dutyCycle);
+    ledcWrite(LED2_PIN, MAX_DUTY_CYCLE - dutyCycle);
+    delay(DELAY_MS);
+  }
+
+  // Чекаємо 1 секунду
+  delay(1000);
+
+  // Плавно загасаємо LED3 від MAX_DUTY_CYCLE до 0
+  for (int dutyCycle = MAX_DUTY_CYCLE; dutyCycle >= 0; dutyCycle--) {
+    ledcWrite(LED3_PIN, dutyCycle);
+    delay(DELAY_MS);
+  }
+}

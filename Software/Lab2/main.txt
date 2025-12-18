@@ -1,0 +1,131 @@
+/**
+   @file main.ino
+   @brief Програма керування чотирма світлодіодами за допомогою кнопки.
+
+   Світлодіоди блимають одночасно з певною частотою (F0), коли кнопка натиснута.
+   Коли кнопка відпущена, всі світлодіоди вимикаються.
+   Код використовує неблокуючий підхід (millis()) для керування блиманням,
+   що дозволяє постійно відстежувати стан кнопки.
+   @author Mykyta Siryk
+   @date 2025-09-13
+*/
+
+// --- Визначення констант та змінних ---
+
+/**
+   @def BUTTON_NOT_PRESSED
+   @brief Високий рівень сигналу, коли кнопка не натиснута.
+   @def BUTTON_PRESSED
+   @brief Низький рівень сигналу, коли кнопка натиснута.
+*/
+#define BUTTON_NOT_PRESSED HIGH
+#define BUTTON_PRESSED LOW
+
+/**
+   @def F0
+   @brief Початкова частота блимання світлодіодів у Гц.
+*/
+#define F0 0.75
+
+/**
+   @def buttonPin
+   @brief Пін для вхідної кнопки.
+   @def ledPins
+   @brief Масив пінів для чотирьох світлодіодів.
+*/
+const int buttonPin = 4;
+const int ledPins[4] = { 5, 13, 14, 15 };
+
+/**
+   @var oldValue
+   @brief Змінна для зберігання попереднього стану кнопки.
+   @details Використовується для виявлення зміни стану кнопки.
+*/
+int oldValue = BUTTON_NOT_PRESSED;
+
+/**
+   @var halfPeriod
+   @brief Півперіод блимання в мілісекундах.
+   @details Визначає тривалість кожного стану (увімкнено/вимкнено).
+   Формула: (1.0 / F0) / 2.0 * 1000.
+*/
+const int halfPeriod = (1.0 / F0) / 2.0 * 1000;
+
+/**
+   @var previousMillis
+   @brief Зберігає час останньої зміни стану світлодіодів.
+   @details Необхідна для реалізації неблокуючої затримки.
+*/
+unsigned long previousMillis = 0;
+
+/**
+   @var ledState
+   @brief Зберігає поточний стан світлодіодів (увімкнено/вимкнено).
+*/
+int ledState = LOW;
+
+/**
+   @brief Налаштування програми.
+
+   Ініціалізує послідовний зв'язок для налагодження,
+   налаштовує пін кнопки як вхідний з внутрішнім підтягуючим резистором
+   і встановлює піни світлодіодів як вихідні.
+*/
+void setup() {
+  Serial.begin(115200);
+  pinMode(buttonPin, INPUT_PULLUP);
+  for (int i = 0; i < 4; i++) {
+    pinMode(ledPins[i], OUTPUT);
+  }
+  Serial.println("Налаштування завершено.");
+}
+
+/**
+   @brief Основний цикл програми.
+
+   Безперервно зчитує стан кнопки та реагує на його зміну.
+   Якщо кнопка натиснута, викликає функцію блимання світлодіодів.
+*/
+void loop() {
+  int newValue = digitalRead(buttonPin);
+
+  if (newValue != oldValue) {
+    if (newValue == BUTTON_NOT_PRESSED) {
+      for (int i = 0; i < 4; i++) {
+        digitalWrite(ledPins[i], LOW);
+      }
+      Serial.println("Кнопка відпущена - Світлодіоди ВИМКНЕНО");
+    }
+    oldValue = newValue;
+  }
+
+  if (newValue == BUTTON_PRESSED) {
+    blinkAllLEDs();
+  }
+}
+
+/**
+   @brief Функція блимання всіх світлодіодів.
+
+   Використовує `millis()` для створення неблокуючої затримки.
+   Перемикає стан всіх світлодіодів кожні `halfPeriod` мілісекунд.
+*/
+void blinkAllLEDs() {
+  unsigned long currentMillis = millis();
+
+  if (currentMillis - previousMillis >= halfPeriod) {
+    previousMillis = currentMillis;
+
+    if (ledState == LOW) {
+      ledState = HIGH;
+    } else {
+      ledState = LOW;
+    }
+
+    for (int i = 0; i < 4; i++) {
+      digitalWrite(ledPins[i], ledState);
+    }
+    Serial.print("Світлодіоди зараз: ");
+    Serial.println(ledState == HIGH ? "УВІМКНЕНО" : "ВИМКНЕНО");
+  }
+}

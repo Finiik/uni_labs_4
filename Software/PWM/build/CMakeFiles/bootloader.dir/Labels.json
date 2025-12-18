@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Studying/Univercity/Embedded_Software/PWM/build/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "D:/Studying/Univercity/Embedded_Software/PWM/build/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "D:/Studying/Univercity/Embedded_Software/PWM/build/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "D:/Studying/Univercity/Embedded_Software/PWM/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		},
+		{
+			"file" : "D:/Studying/Univercity/Embedded_Software/PWM/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "D:/Studying/Univercity/Embedded_Software/PWM/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "D:/Studying/Univercity/Embedded_Software/PWM/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "D:/Studying/Univercity/Embedded_Software/PWM/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "D:/Studying/Univercity/Embedded_Software/PWM/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "D:/Studying/Univercity/Embedded_Software/PWM/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}

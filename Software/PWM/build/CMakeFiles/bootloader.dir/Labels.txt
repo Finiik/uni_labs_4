@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+D:/Studying/Univercity/Embedded_Software/PWM/build/CMakeFiles/bootloader
+D:/Studying/Univercity/Embedded_Software/PWM/build/CMakeFiles/bootloader.rule
+D:/Studying/Univercity/Embedded_Software/PWM/build/CMakeFiles/bootloader-complete.rule
+D:/Studying/Univercity/Embedded_Software/PWM/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+D:/Studying/Univercity/Embedded_Software/PWM/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+D:/Studying/Univercity/Embedded_Software/PWM/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+D:/Studying/Univercity/Embedded_Software/PWM/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+D:/Studying/Univercity/Embedded_Software/PWM/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+D:/Studying/Univercity/Embedded_Software/PWM/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+D:/Studying/Univercity/Embedded_Software/PWM/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

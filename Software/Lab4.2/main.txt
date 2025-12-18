@@ -1,0 +1,122 @@
+/**
+   @file main.ino
+   @brief Програма вимірювання інтервалу часу між двома натисканнями кнопки за допомогою таймера.
+
+   Програма вимірює час між двома послідовними натисканнями кнопки, підключеної до GPIO 4.
+   Результат вимірювання виводиться в мілісекундах на Serial Monitor, а світлодіод на GPIO 5 засвічується для індикації завершення вимірювання.
+   Використовуються переривання тільки від GPIO. Таймер служить як високоточний годинник.
+   Ця версія коду виправляє проблему переповнення, використовуючи 64-бітові змінні для часу.
+   @author Mykyta Siryk
+   @date 2025-09-14
+*/
+
+// --- Визначення констант та змінних ---
+
+/**
+   @def BUTTON_PIN
+   @brief Пін GPIO, до якого підключена кнопка.
+   @def LED_PIN
+   @brief Пін GPIO, до якого підключений світлодіод.
+*/
+#define BUTTON_PIN 4
+#define LED_PIN 5
+
+/**
+   @var timer
+   @brief Вказівник на структуру таймера.
+   @details Використовується для роботи з апаратним таймером ESP32.
+*/
+hw_timer_t *timer = NULL;
+
+/**
+   @var startTime
+   @brief Зберігає час першого натискання кнопки (в мс), 64-бітне значення для уникнення переповнення.
+   @var stopTime
+   @brief Зберігає час другого натискання кнопки (в мс), 64-бітне значення для уникнення переповнення.
+*/
+volatile uint64_t startTime = 0;
+volatile uint64_t stopTime = 0;
+
+/**
+   @var buttonPressCount
+   @brief Лічильник натискань кнопки.
+   @details Використовується для відстеження першого та другого натискання.
+*/
+volatile int buttonPressCount = 0;
+
+/**
+   @var measurementDone
+   @brief Прапорець, що сигналізує про завершення вимірювання.
+   @details Використовується для синхронізації між ISR та основним циклом `loop`.
+*/
+volatile bool measurementDone = false;
+
+/**
+   @brief Допоміжна функція для читання часу з таймера в мілісекундах.
+
+   Читає поточне 64-бітне значення лічильника таймера та ділить його на 1000,
+   щоб отримати результат у мілісекундах.
+   @param timer Вказівник на структуру таймера.
+   @return Час у мілісекундах.
+*/
+uint64_t timerReadMilis(hw_timer_t *timer) {
+  return timerRead(timer) / 1000;
+}
+
+/**
+   @brief Підпрограма обробки переривання (ISR) для натискань кнопки.
+
+   Функція викликається при наростаючому фронті на піні кнопки (`RISING`).
+   Вона фіксує час натискання за допомогою `timerReadMilis`.
+   При першому натисканні зберігається `startTime`, при другому — `stopTime`, після чого встановлюється прапорець `measurementDone`.
+*/
+void IRAM_ATTR buttonISR() {
+  if (buttonPressCount == 0) {
+    startTime = timerReadMilis(timer);
+    buttonPressCount = 1;
+  } else if (buttonPressCount == 1) {
+    stopTime = timerReadMilis(timer);
+    measurementDone = true;
+    buttonPressCount = 0;
+  }
+}
+
+/**
+   @brief Налаштування програми.
+
+   Ініціалізує послідовний зв'язок (`Serial.begin`).
+   Налаштовує пін кнопки як вхід (`INPUT_PULLUP`) та пін світлодіода як вихід (`OUTPUT`).
+   Ініціалізує таймер, який буде працювати як годинник.
+   Налаштовує зовнішнє переривання на піні кнопки, яке спрацьовує на наростаючому фронті (`RISING`).
+*/
+void setup() {
+  Serial.begin(9600);
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+  pinMode(LED_PIN, OUTPUT);
+
+  // Налаштування таймера. Він працює як годинник, не генеруючи переривань.
+  timer = timerBegin(1000000);
+
+  // Прив'язка переривання тільки до кнопки
+  attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), buttonISR, RISING);
+
+  Serial.println("Ready to measure time between button presses.");
+}
+
+/**
+   @brief Основний цикл програми.
+
+   Безперервно перевіряє прапорець `measurementDone`.
+   Якщо вимірювання завершено, розраховує та виводить інтервал часу в мілісекундах на Serial Monitor.
+   Запалює світлодіод для індикації, після чого вимикає його, скидає прапорець та очікує нових вимірювань.
+*/
+void loop() {
+  if (measurementDone) {
+    digitalWrite(LED_PIN, HIGH);
+    uint64_t elapsedTime = stopTime - startTime;
+    Serial.printf("Інтервал часу між натисканнями: %llu мс\n", elapsedTime);
+    measurementDone = false;
+    delay(1000);
+    digitalWrite(LED_PIN, LOW);
+  }
+}
